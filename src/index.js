@@ -9,6 +9,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
+    Navigate,
 } from "react-router-dom";
 import Home from "./components/home";
 import Categories from "./components/categories";
@@ -24,11 +25,14 @@ ReactDOM.render(
                 <Route path="/" element={<App/>}>
 
                     <Route path="home" element={<Home/>}/>
-                    <Route path="categories" element={<Categories/>}/>
 
+                    <Route path="categories" element={<Categories/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
                     <Route path="add_movie" element={<Add_movie/>}/>
+
                     <Route path="*" element={<NotFound/>}/>
+
+                    <Route index element={<Navigate to="/home" />} />
                 </Route>
             </Routes>
         </BrowserRouter>
