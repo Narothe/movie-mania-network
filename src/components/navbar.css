@@ -1,0 +1,32 @@
+.form-control {
+    width: 500px;
+    height: 40px;
+}
+
+.navbar {
+    height: 55px;
+}
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+.btn-color {
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btn-color:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}
+
+.btn-size {
+    width: 40px;
+    padding-left: 3px;
+    padding-top: 3px;
+}
