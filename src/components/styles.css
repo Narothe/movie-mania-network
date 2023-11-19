@@ -1,6 +1,19 @@
 .form-control {
     width: 500px;
     height: 40px;
+    background-color: #312E31;
+    color: #E0A96D;
+    border-color: #E0A96D;
+}
+
+.form-control:focus {
+    background-color: #312E31;
+    color: #E0A96D;
+    border-color: #E0A96D;
+}
+
+.form-control::placeholder {
+    color: #E0A96D;
 }
 
 .navbar {
@@ -30,3 +43,13 @@
     padding-left: 3px;
     padding-top: 3px;
 }
+
+body {
+    background-color: #201E20;
+    color: white;
+}
+.text-color {
+    color: red;
+    background-color: #312E31;
+}
+
