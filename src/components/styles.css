@@ -58,7 +58,7 @@ body {
 }
 
 .img-position {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .navbar-position{
@@ -68,3 +68,12 @@ body {
 .home-nav {
     margin-bottom: 500px;
 }
+
+.footer-style{
+    font-size: 9px;
+}
+
+.thumbnail-image {
+    width: 200px;
+}
+

@@ -16,6 +16,8 @@ import Categories from "./components/categories";
 import Statistics from "./components/statistics";
 import Add_movie from "./components/add_movie";
 import NotFound from "./components/notFound";
+import Login from "./components/login";
+import Show_movie from "./components/show_movie";
 
 
 ReactDOM.render(
@@ -29,6 +31,8 @@ ReactDOM.render(
                     <Route path="categories" element={<Categories/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
                     <Route path="add_movie" element={<Add_movie/>}/>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="show_movie" element={<Show_movie/>}/>
 
                     <Route path="*" element={<NotFound/>}/>
 
