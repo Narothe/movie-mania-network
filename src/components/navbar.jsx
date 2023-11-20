@@ -4,7 +4,7 @@ import "./styles.css";
 
 const Navbar = () => {
     return (
-        <div className="position-absolute top-50 start-50 translate-middle">
+        <div className="position-fixed top-50 start-50 translate-middle navbar-position">
             <nav className="navbar text-color rounded-top-2">
                 <div className="container-fluid">
                     <form className="d-flex" role="search">

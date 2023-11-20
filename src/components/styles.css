@@ -1,5 +1,5 @@
 .form-control {
-    width: 500px;
+    width: 700px;
     height: 40px;
     background-color: #312E31;
     color: #E0A96D;
@@ -44,6 +44,11 @@
     padding-top: 3px;
 }
 
+.btn-size-home {
+    margin-left: -100px;
+    margin-top: 20px;
+}
+
 body {
     background-color: #201E20;
     color: white;
@@ -52,3 +57,14 @@ body {
     background-color: #312E31;
 }
 
+.img-position {
+    margin-top: 100px;
+}
+
+.navbar-position{
+    margin-top: -120px;
+}
+
+.home-nav {
+    margin-bottom: 500px;
+}
