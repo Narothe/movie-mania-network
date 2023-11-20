@@ -14,10 +14,10 @@ import {
 import Home from "./components/home";
 import Categories from "./components/categories";
 import Statistics from "./components/statistics";
-import Add_movie from "./components/add_movie";
+import AddMovie from "./components/addMovie";
 import NotFound from "./components/notFound";
 import Login from "./components/login";
-import Show_movie from "./components/show_movie";
+import ShowMovie from "./components/showMovie";
 
 
 ReactDOM.render(
@@ -30,9 +30,9 @@ ReactDOM.render(
 
                     <Route path="categories" element={<Categories/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
-                    <Route path="add_movie" element={<Add_movie/>}/>
+                    <Route path="add_movie" element={<AddMovie/>}/>
                     <Route path="login" element={<Login/>}/>
-                    <Route path="show_movie" element={<Show_movie/>}/>
+                    <Route path="show_movie" element={<ShowMovie/>}/>
 
                     <Route path="*" element={<NotFound/>}/>
 

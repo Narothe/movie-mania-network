@@ -1,6 +1,6 @@
 import React from "react";
 
-const Add_movie = () => {
+const AddMovie = () => {
     return <div className="container">
         <div className="alert alert-dark" role="alert">
             <h4 className="alert-heading">Add_movie</h4>
@@ -13,4 +13,4 @@ const Add_movie = () => {
     </div>;
 };
 
-export default Add_movie;
+export default AddMovie;
