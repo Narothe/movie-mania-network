@@ -54,7 +54,8 @@ body {
     color: white;
 }
 .text-color {
-    background-color: #312E31;
+    /*background-color: #312E31;*/
+    background-color: rgba(49, 46, 49, 0.5);
 }
 
 .img-position {
