@@ -1,7 +1,7 @@
 .form-control {
     width: 700px;
     height: 40px;
-    background-color: #312E31;
+    background-color: rgba(49, 46, 49, 0.5);
     color: #E0A96D;
     border-color: #E0A96D;
 }
