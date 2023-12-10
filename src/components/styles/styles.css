@@ -103,6 +103,7 @@ body {
     margin-right: 30px;
     margin-bottom: -60px;
     display: none;
+    color: white;
 }
 
 .thumbnail-container:hover .thumbnail-info {

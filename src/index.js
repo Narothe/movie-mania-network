@@ -30,7 +30,7 @@ ReactDOM.render(
                     <Route path="login" element={<Login/>}/>
                     <Route path="*" element={<NotFound/>}/>
                     <Route path="details" element={<Details/>}/>
-                    <Route path="details/:title" element={<Details/>}/>
+                    <Route path="details/:id" element={<Details/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
 
                     {/*<Route index element={<Navigate to="/" />} />*/}
