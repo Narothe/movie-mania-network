@@ -27,13 +27,13 @@ ReactDOM.render(
                 <Route path="/" element={<App/>}>
                     <Route path="add_movie" element={<AddMovie/>}/>
                     <Route path="categories" element={<Categories/>}/>
-                    <Route path="home" element={<Home/>}/>
+                    <Route path="/" element={<Home/>}/>
                     <Route path="login" element={<Login/>}/>
                     <Route path="*" element={<NotFound/>}/>
                     <Route path="show_movie" element={<ShowMovie/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
 
-                    <Route index element={<Navigate to="/home" />} />
+                    {/*<Route index element={<Navigate to="/" />} />*/}
                 </Route>
             </Routes>
         </BrowserRouter>
