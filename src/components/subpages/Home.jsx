@@ -1,9 +1,9 @@
 import React from "react";
 
-import Footnote from "../elements/footnote";
+import Footnote from "../elements/Footnote";
 import SignIn from "../elements/SignIn";
-import MainLogo from "../elements/mainLogo";
-import Movies from "../elements/movies";
+import MainLogo from "../elements/MainLogo";
+import Movies from "../elements/Movies";
 
 const Home = () => {
 

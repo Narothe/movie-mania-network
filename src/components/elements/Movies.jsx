@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import thumbnailImage1 from "../assets/movie_window_view/climate.jpg";
 import thumbnailImage2 from "../assets/movie_window_view/clouds.jpg";
 import thumbnailImage3 from "../assets/movie_window_view/hobbit.jpg";
@@ -14,7 +14,7 @@ import midRate from "../assets/symbols/midRate.png"
 import badRate from "../assets/symbols/badRate.png"
 
 const Movies = () => {
-    const [selectedTitle, setSelectedTitle] = useState(null);
+    const [setSelectedTitle] = useState(null);
 
     const images = [
         { src: thumbnailImage1, title: "Climate", type: "Documentary", description:"Why climate change is bad.", rate: 9 },

@@ -10,13 +10,13 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Home from "./components/subpages/home";
-import Categories from "./components/subpages/categories";
-import Statistics from "./components/subpages/statistics";
-import AddMovie from "./components/subpages/addMovie";
-import NotFound from "./components/subpages/notFound";
-import Login from "./components/subpages/login";
-import Details from "./components/subpages/details";
+import Home from "./components/subpages/Home";
+import Categories from "./components/subpages/Categories";
+import Statistics from "./components/subpages/Statistics";
+import AddMovie from "./components/subpages/AddMovie";
+import NotFound from "./components/subpages/NotFound";
+import Login from "./components/subpages/Login";
+import Details from "./components/subpages/Details";
 
 
 ReactDOM.render(
