@@ -9,7 +9,6 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Navigate,
 } from "react-router-dom";
 import Home from "./components/subpages/home";
 import Categories from "./components/subpages/categories";
@@ -17,7 +16,7 @@ import Statistics from "./components/subpages/statistics";
 import AddMovie from "./components/subpages/addMovie";
 import NotFound from "./components/subpages/notFound";
 import Login from "./components/subpages/login";
-import ShowMovie from "./components/subpages/showMovie";
+import Details from "./components/subpages/details";
 
 
 ReactDOM.render(
@@ -30,7 +29,8 @@ ReactDOM.render(
                     <Route path="/" element={<Home/>}/>
                     <Route path="login" element={<Login/>}/>
                     <Route path="*" element={<NotFound/>}/>
-                    <Route path="show_movie" element={<ShowMovie/>}/>
+                    <Route path="details" element={<Details/>}/>
+                    <Route path="details/:title" element={<Details/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
 
                     {/*<Route index element={<Navigate to="/" />} />*/}

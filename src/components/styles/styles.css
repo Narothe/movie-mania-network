@@ -68,7 +68,7 @@ body {
 }
 
 .home-nav {
-    margin-bottom: 400px;
+    margin-bottom: 60vh;
 }
 
 .footer-style{
@@ -80,7 +80,7 @@ body {
     height: 145px;
     margin-right: 40px;
     margin-bottom: 50px;
-    transition: transform 0.3s ease-in-out
+    transition: transform 0.3s ease-in-out;
 }
 
 .thumbnail-image:hover {

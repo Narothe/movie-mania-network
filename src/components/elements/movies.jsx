@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import thumbnailImage1 from "../assets/movie_window_view/climate.jpg";
 import thumbnailImage2 from "../assets/movie_window_view/clouds.jpg";
 import thumbnailImage3 from "../assets/movie_window_view/hobbit.jpg";
@@ -13,6 +14,8 @@ import midRate from "../assets/symbols/midRate.png"
 import badRate from "../assets/symbols/badRate.png"
 
 const Movies = () => {
+    const [selectedTitle, setSelectedTitle] = useState(null);
+
     const images = [
         { src: thumbnailImage1, title: "Climate", type: "Documentary", description:"Why climate change is bad.", rate: 9 },
         { src: thumbnailImage2, title: "Clouds", type: "Documentary", description:"How about cloud formation are forming.", rate: 8 },
@@ -50,6 +53,10 @@ const Movies = () => {
     const handleMouseLeave = () => {
         setHoveredImage(null);
     };
+
+    const handleImageClick = (title) => {
+        setSelectedTitle(title);
+    };
     return (
         <div className="margin-bottom">
             <div className="d-flex justify-content-end button-margin">
@@ -68,11 +75,13 @@ const Movies = () => {
             </div>
             <div className="d-flex position-relative">
                 {visibleImages.map((image, index) => (
-                    <div
+                    <Link
                         key={index}
+                        to={`/details/${encodeURIComponent(image.title)}`}
                         className="thumbnail-container"
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => handleImageClick(image.title)}
                     >
                         <img
                             className="thumbnail-image"
@@ -93,7 +102,7 @@ const Movies = () => {
                                 )}
                             </div>
                         )}
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
