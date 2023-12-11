@@ -1,9 +1,9 @@
 import React from "react";
 
-const AddMovie = () => {
+const Add = () => {
     return <div className="container">
         <div className="alert alert-dark" role="alert">
-            <h4 className="alert-heading">Add_movie</h4>
+            <h4 className="alert-heading">Add</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aut autem delectus ea
                 error esse est eveniet expedita fugiat illo libero magni maxime mollitia optio quasi ratione rem
                 repellendus sunt.
@@ -13,4 +13,4 @@ const AddMovie = () => {
     </div>;
 };
 
-export default AddMovie;
+export default Add;

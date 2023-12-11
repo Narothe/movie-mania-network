@@ -13,7 +13,7 @@ import {
 import Home from "./components/subpages/Home";
 import Categories from "./components/subpages/Categories";
 import Statistics from "./components/subpages/Statistics";
-import AddMovie from "./components/subpages/AddMovie";
+import Add from "./components/subpages/Add";
 import NotFound from "./components/subpages/NotFound";
 import Login from "./components/subpages/Login";
 import Details from "./components/subpages/Details";
@@ -24,7 +24,7 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App/>}>
-                    <Route path="add_movie" element={<AddMovie/>}/>
+                    <Route path="add_movie" element={<Add/>}/>
                     <Route path="categories" element={<Categories/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="login" element={<Login/>}/>
