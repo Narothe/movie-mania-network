@@ -1,27 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import moviesDetails from "../elements/MoviesData";
-
 import goodRate from "../assets/symbols/goodRate.png";
 import midRate from "../assets/symbols/midRate.png";
 import badRate from "../assets/symbols/badRate.png";
+import moviesData from "./moviesData.json";
+
 
 const Movies = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-
     const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(0);
     const [hoveredImage, setHoveredImage] = useState(null);
 
-    const visibleImages = moviesDetails.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+    const visibleImages = moviesData.slice(
+        currentPage * itemsPerPage,
+        (currentPage + 1) * itemsPerPage
+    );
 
     const handleNext = () => {
-        const totalPages = Math.ceil(moviesDetails.length / itemsPerPage);
+        const totalPages = Math.ceil(moviesData.length / itemsPerPage);
         setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
     };
 
     const handlePrevious = () => {
-        const totalPages = Math.ceil(moviesDetails.length / itemsPerPage);
+        const totalPages = Math.ceil(moviesData.length / itemsPerPage);
         setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
     };
 
@@ -34,17 +36,23 @@ const Movies = () => {
     };
 
     const handleImageClick = (id) => {
-        const selectedImg = moviesDetails.find((img) => img.id === Number(id));
+        const selectedImg = moviesData.find((img) => img.id === Number(id));
         setSelectedImage(selectedImg);
     };
 
     return (
         <div className="margin-bottom">
             <div className="d-flex justify-content-end button-margin">
-                <button className="btn-color nav-link rounded-2 margin-right" onClick={handlePrevious}>
+                <button
+                    className="btn-color nav-link rounded-2 margin-right"
+                    onClick={handlePrevious}
+                >
                     Previous
                 </button>
-                <button className="btn-color nav-link rounded-2" onClick={handleNext}>
+                <button
+                    className="btn-color nav-link rounded-2"
+                    onClick={handleNext}
+                >
                     Next
                 </button>
             </div>
@@ -58,14 +66,22 @@ const Movies = () => {
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleImageClick(image.id)}
                     >
-                        <img className="thumbnail-image" src={image.src} alt={`thumbnail ${index}`} />
+                        <img
+                            className="thumbnail-image"
+                            src={require(`../assets/movie_window_view/${image.src}.jpg`)}
+                            alt={`thumbnail ${index}`}
+                        />
                         {hoveredImage === index && (
                             <div className="thumbnail-info">
                                 <p>{image.title}</p>
                                 <p>{image.description}</p>
                                 <p>Rate: {image.rate}/10</p>
                                 {image.rate >= 8 ? (
-                                    <img className="rate-image" src={goodRate} alt="Good Rate" />
+                                    <img
+                                        className="rate-image"
+                                        src={goodRate}
+                                        alt="Good Rate"
+                                    />
                                 ) : image.rate >= 4 ? (
                                     <img className="rate-image" src={midRate} alt="Mid Rate" />
                                 ) : (
