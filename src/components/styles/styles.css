@@ -144,9 +144,16 @@ body {
     /*width: 70vw;*/
 }
 
+.details-logo-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .details-split {
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
 }
 
 .details-names {

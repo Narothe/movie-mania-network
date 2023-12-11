@@ -4,6 +4,7 @@ import moviesDetails from "../elements/MoviesData";
 import goodRate from "../assets/symbols/goodRate.png";
 import midRate from "../assets/symbols/midRate.png";
 import badRate from "../assets/symbols/badRate.png";
+import MainLogo from "../elements/MainLogo";
 
 const Details = () => {
     const {id} = useParams();
@@ -15,6 +16,9 @@ const Details = () => {
 
     return (
         <div className="details-position">
+            <div className="details-logo-position">
+                <MainLogo/>
+            </div>
             <div className="details-split">
                 <div className="details-names">
                     <h2>{selectedImage.title}</h2>

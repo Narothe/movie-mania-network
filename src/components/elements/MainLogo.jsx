@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const MainLogo = () => {
     return (
-        <Link to="/home">
+        <Link to="/">
             <img className="img-position" src={fullLogo} alt="full logo"/>
         </Link>
     );
