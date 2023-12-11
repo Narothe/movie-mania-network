@@ -75,7 +75,7 @@ const moviesDetails = [
         id: 8,
         src: thumbnailImage8,
         title: "Ghostbusters",
-        type: "Documentary",
+        type: "Action",
         description: "Brave team want to catch ghosts.",
         rate: 9,
         long_description: "Join the brave team of Ghostbusters in this thrilling documentary that follows their quest to catch ghosts and paranormal entities. With a perfect blend of humor and suspense, this film introduces you to the world of supernatural investigations. Follow the team as they confront spooky apparitions, uncover haunted locations, and use their ingenious ghost-capturing technology. Get ready for a spine-tingling adventure with the Ghostbusters.",
