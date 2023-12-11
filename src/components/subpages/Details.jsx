@@ -5,13 +5,22 @@ import goodRate from "../assets/symbols/goodRate.png";
 import midRate from "../assets/symbols/midRate.png";
 import badRate from "../assets/symbols/badRate.png";
 import MainLogo from "../elements/MainLogo";
+import NotFound from "./NotFound";
 
 const Details = () => {
     const {id} = useParams();
     const selectedImage = moviesDetails.find((img) => img.id.toString() === id);
 
     if (!selectedImage) {
-        return <p>Movie not found</p>;
+        return (
+            <div className="details-not-founds">
+                <div className="details-not-found">
+                    <h1>Sorry</h1>
+                    <h2>Movie not found</h2>
+                </div>
+                <NotFound/>
+            </div>
+        );
     }
 
     return (

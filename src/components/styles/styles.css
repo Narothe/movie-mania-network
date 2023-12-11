@@ -130,7 +130,18 @@ body {
     bottom: 15px;
 }
 
+.details-not-founds {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
 
+.details-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
 
 .details-rate-image {
     width: 65px;
