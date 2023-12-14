@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moviesData from "../elements/moviesData.json";
-import SmallerMainLogo from "../elements/SmallerMainLogo";
+import TopContainer from "../elements/TopContainer";
 
 const Add = () => {
 
@@ -33,10 +33,7 @@ const Add = () => {
 
     return (
         <div className="add-container">
-            <div className="add-top-container">
-                <h3>Add a Movie</h3>
-                <SmallerMainLogo/>
-            </div>
+            <TopContainer text={'Add a Movie'}/>
             <form onSubmit={handleSubmit} className="add-form">
                 <div className="add-labels">
                     <label className="add-label">

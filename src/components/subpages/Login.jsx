@@ -1,16 +1,38 @@
 import React from "react";
+import TopContainer from "../elements/TopContainer";
 
 const Login = () => {
-    return <div className="container">
-        <div className="alert alert-dark" role="alert">
-            <h4 className="alert-heading">Login</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aut autem delectus ea
-                error esse est eveniet expedita fugiat illo libero magni maxime mollitia optio quasi ratione rem
-                repellendus sunt.
-            </p>
+    const handleSubmit = () => {
+        console.log('Zalogowano')
+        alert('Zalogowano! (aktualnie brak możliwości zalogowania)');
 
+    };
+    return (
+        <div className="login-container">
+            <TopContainer text={'Login'}/>
+            <div className="login-center">
+                <div className="login-space-container">
+                    <div className="login-margin">
+                        <div className="login-elements">
+                            <form onSubmit={handleSubmit} className="login-form">
+                                <label>
+                                    Login:
+                                    <input
+                                        className="login-form-control me-2"
+                                        type="text"
+                                        name="login"
+                                    />
+                                </label>
+
+                            </form>
+
+                            {/*<p>Login:</p>*/}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>;
+    );
 };
 
 export default Login;

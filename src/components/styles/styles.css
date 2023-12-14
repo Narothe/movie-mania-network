@@ -221,7 +221,7 @@ body {
     color: #E0A96D;
 }
 
-.add-top-container {
+.top-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -258,3 +258,65 @@ body {
     height: 180px;
 }
 
+.login-container {
+    display: flex;
+    flex-direction: column;
+    color: #E0A96D;
+}
+
+.login-center {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.login-space-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #E0A96D;
+    color: white;
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.login-elements {
+    display: flex;
+    flex-direction: row;
+    background-color: #201E20;
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.login-margin {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.login-form {
+    color: #E0A96D;
+}
+
+.login-form-control {
+    width: 700px;
+    height: 40px;
+    background-color: rgba(32, 30, 32, 0.5);
+    color: #E0A96D;
+}
+
+.login-form-control:focus {
+    background-color: #312E31;
+    color: #E0A96D;
+}
+
+.login-form-control::placeholder {
+    color: #E0A96D;
+}
