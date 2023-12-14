@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import moviesData from "../elements/moviesData.json";
+import SmallerMainLogo from "../elements/SmallerMainLogo";
 
 const Add = () => {
 
-    const [lastId, setLastId] = useState(0);
+    const [setLastId] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,64 +22,89 @@ const Add = () => {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     const handleSubmit = () => {
         console.log('Zapis danych przy pomocy API (aktualnie brak możliwości zapisu)')
+        alert('Zapis danych przy pomocy API (aktualnie brak możliwości zapisu)');
+
     };
 
     return (
-        <div>
-            <h2>Add a Movie</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Image Source:
-                    <input
-                        type="text"
-                        name="src"
-                    />
-                </label>
-                <br />
-                <label>
-                    Title:
-                    <input
-                        type="text"
-                        name="title"
-                    />
-                </label>
-                <br />
-                <label>
-                    Type:
-                    <input
-                        type="text"
-                        name="type"
-                    />
-                </label>
-                <br />
-                <label>
-                    Description:
-                    <textarea
-                        name="description"
-                    />
-                </label>
-                <br />
-                <label>
-                    Rate:
-                    <input
-                        type="number"
-                        name="rate"
-                    />
-                </label>
-                <br />
-                <label>
-                    Long Description:
-                    <textarea
-                        name="long_description"
-                    />
-                </label>
-                <br />
-                <button type="submit">Add Movie</button>
+        <div className="add-container">
+            <div className="add-top-container">
+                <h3>Add a Movie</h3>
+                <SmallerMainLogo/>
+            </div>
+            <form onSubmit={handleSubmit} className="add-form">
+                <div className="add-labels">
+                    <label className="add-label">
+                        Image Source:
+                        <input
+                            className="form-control me-2 add-margin"
+                            type="text"
+                            name="src"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <div className="add-labels">
+                    <label className="add-label">
+                        Title:
+                        <input
+                            className="form-control me-2 add-margin"
+                            type="text"
+                            name="title"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <div className="add-labels">
+                    <label className="add-label">
+                        Type:
+                        <input
+                            className="form-control me-2 add-margin"
+                            type="text"
+                            name="type"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <div className="add-labels">
+                    <label className="add-label">
+                        Short description:
+                        <input
+                            className="form-control me-2 add-margin"
+                            type="text"
+                            name="description"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <div className="add-labels">
+                    <label className="add-label">
+                        Rate (1-10):
+                        <input
+                            className="form-control me-2 add-margin"
+                            type="number"
+                            name="rate"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <div className="add-labels">
+                    <label className="add-label">
+                        Long Description:
+                        <textarea
+                            className="form-control me-2 add-super-height add-margin"
+                            type="text"
+                            name="long_description"
+                        />
+                    </label>
+                </div>
+                <br/>
+                <button className="btn btn-color" type="submit">Add Movie</button>
             </form>
         </div>
     );
