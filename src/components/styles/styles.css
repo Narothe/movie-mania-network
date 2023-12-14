@@ -38,7 +38,7 @@
     color: #312E31;
 }
 
-.btn-size {
+.navbar-btn-size {
     width: 40px;
     padding-left: 3px;
     padding-top: 3px;
@@ -249,10 +249,10 @@ body {
 
 }
 
-.add-margin {
-    margin-left: 10px;
-    width: 40vw;
-}
+/*.add-margin {*/
+/*    margin-left: 10px;*/
+/*    width: 40vw;*/
+/*}*/
 
 .add-super-height {
     height: 180px;
@@ -277,7 +277,7 @@ body {
     background-color: #E0A96D;
     color: white;
     width: 80%;
-    height: 500px;
+    height: 400px;
     border-radius: 10px;
     justify-content: center;
 }
@@ -286,30 +286,33 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #201E20;
-    width: 80%;
+    width: 750px;
     height: 50px;
-    margin: 10px;
+    margin-bottom: 20px;
     border-radius: 10px;
     align-items: center;
+    justify-content: end;
 }
 
 .login-margin {
     margin-top: 75px;
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: center;
 }
 
 .login-form {
+    display: flex;
+    flex-direction: column;
     color: #E0A96D;
 }
 
 .login-form-control {
-    width: 700px;
+    width: 650px;
     height: 40px;
     background-color: rgba(32, 30, 32, 0.5);
     color: #E0A96D;
+    margin-left: 10px;
 }
 
 .login-form-control:focus {
@@ -319,4 +322,30 @@ body {
 
 .login-form-control::placeholder {
     color: #E0A96D;
+}
+
+.invert-btn-color {
+    color: #E0A96D;
+    background-color: #201E20;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.invert-btn-color:hover {
+    background-color: #E0A96D;
+    border-color: #201E20;
+    color: #201E20;
+}
+
+.btn-size {
+    width: 20%;
+}
+
+.login-margin-top {
+    margin-top: 56px;
+}
+
+.login-bigger-font {
+    font-size: 27px;
+
 }
