@@ -24,7 +24,7 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App/>}>
-                    <Route path="add_movie" element={<Add/>}/>
+                    <Route path="add" element={<Add/>}/>
                     <Route path="categories" element={<Categories/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="login" element={<Login/>}/>

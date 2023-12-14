@@ -1,38 +1,31 @@
-import React, { useState } from "react";
-import { useNavigate  } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import moviesData from "../elements/moviesData.json";
 
-const Add = ({ onAddMovie }) => {
-    const history = useNavigate ();
+const Add = () => {
 
-    const [formData, setFormData] = useState({
-        src: "",
-        title: "",
-        type: "",
-        description: "",
-        rate: "",
-        long_description: "",
-    });
+    const [lastId, setLastId] = useState(0);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                console.log("Udało się pobrać dane");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+                const data = moviesData;
+                const maxId = Math.max(...data.map((movie) => movie.id));
+                setLastId(maxId);
+                console.log('Ostatni numer id:', maxId);
 
-        // Generowanie automatycznego ID - możesz użyć np. timestamp
-        const id = new Date().getTime();
+            } catch (error) {
+                console.error("Błąd podczas pobierania danych:", error);
+            }
+        };
 
-        // Tworzenie nowego filmu z formularza
-        const newMovie = { id, ...formData };
+        fetchData();
+    }, []);
 
-        // Dodawanie filmu i przekierowanie
-        onAddMovie(newMovie);
-        history.push("/");
+
+    const handleSubmit = () => {
+        console.log('Zapis danych przy pomocy API (aktualnie brak możliwości zapisu)')
     };
 
     return (
@@ -44,8 +37,6 @@ const Add = ({ onAddMovie }) => {
                     <input
                         type="text"
                         name="src"
-                        value={formData.src}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />
@@ -54,8 +45,6 @@ const Add = ({ onAddMovie }) => {
                     <input
                         type="text"
                         name="title"
-                        value={formData.title}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />
@@ -64,8 +53,6 @@ const Add = ({ onAddMovie }) => {
                     <input
                         type="text"
                         name="type"
-                        value={formData.type}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />
@@ -73,8 +60,6 @@ const Add = ({ onAddMovie }) => {
                     Description:
                     <textarea
                         name="description"
-                        value={formData.description}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />
@@ -83,8 +68,6 @@ const Add = ({ onAddMovie }) => {
                     <input
                         type="number"
                         name="rate"
-                        value={formData.rate}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />
@@ -92,8 +75,6 @@ const Add = ({ onAddMovie }) => {
                     Long Description:
                     <textarea
                         name="long_description"
-                        value={formData.long_description}
-                        onChange={handleChange}
                     />
                 </label>
                 <br />

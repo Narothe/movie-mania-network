@@ -29,7 +29,7 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item d-inline-flex">
                                 {/*<a className="btn-color nav-link rounded-2" href="/add_movie">Add</a>*/}
-                                <Link to="/add_movie" className="btn-color nav-link rounded-2"> Add movie </Link>
+                                <Link to="/add" className="btn-color nav-link rounded-2"> Add movie </Link>
                             </li>
                         </ul>
                     </div>
