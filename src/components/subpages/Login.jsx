@@ -8,7 +8,7 @@ const Login = () => {
     };
     return (
         <div className="login-container">
-            <TopContainer text={'Login'}/>
+            <TopContainer text={'Sign in'}/>
             <div className="login-center">
                 <div className="login-space-container">
                     <div className="login-margin">
@@ -42,7 +42,7 @@ const Login = () => {
                 <p className="login-center login-bigger-font">Or:</p>
 
                 <div className="login-center">
-                    <button className="btn btn-color btn-size" type="submit">Register</button>
+                    <button className="btn btn-color btn-size" type="submit">Create account</button>
                 </div>
             </div>
         </div>
