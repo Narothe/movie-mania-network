@@ -1,6 +1,7 @@
 import React from "react";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
+import Footnote from "../elements/Footnote";
 
 const Signin = () => {
     const handleSubmit = () => {
@@ -20,7 +21,7 @@ const Signin = () => {
                                     <input
                                         className="signin-form-control me-2 add-margin"
                                         type="text"
-                                        name="signin"
+                                        name="login"
                                     />
                                 </label>
                             </div>
@@ -45,6 +46,9 @@ const Signin = () => {
                 <div className="signin-center">
                     <Link to="/signup" className="btn btn-color btn-size" type="submit">Sign up</Link>
                 </div>
+            </div>
+            <div className="details-footnote">
+                <Footnote/>
             </div>
         </div>
     );

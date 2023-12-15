@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moviesData from "../elements/moviesData.json";
 import TopContainer from "../elements/TopContainer";
+import Footnote from "../elements/Footnote";
 
 const Add = () => {
 
@@ -103,6 +104,9 @@ const Add = () => {
                 <br/>
                 <button className="btn btn-color" type="submit">Add Movie</button>
             </form>
+            <div className="details-footnote">
+                <Footnote/>
+            </div>
         </div>
     );
 };
