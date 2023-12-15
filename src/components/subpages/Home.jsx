@@ -1,7 +1,7 @@
 import React from "react";
 
 import Footnote from "../elements/Footnote";
-import SignIn from "../elements/SignIn";
+import SignInButton from "../elements/SignInButton";
 import MainLogo from "../elements/MainLogo";
 import Movies from "../elements/Movies";
 
@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className="container">
             <nav className="d-flex justify-content-center home-nav">
-                <SignIn/>
+                <SignInButton/>
                 <MainLogo/>
             </nav>
             <div>

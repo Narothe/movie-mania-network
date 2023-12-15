@@ -152,6 +152,7 @@ body {
 }
 
 .details-position {
+    color: #FFE1BF;
     display: flex;
     flex-direction: column;
     /*justify-content: start;*/
@@ -249,29 +250,29 @@ body {
 
 }
 
-/*.add-margin {*/
-/*    margin-left: 10px;*/
-/*    width: 40vw;*/
-/*}*/
+.add-margin {
+    margin-left: 10px;
+    width: 40vw;
+}
 
 .add-super-height {
     height: 180px;
 }
 
-.login-container {
+.signin-container {
     display: flex;
     flex-direction: column;
-    color: #E0A96D;
+    color: #FFE1BF;
 }
 
-.login-center {
+.signin-center {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
 }
 
-.login-space-container {
+.signin-space-container {
     display: flex;
     flex-direction: row;
     background-color: #E0A96D;
@@ -282,7 +283,7 @@ body {
     justify-content: center;
 }
 
-.login-elements {
+.signin-elements {
     display: flex;
     flex-direction: row;
     background-color: #201E20;
@@ -294,34 +295,34 @@ body {
     justify-content: end;
 }
 
-.login-margin {
+.signin-margin {
     margin-top: 75px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.login-form {
+.signin-form {
     display: flex;
     flex-direction: column;
-    color: #E0A96D;
+    color: #FFE1BF;
 }
 
-.login-form-control {
+.signin-form-control {
     width: 650px;
     height: 40px;
     background-color: rgba(32, 30, 32, 0.5);
-    color: #E0A96D;
+    color: #FFE1BF;
     margin-left: 10px;
 }
 
-.login-form-control:focus {
+.signin-form-control:focus {
     background-color: #312E31;
-    color: #E0A96D;
+    color: #FFE1BF;
 }
 
-.login-form-control::placeholder {
-    color: #E0A96D;
+.signin-form-control::placeholder {
+    color: #FFE1BF;
 }
 
 .invert-btn-color {
@@ -341,11 +342,11 @@ body {
     width: 20%;
 }
 
-.login-margin-top {
+.signin-margin-top {
     margin-top: 50px;
 }
 
-.login-bigger-font {
+.signin-bigger-font {
     font-size: 27px;
 
 }
