@@ -220,7 +220,7 @@ body {
 .add-container {
     display: flex;
     flex-direction: column;
-    color: #E0A96D;
+    color: #FFE1BF;
 }
 
 .top-container {
@@ -241,14 +241,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
 }
 
 .add-label {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
 .add-margin {
@@ -349,7 +347,6 @@ body {
 
 .signin-bigger-font {
     font-size: 27px;
-
 }
 
 .signup-container {
@@ -424,5 +421,25 @@ body {
 
 .signup-bigger-font {
     font-size: 27px;
+}
 
+.statistics-container {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.statistics-sorted {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.statistics-link-color {
+    color: #FFE1BF;
+    text-decoration: none;
+}
+
+.statistics-thumbnail-image {
+    width: 30px;
+    position: absolute;
 }

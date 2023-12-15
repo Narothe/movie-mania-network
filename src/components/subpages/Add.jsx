@@ -35,6 +35,8 @@ const Add = () => {
     return (
         <div className="add-container">
             <TopContainer text={'Add a Movie'}/>
+            <h4>Form for adding a movie</h4>
+            <hr/>
             <form onSubmit={handleSubmit} className="add-form">
                 <div className="add-labels">
                     <label className="add-label">
