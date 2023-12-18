@@ -14,11 +14,11 @@ const Home = () => {
                 <MainLogo/>
             </nav>
             <div>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
+                <Movies category={1}/>
+                <Movies category={1}/>
+                <Movies category={1}/>
+                <Movies category={1}/>
+                <Movies category={1}/>
             </div>
 
             <Footnote/>

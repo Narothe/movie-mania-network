@@ -6,7 +6,7 @@ import badRate from "../assets/symbols/badRate.png";
 import moviesData from "./moviesData.json";
 
 
-const Movies = () => {
+const Movies = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(0);
@@ -45,7 +45,7 @@ const Movies = () => {
 
             <div className="d-flex justify-content-between button-margin">
                 <div className="movies-category-name">
-                    <p>Category name</p>
+                    <p>Category {props.category}</p>
                 </div>
                 <div className="movies-buttons">
                 <button

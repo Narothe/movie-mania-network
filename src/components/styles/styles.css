@@ -475,3 +475,7 @@ body {
     flex-direction: column;
     color: #FFE1BF;
 }
+
+.category-container-text-color {
+    color: #FFE1BF;
+}

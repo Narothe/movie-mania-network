@@ -18,6 +18,7 @@ import NotFound from "./components/subpages/NotFound";
 import Signin from "./components/subpages/Signin";
 import Details from "./components/subpages/Details";
 import Signup from "./components/subpages/Signup";
+import Category from "./components/subpages/Category";
 
 
 ReactDOM.render(
@@ -27,6 +28,7 @@ ReactDOM.render(
                 <Route path="/" element={<App/>}>
                     <Route path="add" element={<Add/>}/>
                     <Route path="categories" element={<Categories/>}/>
+                    <Route path="category" element={<Category/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="signup" element={<Signup/>}/>
