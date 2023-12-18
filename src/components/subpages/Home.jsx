@@ -15,10 +15,10 @@ const Home = () => {
             </nav>
             <div>
                 <Movies category={1}/>
-                <Movies category={1}/>
-                <Movies category={1}/>
-                <Movies category={1}/>
-                <Movies category={1}/>
+                <Movies category={2}/>
+                <Movies category={3}/>
+                <Movies category={4}/>
+                <Movies category={5}/>
             </div>
 
             <Footnote/>

@@ -29,6 +29,7 @@ ReactDOM.render(
                     <Route path="add" element={<Add/>}/>
                     <Route path="categories" element={<Categories/>}/>
                     <Route path="category" element={<Category/>}/>
+                    <Route path="category/:categoryName" element={<Category/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="signup" element={<Signup/>}/>

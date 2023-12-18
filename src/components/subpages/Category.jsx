@@ -1,10 +1,16 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Footnote from "../elements/Footnote";
+import TopContainer from "../elements/TopContainer";
+import HorizontalGap from "../elements/horizontalGap";
 
+const Category = () => {
+    const { categoryName } = useParams();
 
-const Categories = () => {
     return (
         <div className="container category-container">
+            <TopContainer text={'Category'}/>
+            <HorizontalGap gap={`Category ${categoryName}`}/>
 
             <Footnote/>
         </div>
@@ -12,4 +18,4 @@ const Categories = () => {
     );
 }
 
-export default Categories;
+export default Category;

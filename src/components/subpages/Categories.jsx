@@ -11,10 +11,9 @@ const Categories = () => {
             <HorizontalGap gap={'All Categories'}/>
 
             <div className="d-flex flex-row">
-                <CategoryContainer categoryName={'Category 1'}/>
-                <CategoryContainer categoryName={'Category 2'}/>
-                <CategoryContainer categoryName={'Category 3'}/>
-
+                <CategoryContainer categoryName={1}/>
+                <CategoryContainer categoryName={2}/>
+                <CategoryContainer categoryName={3}/>
             </div>
             <Footnote/>
         </div>
