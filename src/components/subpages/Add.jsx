@@ -48,7 +48,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <div className="add-labels">
                     <label className="add-label">
                         Title:
@@ -59,7 +58,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <div className="add-labels">
                     <label className="add-label">
                         Type:
@@ -70,7 +68,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <div className="add-labels">
                     <label className="add-label">
                         Short description:
@@ -81,7 +78,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <div className="add-labels">
                     <label className="add-label">
                         Rate (1-10):
@@ -92,7 +88,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <div className="add-labels">
                     <label className="add-label">
                         Long Description:
@@ -103,7 +98,6 @@ const Add = () => {
                         />
                     </label>
                 </div>
-                <br/>
                 <button className="btn btn-color" type="submit">Add Movie</button>
             </form>
             <div className="details-footnote">

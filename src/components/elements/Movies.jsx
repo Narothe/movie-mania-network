@@ -42,7 +42,12 @@ const Movies = () => {
 
     return (
         <div className="margin-bottom">
-            <div className="d-flex justify-content-end button-margin">
+
+            <div className="d-flex justify-content-between button-margin">
+                <div className="movies-category-name">
+                    <p>Category name</p>
+                </div>
+                <div className="movies-buttons">
                 <button
                     className="btn-color nav-link rounded-2 margin-right"
                     onClick={handlePrevious}
@@ -55,6 +60,7 @@ const Movies = () => {
                 >
                     Next
                 </button>
+                </div>
             </div>
             <div className="d-flex position-relative">
                 {visibleImages.map((image, index) => (

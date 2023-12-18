@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import moviesData from "../elements/moviesData.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/styles.css";
 import {Link} from "react-router-dom";
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+
+        // Filtruj filmy według wpisanej frazy
+        const results = moviesData.filter((movie) =>
+            movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        // Ustaw wyniki w stanie komponentu
+        setSearchResults(results);
+
+        // Jeśli znaleziono dokładnie jeden film, przekieruj do jego szczegółów
+        if (results.length === 1) {
+            navigate(`/details/${results[0].id}`);
+        } else if (results.length === 0) {
+            // Jeśli nie znaleziono żadnego filmu, wyświetl alert
+            alert("Nie znaleziono filmu o podanej nazwie.");
+        }
+    };
+
     return (
         <div className="position-fixed top-50 start-50 translate-middle navbar-position">
-            <nav className="navbar text-color rounded-top-2">
+            <nav onSubmit={handleSearch} className="navbar text-color rounded-top-2">
                 <div className="container-fluid">
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setSearchTerm(e.target.value)}/>
                         <button className="btn btn-color navbar-btn-size" type="submit"> >>></button>
                     </form>
                 </div>

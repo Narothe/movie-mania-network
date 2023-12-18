@@ -32,7 +32,7 @@ const Statistics = () => {
                     <Link
                         to={`/details/${movie.id}`}
                         key={movie.id}
-                        className="statistics-link-color"
+                        className="statistics-link"
                     >
                         <h5>{movie.title}</h5>
                         <p>{`Rating: ${movie.rate}/10`}</p>

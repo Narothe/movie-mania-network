@@ -241,6 +241,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 10px;
 }
 
 .add-label {
@@ -432,14 +433,25 @@ body {
 .statistics-sorted {
     display: flex;
     flex-wrap: wrap;
+
 }
 
-.statistics-link-color {
+.statistics-link {
     color: #FFE1BF;
     text-decoration: none;
+    margin-right: auto;
 }
 
 .statistics-thumbnail-image {
     width: 30px;
     position: absolute;
+}
+
+.movies-category-name {
+    margin-bottom: -10px;
+}
+
+.movies-buttons {
+    display: flex;
+    flex-direction: row;
 }
