@@ -85,6 +85,8 @@ body {
     height: 145px;
     margin-right: 40px;
     margin-bottom: 50px;
+    border-radius: 10px;
+
     transition: transform 0.3s ease-in-out;
 }
 
@@ -449,9 +451,21 @@ body {
 
 .movies-category-name {
     margin-bottom: -10px;
+    color: #FFE1BF;
 }
 
 .movies-buttons {
     display: flex;
     flex-direction: row;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.background-color {
+    background-color: #E0A96D;
+    border-radius: 10px;
 }

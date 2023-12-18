@@ -1,16 +1,24 @@
 import React from "react";
+import Footnote from "../elements/Footnote";
+import TopContainer from "../elements/TopContainer";
 
 const Categories = () => {
-    return <div className="container">
-        <div className="alert alert-dark" role="alert">
-            <h4 className="alert-heading">Categories</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aut autem delectus ea
-                error esse est eveniet expedita fugiat illo libero magni maxime mollitia optio quasi ratione rem
-                repellendus sunt.
-            </p>
+    return (
+        <div className="container categories-container">
+            <TopContainer text="Categories" />
+            <h4>All Categories</h4>
+            <hr />
 
+            <div className="thumbnail-image background-color d-flex align-items-center justify-content-center">
+                <div>
+                    <p className="text-center fw-bold fs-4">Category 1</p>
+                </div>
+            </div>
+
+            <Footnote />
         </div>
-    </div>;
-};
+
+    );
+}
 
 export default Categories;
