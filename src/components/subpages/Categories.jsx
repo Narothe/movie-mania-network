@@ -1,21 +1,22 @@
 import React from "react";
 import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
+import CategoryContainer from "../elements/CategoryContainer";
+import HorizontalGap from "../elements/horizontalGap";
 
 const Categories = () => {
     return (
         <div className="container categories-container">
-            <TopContainer text="Categories" />
-            <h4>All Categories</h4>
-            <hr />
+            <TopContainer text="Categories"/>
+            <HorizontalGap gap={'All Categories'}/>
 
-            <div className="thumbnail-image background-color d-flex align-items-center justify-content-center">
-                <div>
-                    <p className="text-center fw-bold fs-4">Category 1</p>
-                </div>
+            <div className="d-flex flex-row">
+                <CategoryContainer categoryName={'Category 1'}/>
+                <CategoryContainer categoryName={'Category 2'}/>
+                <CategoryContainer categoryName={'Category 3'}/>
+
             </div>
-
-            <Footnote />
+            <Footnote/>
         </div>
 
     );

@@ -3,6 +3,7 @@ import moviesData from "../elements/moviesData.json";
 import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
+import HorizontalGap from "../elements/horizontalGap";
 // import goodRate from "../assets/symbols/goodRate.png";
 // import midRate from "../assets/symbols/midRate.png";
 // import badRate from "../assets/symbols/badRate.png";
@@ -24,8 +25,7 @@ const Statistics = () => {
     return (
         <div className="statistics-container">
             <TopContainer text={'Statistics'}/>
-            <h4>Top most rated videos (sorted)</h4>
-            <hr/>
+            <HorizontalGap gap={'Top most rated videos (sorted)'}/>
 
             <div className="statistics-sorted">
                 {sortedMovies.map((movie) => (

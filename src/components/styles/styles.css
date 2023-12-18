@@ -469,3 +469,9 @@ body {
     background-color: #E0A96D;
     border-radius: 10px;
 }
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import moviesData from "../elements/moviesData.json";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
+import HorizontalGap from "../elements/horizontalGap";
 
 const Add = () => {
 
@@ -35,8 +36,8 @@ const Add = () => {
     return (
         <div className="add-container">
             <TopContainer text={'Add a Movie'}/>
-            <h4>Form for adding a movie</h4>
-            <hr/>
+            <HorizontalGap gap={'Form for adding a movie'}/>
+
             <form onSubmit={handleSubmit} className="add-form">
                 <div className="add-labels">
                     <label className="add-label">
