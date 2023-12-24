@@ -1,13 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
 import Footnote from "../elements/Footnote";
 
 const Signin = () => {
-    const handleSubmit = () => {
-        console.log('Zalogowano')
-        alert('Zalogowano! (aktualnie brak możliwości zalogowania)');
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post("https://at.usermd.net", {
+                login,
+                password,
+            });
+
+            // Tutaj możesz obsłużyć odpowiedź od serwera, na przykład ustawiając stan zalogowanego użytkownika w twojej aplikacji.
+            console.log("Zalogowano", response.data);
+        } catch (error) {
+            // Tutaj możesz obsłużyć błędy, na przykład wyświetlając komunikat o błędzie.
+            console.error("Błąd logowania", error);
+            alert("Błąd logowania");
+        }
     };
+
     return (
         <div className="signin-container">
             <TopContainer text={'Sign in'}/>
@@ -22,6 +40,8 @@ const Signin = () => {
                                         className="signin-form-control me-2 add-margin"
                                         type="text"
                                         name="login"
+                                        value={login}
+                                        onChange={(e) => setLogin(e.target.value)}
                                     />
                                 </label>
                             </div>
@@ -31,6 +51,8 @@ const Signin = () => {
                                     className="signin-form-control me-2 add-margin"
                                     type="password"
                                     name="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </label>
                             <br/>
