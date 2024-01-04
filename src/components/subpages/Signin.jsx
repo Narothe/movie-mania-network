@@ -17,9 +17,11 @@ const Signin = () => {
                 account
             )
             .then(response => {
-                console.log('response.data',response.data);
-                localStorage.setItem('token', response.data.token);
-                alert("Signed!");
+                    console.log('response.data', response.data);
+                    localStorage.setItem('token', response.data.token);
+                    alert("Signed!");
+                    window.open("/", "_self")
+
                 }
             ).catch(error => {
             console.error(error);
@@ -28,7 +30,7 @@ const Signin = () => {
     }
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setAccount((prevAccount) => ({
             ...prevAccount,
             [name]: value,

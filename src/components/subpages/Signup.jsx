@@ -18,7 +18,7 @@ const Signup = () => {
                 account
             )
             .then((response) => {
-                console.log('response.data',response.data);
+                console.log('response.data', response.data);
                 localStorage.setItem('token', response.data.token);
                 alert("Account created successfully!");
                 window.open("/", "_self")
@@ -30,7 +30,7 @@ const Signup = () => {
     };
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setAccount((prevAccount) => ({
             ...prevAccount,
             [name]: value,
@@ -39,13 +39,13 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
-            <TopContainer text={"Sign up"} />
+            <TopContainer text={"Sign up"}/>
             <div className="signup-center">
                 <div className="signup-space-container">
                     <div className="signup-margin">
                         <form onSubmit={handleSubmit} className="signup-form">
                             <label className="signup-elements">
-                                Name:
+                                Email:
                                 <input
                                     className="signup-form-control me-2 add-margin"
                                     type="text"
@@ -55,7 +55,7 @@ const Signup = () => {
                                 />
                             </label>
                             <label className="signup-elements">
-                                Email:
+                                Login:
                                 <input
                                     className="signup-form-control me-2 add-margin"
                                     type="text"
@@ -74,8 +74,8 @@ const Signup = () => {
                                     onChange={handleInputChange}
                                 />
                             </label>
-                            <br />
-                            <br />
+                            <br/>
+                            <br/>
                             <button className="btn invert-btn-color" type="submit">
                                 Create account
                             </button>
@@ -84,7 +84,7 @@ const Signup = () => {
                 </div>
             </div>
             <div className="details-footnote">
-                <Footnote />
+                <Footnote/>
             </div>
         </div>
     );
