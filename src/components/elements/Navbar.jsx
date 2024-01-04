@@ -36,7 +36,7 @@ const Navbar = () => {
             <nav onSubmit={handleSearch} className={`${styles.navBar} ${styles.textColor} navbar rounded-top-2`}>
                 <div className="container-fluid">
                     <form className="d-flex" role="search">
-                        <input className={`${styles.formControl} me-2`} type="search" placeholder="Search" aria-label="Search" onChange={(e) => setSearchTerm(e.target.value)}/>
+                        <input className={`${styles.formControl} form-control me-2`} type="search" placeholder="Search" aria-label="Search" onChange={(e) => setSearchTerm(e.target.value)}/>
                         <button className={`btn ${styles.btnColor} ${styles.navbarBtnSize}`} type="submit"> >>></button>
                     </form>
                 </div>
