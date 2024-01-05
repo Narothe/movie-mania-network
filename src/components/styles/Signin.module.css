@@ -1,0 +1,126 @@
+.signinContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.signinCenter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.signinSpaceContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #E0A96D;
+    color: white;
+    width: 80%;
+    height: 400px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.signinMargin {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.signinForm {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.addLabels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.signinElements {
+    display: flex;
+    flex-direction: row;
+    background-color: #201E20;
+    width: 750px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.signinFormControl {
+    width: 650px;
+    height: 40px;
+    background-color: rgba(32, 30, 32, 0.5);
+    color: #FFE1BF;
+    margin-left: 10px;
+}
+
+.signinFormControl:focus {
+    background-color: #312E31;
+    color: #FFE1BF;
+}
+
+.signinFormControl::placeholder {
+    color: #FFE1BF;
+}
+
+.addMargin {
+    margin-left: 10px;
+    width: 40vw;
+}
+
+
+.invertBtnColor {
+    color: #E0A96D;
+    background-color: #201E20;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.invertBtnColor:hover {
+    background-color: #E0A96D;
+    border-color: #201E20;
+    color: #201E20;
+}
+
+.signinMarginTop {
+    margin-top: 50px;
+}
+
+.signinCenter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.signinBiggerFont {
+    font-size: 27px;
+}
+
+.btnColor {
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btnColor:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}
+
+.btnSize {
+    width: 20%;
+}
+
+.detailsFootnote {
+    margin-top: 30px;
+}

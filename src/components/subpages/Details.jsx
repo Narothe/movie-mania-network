@@ -7,6 +7,7 @@ import MainLogo from "../elements/MainLogo";
 import NotFound from "./NotFound";
 import Footnote from "../elements/Footnote";
 import moviesData from "../elements/moviesData.json";
+import styles from "../styles/Details.module.css";
 
 const Details = () => {
     const { id } = useParams();
@@ -20,7 +21,7 @@ const Details = () => {
 
     if (!selectedImage) {
         return (
-            <div className="details-not-founds">
+            <div className={styles.detailsNotFounds}>
                 <div className="details-not-found">
                     <h1>Sorry</h1>
                     <h2>Movie not found</h2>
@@ -31,42 +32,42 @@ const Details = () => {
     }
 
     return (
-        <div className="details-position">
-            <div className="details-logo-position">
+        <div className={styles.detailsPosition}>
+            <div className={styles.detailsLogoPosition}>
                 <MainLogo />
             </div>
-            <div className="details-split">
-                <div className="details-names">
+            <div className={styles.detailsSplit}>
+                <div className={styles.detailsNames}>
                     <h2>{selectedImage.title}</h2>
                     <p>{selectedImage.description}</p>
                 </div>
-                <div className="details-right-items">
-                    <div className="details-type-rate">
+                <div className={styles.detailsRightItems}>
+                    <div className={styles.detailsTypeRate}>
                         <h4>{selectedImage.type}</h4>
                         <p>Rate: {selectedImage.rate}/10</p>
                     </div>
-                    <div className="details-rate-icon">
+                    <div className={styles.detailsRateIcon}>
                         {selectedImage.rate >= 8 ? (
                             <img
-                                className="details-rate-image"
+                                className={styles.detailsRateImage}
                                 src={goodRate}
                                 alt="Good Rate"
                             />
                         ) : selectedImage.rate >= 4 ? (
-                            <img className="details-rate-image" src={midRate} alt="Mid Rate" />
+                            <img className={styles.detailsRateImage} src={midRate} alt="Mid Rate" />
                         ) : (
-                            <img className="details-rate-image" src={badRate} alt="Bad Rate" />
+                            <img className={styles.detailsRateImage} src={badRate} alt="Bad Rate" />
                         )}
                     </div>
                 </div>
             </div>
-            <div className="details-details">
+            <div className={styles.detailsDetails}>
                 <img
-                    className="details-image"
+                    className={styles.detailsImage}
                     src={require(`../assets/movie_window_view/${selectedImage.src}.jpg`)}
                     alt={selectedImage.title}
                 />
-                <p className="details-p">{selectedImage.long_description}</p>
+                <p className={styles.detailsP}>{selectedImage.long_description}</p>
             </div>
             <div className="details-footnote">
                 <Footnote />

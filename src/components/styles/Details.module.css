@@ -1,0 +1,71 @@
+.detailsNotFounds {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsPosition {
+    color: #FFE1BF;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: start;*/
+    margin-top: 10px;
+    /*width: 70vw;*/
+}
+
+.detailsLogoPosition {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.detailsSplit {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.detailsNames {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detailsRightItems {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.detailsTypeRate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*background-color: red;*/
+    margin-right: 5px;
+}
+
+.detailsRateIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detailsRateImage {
+    width: 65px;
+}
+
+.detailsDetails {
+    display: flex;
+    /*flex-direction: row;*/
+    align-items: center;
+}
+
+.detailsImage {
+    width: 50vw;
+    border-radius: 10px;
+}
+
+.detailsP {
+    margin-left: 30px;
+}

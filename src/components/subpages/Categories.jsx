@@ -3,10 +3,11 @@ import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
 import CategoryContainer from "../elements/CategoryContainer";
 import HorizontalGap from "../elements/horizontalGap";
+import styles from "../styles/Categories.module.css";
 
 const Categories = () => {
     return (
-        <div className="container categories-container">
+        <div className={`container ${styles.categoriesContainer}`}>
             <TopContainer text="Categories"/>
             <HorizontalGap gap={'All Categories'}/>
 

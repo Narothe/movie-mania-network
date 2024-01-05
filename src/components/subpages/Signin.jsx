@@ -3,6 +3,7 @@ import axios from "axios";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
 import Footnote from "../elements/Footnote";
+import styles from "../styles/Signin.module.css";
 
 const Signin = () => {
     const [account, setAccount] = useState({
@@ -38,17 +39,17 @@ const Signin = () => {
     };
 
     return (
-        <div className="signin-container">
+        <div className={styles.signinContainer}>
             <TopContainer text={'Sign in'}/>
-            <div className="signin-center">
-                <div className="signin-space-container">
-                    <div className="signin-margin">
-                        <form onSubmit={handleSubmit} className="signin-form">
-                            <div className="add-labels">
-                                <label className="signin-elements">
+            <div className={styles.signinCenter}>
+                <div className={styles.signinSpaceContainer}>
+                    <div className={styles.signinMargin}>
+                        <form onSubmit={handleSubmit} className={styles.signinForm}>
+                            <div className={styles.addLabels}>
+                                <label className={styles.signinElements}>
                                     Login:
                                     <input
-                                        className="signin-form-control me-2 add-margin"
+                                        className={`${styles.signinFormControl} me-2 ${styles.addMargin}`}
                                         type="text"
                                         name="login"
                                         value={account.login}
@@ -56,10 +57,10 @@ const Signin = () => {
                                     />
                                 </label>
                             </div>
-                            <label className="signin-elements">
+                            <label className={styles.signinElements}>
                                 Password:
                                 <input
-                                    className="signin-form-control me-2 add-margin"
+                                    className={`${styles.signinFormControl} me-2 ${styles.addMargin}`}
                                     type="password"
                                     name="password"
                                     value={account.password}
@@ -68,19 +69,19 @@ const Signin = () => {
                             </label>
                             <br/>
                             <br/>
-                            <button className="btn invert-btn-color" type="submit">Sign in</button>
+                            <button className={`btn ${styles.invertBtnColor}`} type="submit">Sign in</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div className="signin-margin-top ">
-                <p className="signin-center signin-bigger-font">Or:</p>
+            <div className={styles.signinMarginTop}>
+                <p className={`${styles.signinCenter} ${styles.signinBiggerFont}`}>Or:</p>
 
-                <div className="signin-center">
-                    <Link to="/signup" className="btn btn-color btn-size" type="submit">Sign up</Link>
+                <div className={styles.signinCenter}>
+                    <Link to="/signup" className={`btn ${styles.btnColor} ${styles.btnSize}`} type="submit">Sign up</Link>
                 </div>
             </div>
-            <div className="details-footnote">
+            <div className={styles.detailsFootnote}>
                 <Footnote/>
             </div>
         </div>
