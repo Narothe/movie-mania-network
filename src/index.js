@@ -19,10 +19,11 @@ import Signin from "./components/subpages/Signin";
 import Details from "./components/subpages/Details";
 import Signup from "./components/subpages/Signup";
 import Category from "./components/subpages/Category";
+import {AuthProvider} from "./components/elements/AuthContext";
 
 
 ReactDOM.render(
-    <React.StrictMode>
+    <AuthProvider>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App/>}>
@@ -42,7 +43,7 @@ ReactDOM.render(
                 </Route>
             </Routes>
         </BrowserRouter>
-    </React.StrictMode>,
+    </AuthProvider>,
     document.getElementById('root')
 );
 

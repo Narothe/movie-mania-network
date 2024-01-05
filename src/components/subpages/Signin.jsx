@@ -1,37 +1,38 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../elements/AuthContext";
 import TopContainer from "../elements/TopContainer";
-import {Link} from "react-router-dom";
 import Footnote from "../elements/Footnote";
 import styles from "../styles/Signin.module.css";
 
 const Signin = () => {
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
     const [account, setAccount] = useState({
         login: "",
-        password: ""
+        password: "",
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post("https://at.usermd.net/api/user/auth",
-                account
-            )
-            .then(response => {
-                    console.log('response.data', response.data);
-                    localStorage.setItem('token', response.data.token);
-                    alert("Signed!");
-                    window.open("/", "_self")
-
-                }
-            ).catch(error => {
-            console.error(error);
-            alert("Given username does't exists or password is wrong!");
-        })
-    }
+            .post("https://at.usermd.net/api/user/auth", account)
+            .then((response) => {
+                console.dir(response.data, { depth: null });
+                login(response.data.token);
+                alert("Signed!");
+                navigate("/");
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("Given username doesn't exist or password is wrong!");
+            });
+    };
 
     const handleInputChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setAccount((prevAccount) => ({
             ...prevAccount,
             [name]: value,

@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useEffect} from "react";
+import { useAuth } from "../elements/AuthContext";
 import Footnote from "../elements/Footnote";
 import SignInButton from "../elements/SignInButton";
 import MainLogo from "../elements/MainLogo";
@@ -7,6 +7,13 @@ import Movies from "../elements/Movies";
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
+    const { token } = useAuth();
+
+    useEffect(() => {
+        if (token) {
+            console.log("Użytkownik jest zalogowany.\nToken:", token);
+        }
+    }, [token]);
 
     return (
         <div className="container">
