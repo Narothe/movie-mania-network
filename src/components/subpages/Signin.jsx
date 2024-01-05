@@ -5,6 +5,7 @@ import { useAuth } from "../elements/AuthContext";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import styles from "../styles/Signin.module.css";
+import toast from "react-hot-toast";
 
 const Signin = () => {
     const { login } = useAuth();
@@ -16,18 +17,20 @@ const Signin = () => {
     });
 
     const handleSubmit = (e) => {
+        // localStorage.removeItem('token');
+
         e.preventDefault();
         axios
             .post("https://at.usermd.net/api/user/auth", account)
             .then((response) => {
                 console.dir(response.data, { depth: null });
                 login(response.data.token);
-                alert("Signed!");
-                navigate("/");
+                toast.success("Signed!");
+                // navigate("/");
             })
             .catch((error) => {
                 console.error(error);
-                alert("Given username doesn't exist or password is wrong!");
+                toast.error("Given username doesn't exist or password is wrong!");
             });
     };
 

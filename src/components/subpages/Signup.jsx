@@ -3,6 +3,7 @@ import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import axios from "axios";
 import styles from "../styles/Signup.module.css";
+import toast from "react-hot-toast";
 
 const Signup = () => {
     const [account, setAccount] = useState({
@@ -21,12 +22,12 @@ const Signup = () => {
             .then((response) => {
                 console.log('response.data', response.data);
                 localStorage.setItem('token', response.data.token);
-                alert("Account created successfully!");
-                window.open("/", "_self")
+                toast.success("Account created successfully!");
+                // window.open("/", "_self")
             })
             .catch((error) => {
                 console.error(error);
-                alert("Given username does exists!");
+                toast.error("Given username does exists!");
             });
     };
 

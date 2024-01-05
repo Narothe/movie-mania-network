@@ -1,0 +1,34 @@
+.btnSizeHome {
+    margin-left: -100px;
+    margin-top: 20px;
+}
+
+.imgComponent {
+    width: 75px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    background-color: #312E31;
+    padding: 0; /* Zresetuj wypełnienie */
+    margin: 0; /* Zresetuj margines */
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #FFE1BF;
+}
+
+.btnColor {
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btnColor:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}
