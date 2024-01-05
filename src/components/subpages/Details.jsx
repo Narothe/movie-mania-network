@@ -69,7 +69,7 @@ const Details = () => {
                 />
                 <p className={styles.detailsP}>{selectedImage.long_description}</p>
             </div>
-            <div className="details-footnote">
+            <div className={styles.detailsFootnote}>
                 <Footnote />
             </div>
         </div>

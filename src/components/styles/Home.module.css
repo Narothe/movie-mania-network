@@ -4,5 +4,9 @@ body {
 }
 
 .homeNav {
-    margin-bottom: 60vh;
+    margin-bottom: 50vh;
+}
+
+.footnote {
+    margin-top: 50px;
 }

@@ -102,7 +102,7 @@ const Add = () => {
                 </div>
                 <button className={`btn ${styles.btnColor}`} type="submit">Add Movie</button>
             </form>
-            <div className="details-footnote">
+            <div className={styles.detailsFootnote}>
                 <Footnote/>
             </div>
         </div>

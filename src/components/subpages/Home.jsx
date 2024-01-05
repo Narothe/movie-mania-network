@@ -21,8 +21,9 @@ const Home = () => {
                 <Movies category={4}/>
                 <Movies category={5}/>
             </div>
-
-            <Footnote/>
+            <div className={styles.footnote}>
+                <Footnote/>
+            </div>
         </div>
     );
 };
