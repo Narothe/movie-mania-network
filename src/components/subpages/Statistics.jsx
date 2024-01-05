@@ -4,9 +4,8 @@ import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
 import HorizontalGap from "../elements/horizontalGap";
-// import goodRate from "../assets/symbols/goodRate.png";
-// import midRate from "../assets/symbols/midRate.png";
-// import badRate from "../assets/symbols/badRate.png";
+import styles from "../styles/Statistics.module.css";
+
 
 const Statistics = () => {
     const [sortedMovies, setSortedMovies] = useState([]);
@@ -23,22 +22,22 @@ const Statistics = () => {
     }, []);
 
     return (
-        <div className="statistics-container">
+        <div className={styles.statisticsContainer}>
             <TopContainer text={'Statistics'}/>
             <HorizontalGap gap={'Top most rated videos (sorted)'}/>
 
-            <div className="statistics-sorted">
+            <div className={styles.statisticsSorted}>
                 {sortedMovies.map((movie) => (
                     <Link
                         to={`/details/${movie.id}`}
                         key={movie.id}
-                        className="statistics-link"
+                        className={styles.statisticsLink}
                     >
                         <h5>{movie.title}</h5>
                         <p>{`Rating: ${movie.rate}/10`}</p>
                         <p>{movie.description}</p>
                         <img
-                            className="thumbnail-image"
+                            className={styles.thumbnailImage}
                             src={require(`../assets/movie_window_view/${movie.src}.jpg`)}
                             alt={`thumbnail ${movie.src}`}
                         />
@@ -58,7 +57,7 @@ const Statistics = () => {
                     </Link>
                 ))}
             </div>
-            <div className="details-footnote">
+            <div className="detailsFootnote">
                 <Footnote/>
             </div>
         </div>

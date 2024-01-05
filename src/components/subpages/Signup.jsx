@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import axios from "axios";
+import styles from "../styles/Signup.module.css";
 
 const Signup = () => {
     const [account, setAccount] = useState({
@@ -38,36 +39,36 @@ const Signup = () => {
     };
 
     return (
-        <div className="signup-container">
+        <div className={styles.signupContainer}>
             <TopContainer text={"Sign up"}/>
-            <div className="signup-center">
-                <div className="signup-space-container">
-                    <div className="signup-margin">
-                        <form onSubmit={handleSubmit} className="signup-form">
-                            <label className="signup-elements">
+            <div className={styles.signupCenter}>
+                <div className={styles.signupSpaceContainer}>
+                    <div className={styles.signupMargin}>
+                        <form onSubmit={handleSubmit} className={styles.signupForm}>
+                            <label className={styles.signupElements}>
                                 Email:
                                 <input
-                                    className="signup-form-control me-2 add-margin"
+                                    className={`${styles.signupFormControl} me-2 ${styles.addMargin}`}
                                     type="text"
                                     name="name"
                                     value={account.name}
                                     onChange={handleInputChange}
                                 />
                             </label>
-                            <label className="signup-elements">
+                            <label className={styles.signupElements}>
                                 Login:
                                 <input
-                                    className="signup-form-control me-2 add-margin"
+                                    className={`${styles.signupFormControl} me-2 ${styles.addMargin}`}
                                     type="text"
                                     name="email"
                                     value={account.email}
                                     onChange={handleInputChange}
                                 />
                             </label>
-                            <label className="signup-elements">
+                            <label className={styles.signupElements}>
                                 Password:
                                 <input
-                                    className="signup-form-control me-2 add-margin"
+                                    className={`${styles.signupFormControl} me-2 ${styles.addMargin}`}
                                     type="password"
                                     name="password"
                                     value={account.password}
@@ -76,14 +77,14 @@ const Signup = () => {
                             </label>
                             <br/>
                             <br/>
-                            <button className="btn invert-btn-color" type="submit">
+                            <button className={`btn ${styles.invertBtnColor}`} type="submit">
                                 Create account
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div className="details-footnote">
+            <div className="detailsFootnote">
                 <Footnote/>
             </div>
         </div>

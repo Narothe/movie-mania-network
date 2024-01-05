@@ -1,0 +1,33 @@
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.statisticsSorted {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.statisticsLink {
+    color: #FFE1BF;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.thumbnailImage {
+    width: 210px;
+    height: 145px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thumbnailImage:hover {
+    transform: scale(1.1);
+}
+
+.detailsFootnote {
+    margin-top: 30px;
+}

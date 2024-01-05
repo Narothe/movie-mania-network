@@ -1,0 +1,11 @@
+.footerStyle{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: -1;
+    font-size: 9px;
+    color: #FFE1BF;
+}

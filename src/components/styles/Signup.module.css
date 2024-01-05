@@ -1,0 +1,88 @@
+.signupContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.signupCenter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.signupSpaceContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #E0A96D;
+    color: white;
+    width: 80%;
+    height: 480px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.signupMargin {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.signupElements {
+    display: flex;
+    flex-direction: row;
+    background-color: #201E20;
+    width: 750px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.signupFormControl {
+    width: 650px;
+    height: 40px;
+    background-color: rgba(32, 30, 32, 0.5);
+    color: #FFE1BF;
+    margin-left: 10px;
+}
+
+.signupFormControl:focus {
+    background-color: #312E31;
+    color: #FFE1BF;
+}
+
+.signupFormControl::placeholder {
+    color: #FFE1BF;
+}
+
+.addMargin {
+    margin-left: 10px;
+    width: 40vw;
+}
+
+.invertBtnColor {
+    color: #E0A96D;
+    background-color: #201E20;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.invertBtnColor:hover {
+    background-color: #E0A96D;
+    border-color: #201E20;
+    color: #201E20;
+}
+
+.detailsFootnote {
+    margin-top: 30px;
+}

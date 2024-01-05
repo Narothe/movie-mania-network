@@ -42,7 +42,6 @@ const Movies = (props) => {
 
     return (
         <div className="margin-bottom">
-
             <div className="d-flex justify-content-between button-margin">
                 <div className="movies-category-name">
                     <p>Category {props.category}</p>
