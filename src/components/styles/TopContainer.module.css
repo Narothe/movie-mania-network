@@ -1,0 +1,7 @@
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    margin-top: 12px;
+}

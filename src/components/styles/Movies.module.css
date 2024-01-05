@@ -1,0 +1,70 @@
+.marginBottom {
+    margin-bottom: 25px;
+}
+
+.buttonMargin {
+    margin-right: 75px;
+    margin-bottom: 10px;
+}
+
+.moviesCategoryName {
+    margin-bottom: -10px;
+    color: #FFE1BF;
+}
+
+.moviesButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnColor {
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btnColor:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}
+
+.marginRight {
+    margin-right: 20px;
+}
+
+.thumbnailContainer {
+    position: relative;
+    background-color: blue;
+}
+
+.thumbnailContainer:hover {
+    display: block;
+}
+
+.thumbnailInfo {
+    display: block;
+    background-color: red;
+    /*border-radius: 0px 0px 10px 10px;*/
+    /*width: 210px;*/
+}
+
+.thumbnailImage {
+    width: 210px;
+    height: 145px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thumbnailImage:hover {
+    transform: scale(1.1);
+}
+
+.rateImage {
+    position: absolute;
+    width: 45px;
+    left: 170px;
+    bottom: 15px;
+}

@@ -4,7 +4,7 @@ import goodRate from "../assets/symbols/goodRate.png";
 import midRate from "../assets/symbols/midRate.png";
 import badRate from "../assets/symbols/badRate.png";
 import moviesData from "./moviesData.json";
-
+import styles from "../styles/Movies.module.css";
 
 const Movies = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -41,20 +41,20 @@ const Movies = (props) => {
     };
 
     return (
-        <div className="margin-bottom">
-            <div className="d-flex justify-content-between button-margin">
-                <div className="movies-category-name">
+        <div className={styles.marginBottom}>
+            <div className={`d-flex justify-content-between ${styles.buttonMargin}`}>
+                <div className={styles.moviesCategoryName}>
                     <p>Category {props.category}</p>
                 </div>
-                <div className="movies-buttons">
+                <div className={styles.moviesButtons}>
                 <button
-                    className="btn-color nav-link rounded-2 margin-right"
+                    className={`${styles.btnColor} nav-link rounded-2 ${styles.marginRight}`}
                     onClick={handlePrevious}
                 >
                     Previous
                 </button>
                 <button
-                    className="btn-color nav-link rounded-2"
+                    className={`${styles.btnColor} nav-link rounded-2`}
                     onClick={handleNext}
                 >
                     Next
@@ -66,31 +66,31 @@ const Movies = (props) => {
                     <Link
                         key={index}
                         to={`/details/${image.id}`}
-                        className="thumbnail-container"
+                        className={styles.thumbnailContainer}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleImageClick(image.id)}
                     >
                         <img
-                            className="thumbnail-image"
+                            className={styles.thumbnailImage}
                             src={require(`../assets/movie_window_view/${image.src}.jpg`)}
                             alt={`thumbnail ${index}`}
                         />
                         {hoveredImage === index && (
-                            <div className="thumbnail-info">
+                            <div className={styles.thumbnailInfo}>
                                 <p>{image.title}</p>
                                 <p>{image.description}</p>
                                 <p>Rate: {image.rate}/10</p>
                                 {image.rate >= 8 ? (
                                     <img
-                                        className="rate-image"
+                                        className={styles.rateImage}
                                         src={goodRate}
                                         alt="Good Rate"
                                     />
                                 ) : image.rate >= 4 ? (
-                                    <img className="rate-image" src={midRate} alt="Mid Rate" />
+                                    <img className={styles.rateImage} src={midRate} alt="Mid Rate" />
                                 ) : (
-                                    <img className="rate-image" src={badRate} alt="Bad Rate" />
+                                    <img className={styles.rateImage} src={badRate} alt="Bad Rate" />
                                 )}
                             </div>
                         )}

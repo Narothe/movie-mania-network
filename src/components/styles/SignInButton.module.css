@@ -1,0 +1,16 @@
+.btnColor {
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btnColor:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}
+
+.btnSizeHome {
+    margin-left: -100px;
+    margin-top: 20px;
+}
