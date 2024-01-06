@@ -1,0 +1,31 @@
+.moviesContainer {
+    display: flex;
+    flex-direction: row;
+    /*background-color: orangered;*/
+
+    justify-content: center;
+}
+
+.movieItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.thumbnailContainer {
+    display: flex;
+    flex-direction: row;
+
+    margin-right: 50px;
+    margin-bottom: 100px;
+}
+
+.thumbnailImage {
+    width: 200px;
+    height: 300px;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.thumbnailImage:hover {
+    transform: scale(1.1);
+}

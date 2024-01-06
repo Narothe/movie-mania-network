@@ -1,16 +1,33 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import goodRate from "../assets/symbols/goodRate.png";
 import midRate from "../assets/symbols/midRate.png";
 import badRate from "../assets/symbols/badRate.png";
 import moviesData from "./moviesData.json";
 import styles from "../styles/Movies.module.css";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Movies = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(0);
     const [hoveredImage, setHoveredImage] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            axios
+                .get("https://at.usermd.net/api/movies")
+                .then((response) =>
+                        console.log(response.data)
+                )
+                .catch((error) => {
+                    console.error(error)
+                    toast.error("Error when loading videos");
+                })
+        };
+        fetchData();
+    }, []);
 
     const visibleImages = moviesData.slice(
         currentPage * itemsPerPage,

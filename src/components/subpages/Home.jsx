@@ -8,6 +8,7 @@ import MainLogo from "../elements/MainLogo";
 import Movies from "../elements/Movies";
 import { useSpring, animated } from 'react-spring';
 import styles from "../styles/Home.module.css";
+import NewMovies from "../elements/NewMovies";
 
 const Home = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -30,11 +31,12 @@ const Home = () => {
                     <MainLogo/>
                 </nav>
                 <div>
-                    <Movies category={1}/>
-                    <Movies category={2}/>
-                    <Movies category={3}/>
-                    <Movies category={4}/>
-                    <Movies category={5}/>
+                    {/*<Movies category={1}/>*/}
+                    {/*<Movies category={2}/>*/}
+                    {/*<Movies category={3}/>*/}
+                    {/*<Movies category={4}/>*/}
+                    {/*<Movies category={5}/>*/}
+                    <NewMovies/>
                 </div>
                 <div className={styles.footnote}>
                     <Footnote/>
