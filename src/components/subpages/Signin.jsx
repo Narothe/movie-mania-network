@@ -26,7 +26,9 @@ const Signin = () => {
                 console.dir(response.data, { depth: null });
                 login(response.data.token);
                 toast.success("Signed!");
-                // navigate("/");
+                setTimeout(() => {
+                    navigate("/");
+                }, 1500);
             })
             .catch((error) => {
                 console.error(error);

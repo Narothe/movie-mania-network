@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/Signup.module.css";
 import toast from "react-hot-toast";
+import { useAuth } from "../elements/AuthContext";
 
 const Signup = () => {
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
     const [account, setAccount] = useState({
         name: "",
         email: "",
@@ -23,13 +28,35 @@ const Signup = () => {
                 console.log('response.data', response.data);
                 localStorage.setItem('token', response.data.token);
                 toast.success("Account created successfully!");
-                // window.open("/", "_self")
+
+                // Zaloguj użytkownika po rejestracji
+                axios
+                    .post("https://at.usermd.net/api/user/auth", {
+                        login: account.email, // Użyj loginu, który został użyty podczas rejestracji
+                        password: account.password,
+                    })
+                    .then((loginResponse) => {
+                        console.dir(loginResponse.data, { depth: null });
+                        login(loginResponse.data.token);
+                        toast.success("Logged in!");
+
+                        // Przejdź do strony głównej po zalogowaniu
+                        setTimeout(() => {
+                            navigate("/");
+                        }, 1500);
+                    })
+                    .catch((loginError) => {
+                        console.error(loginError);
+                        toast.error("Error during login.");
+                    });
+
             })
             .catch((error) => {
                 console.error(error);
                 toast.error("Given username does exists!");
             });
     };
+
 
     const handleInputChange = (e) => {
         const {name, value} = e.target;
