@@ -4,10 +4,13 @@ import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
 import {Link} from "react-router-dom";
 import HorizontalGap from "../elements/horizontalGap";
+import { useSpring, animated } from 'react-spring';
 import styles from "../styles/Statistics.module.css";
 
 
 const Statistics = () => {
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
+
     const [sortedMovies, setSortedMovies] = useState([]);
 
     useEffect(() => {
@@ -22,45 +25,48 @@ const Statistics = () => {
     }, []);
 
     return (
-        <div className={styles.statisticsContainer}>
-            <TopContainer text={'Statistics'}/>
-            <HorizontalGap gap={'Top most rated videos (sorted)'}/>
+        <animated.div style={props}>
 
-            <div className={styles.statisticsSorted}>
-                {sortedMovies.map((movie) => (
-                    <Link
-                        to={`/details/${movie.id}`}
-                        key={movie.id}
-                        className={styles.statisticsLink}
-                    >
-                        <h5>{movie.title}</h5>
-                        <p>{`Rating: ${movie.rate}/10`}</p>
-                        <p>{movie.description}</p>
-                        <img
-                            className={styles.thumbnailImage}
-                            src={require(`../assets/movie_window_view/${movie.src}.jpg`)}
-                            alt={`thumbnail ${movie.src}`}
-                        />
-                        {/*{movie.rate >= 8 ? (*/}
-                        {/*    <img*/}
-                        {/*        className="statistics-thumbnail-image"*/}
-                        {/*        src={goodRate}*/}
-                        {/*        alt="Good Rate"*/}
-                        {/*    />*/}
-                        {/*) : movie.rate >= 4 ? (*/}
-                        {/*    <img className="statistics-thumbnail-image" src={midRate} alt="Mid Rate" />*/}
-                        {/*) : (*/}
-                        {/*    <img className="statistics-thumbnail-image" src={badRate} alt="Bad Rate" />*/}
-                        {/*)}*/}
+            <div className={styles.statisticsContainer}>
+                <TopContainer text={'Statistics'}/>
+                <HorizontalGap gap={'Top most rated videos (sorted)'}/>
 
-                        {/* Dodaj więcej informacji, jeśli to konieczne */}
-                    </Link>
-                ))}
+                <div className={styles.statisticsSorted}>
+                    {sortedMovies.map((movie) => (
+                        <Link
+                            to={`/details/${movie.id}`}
+                            key={movie.id}
+                            className={styles.statisticsLink}
+                        >
+                            <h5>{movie.title}</h5>
+                            <p>{`Rating: ${movie.rate}/10`}</p>
+                            <p>{movie.description}</p>
+                            <img
+                                className={styles.thumbnailImage}
+                                src={require(`../assets/movie_window_view/${movie.src}.jpg`)}
+                                alt={`thumbnail ${movie.src}`}
+                            />
+                            {/*{movie.rate >= 8 ? (*/}
+                            {/*    <img*/}
+                            {/*        className="statistics-thumbnail-image"*/}
+                            {/*        src={goodRate}*/}
+                            {/*        alt="Good Rate"*/}
+                            {/*    />*/}
+                            {/*) : movie.rate >= 4 ? (*/}
+                            {/*    <img className="statistics-thumbnail-image" src={midRate} alt="Mid Rate" />*/}
+                            {/*) : (*/}
+                            {/*    <img className="statistics-thumbnail-image" src={badRate} alt="Bad Rate" />*/}
+                            {/*)}*/}
+
+                            {/* Dodaj więcej informacji, jeśli to konieczne */}
+                        </Link>
+                    ))}
+                </div>
+                <div className="detailsFootnote">
+                    <Footnote/>
+                </div>
             </div>
-            <div className="detailsFootnote">
-                <Footnote/>
-            </div>
-        </div>
+        </animated.div>
     );
 };
 

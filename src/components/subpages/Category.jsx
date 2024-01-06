@@ -5,19 +5,24 @@ import TopContainer from "../elements/TopContainer";
 import HorizontalGap from "../elements/horizontalGap";
 import Movies from "../elements/Movies";
 import styles from "../styles/Category.module.css";
+import { useSpring, animated } from 'react-spring';
 
 const Category = () => {
-    const { categoryName } = useParams();
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    const {categoryName} = useParams();
 
     return (
-        <div className={`container ${styles.categoryContainer}`}>
-            <TopContainer text={'Category'}/>
-            <HorizontalGap gap={`Category ${categoryName}`}/>
-            <Movies category={categoryName}/>
+        <animated.div style={props}>
 
-            <Footnote/>
-        </div>
+            <div className={`container ${styles.categoryContainer}`}>
+                <TopContainer text={'Category'}/>
+                <HorizontalGap gap={`Category ${categoryName}`}/>
+                <Movies category={categoryName}/>
 
+                <Footnote/>
+            </div>
+        </animated.div>
     );
 }
 

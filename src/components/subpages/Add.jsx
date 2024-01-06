@@ -4,9 +4,10 @@ import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import HorizontalGap from "../elements/horizontalGap";
 import styles from"../styles/Add.module.css";
+import { useSpring, animated } from 'react-spring';
 
 const Add = () => {
-
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [setLastId] = useState(0);
 
     useEffect(() => {
@@ -35,77 +36,79 @@ const Add = () => {
     };
 
     return (
-        <div className={styles.addContainer}>
-            <TopContainer text={'Add a Movie'}/>
-            <HorizontalGap gap={'Form for adding a movie'}/>
+        <animated.div style={props}>
+            <div className={styles.addContainer}>
+                <TopContainer text={'Add a Movie'}/>
+                <HorizontalGap gap={'Form for adding a movie'}/>
 
-            <form onSubmit={handleSubmit} className={styles.addForm}>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Image Source:
-                        <input
-                            className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                            type="text"
-                            name="src"
-                        />
-                    </label>
+                <form onSubmit={handleSubmit} className={styles.addForm}>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Image Source:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="text"
+                                name="src"
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Title:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="text"
+                                name="title"
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Type:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="text"
+                                name="type"
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Short description:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="text"
+                                name="description"
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Rate (1-10):
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="number"
+                                name="rate"
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Long Description:
+                            <textarea
+                                className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
+                                type="text"
+                                name="long_description"
+                            />
+                        </label>
+                    </div>
+                    <button className={`btn ${styles.btnColor}`} type="submit">Add Movie</button>
+                </form>
+                <div className={styles.detailsFootnote}>
+                    <Footnote/>
                 </div>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Title:
-                        <input
-                            className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                            type="text"
-                            name="title"
-                        />
-                    </label>
-                </div>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Type:
-                        <input
-                            className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                            type="text"
-                            name="type"
-                        />
-                    </label>
-                </div>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Short description:
-                        <input
-                            className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                            type="text"
-                            name="description"
-                        />
-                    </label>
-                </div>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Rate (1-10):
-                        <input
-                            className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                            type="number"
-                            name="rate"
-                        />
-                    </label>
-                </div>
-                <div className={styles.addLabels}>
-                    <label className={styles.addLabel}>
-                        Long Description:
-                        <textarea
-                            className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
-                            type="text"
-                            name="long_description"
-                        />
-                    </label>
-                </div>
-                <button className={`btn ${styles.btnColor}`} type="submit">Add Movie</button>
-            </form>
-            <div className={styles.detailsFootnote}>
-                <Footnote/>
             </div>
-        </div>
+        </animated.div>
     );
 };
 
