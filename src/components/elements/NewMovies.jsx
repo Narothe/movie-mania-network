@@ -7,6 +7,7 @@ import noThumbnailImage from "../assets/noThumbnail/noThumbnailPattern.png";
 
 const NewMovies = () => {
     const [movies, setMovies] = useState([]);
+    const [hoveredMovie, setHoveredMovie] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,11 +24,24 @@ const NewMovies = () => {
         fetchData();
     }, []);
 
+    const handleMouseEnter = (movie) => {
+        setHoveredMovie(movie);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredMovie(null);
+    };
+
     const renderMoviesRow = (moviesSlice) => {
         return (
-            <div>
+            <div className={styles.moviesRow}>
                 {moviesSlice.map((movie) => (
-                    <div key={movie.id} className={styles.movieItem}>
+                    <div
+                        key={movie.id}
+                        className={styles.movieItem}
+                        onMouseEnter={() => handleMouseEnter(movie)}
+                        onMouseLeave={handleMouseLeave}
+                    >
                         <Link to={`/details/${movie.id}`} className={styles.thumbnailContainer}>
                             <img
                                 className={styles.thumbnailImage}
@@ -39,10 +53,16 @@ const NewMovies = () => {
                                 alt={`thumbnail ${movie.id}`}
                             />
                         </Link>
-                        {/*<div className={styles.movieInfo}>*/}
-                        {/*    <h3>{movie.title}</h3>*/}
-                        {/*    <p>{movie.content}</p>*/}
-                        {/*</div>*/}
+                        {hoveredMovie === movie && (
+                            <div className={styles.hoveredInfoBlock}>
+                                <h4 className="text-center">{movie.title}</h4>
+                                <p>
+                                    {movie.content.length > 100
+                                        ? `${movie.content.slice(0, 100)}...`
+                                        : movie.content}
+                                </p>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -59,14 +79,22 @@ const NewMovies = () => {
         }
     };
 
+    const chunkArray = (array, chunkSize) => {
+        const result = [];
+        for (let i = 0; i < array.length; i += chunkSize) {
+            result.push(array.slice(i, i + chunkSize));
+        }
+        return result;
+    };
+
+    const chunkSize = Math.ceil(movies.length / 5);
+    const rows = chunkArray(movies, chunkSize);
+
     return (
         <div className={styles.moviesContainer}>
-            {movies.reduce((rows, movie, index) => {
-                if (index % 7 === 0) {
-                    rows.push(renderMoviesRow(movies.slice(index, index + 5)));
-                }
-                return rows;
-            }, [])}
+            {rows.map((row, index) => (
+                <div key={index}>{renderMoviesRow(row)}</div>
+            ))}
         </div>
     );
 };
