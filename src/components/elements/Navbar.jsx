@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import moviesData from "../elements/moviesData.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,6 +10,8 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -31,8 +33,20 @@ const Navbar = () => {
         }
     };
 
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className={`position-fixed top-50 start-50 translate-middle ${styles.navbarPosition}`}>
+        <div className={`${styles.navbarPosition} position-fixed start-50 translate-middle`} style={{ top: scrollPosition > 30 ? "30%" : "50%" }}>
             <nav onSubmit={handleSearch} className={`${styles.navBar} ${styles.textColor} navbar rounded-top-2`}>
                 <div className="container-fluid">
                     <form className="d-flex" role="search">

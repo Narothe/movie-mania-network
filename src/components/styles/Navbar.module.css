@@ -1,6 +1,7 @@
 .navbarPosition{
     margin-top: -120px;
     z-index: 1000;
+    transition: top 0.3s ease;
 }
 
 .navBar {
