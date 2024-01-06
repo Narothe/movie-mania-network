@@ -71,6 +71,9 @@ const LoggedUser = () => {
 
     return (
         <div className={`position-absolute start-100 ${styles.btnSizeHome}`}>
+            <div className={`position-absolute end-100 ${styles.positionOfUsername}`}>
+                {decoded.name}
+            </div>
             <img
                 className={`btn ${styles.imgComponent}`}
                 src={selectedPattern}
