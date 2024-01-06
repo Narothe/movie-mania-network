@@ -19,6 +19,7 @@ const Home = () => {
         console.log("Użytkownik niezalogowany");
     } else {
         console.log("Użytkownik zalogowany\n", decoded);
+        console.log("Token\n", token)
     }
 
     return (
