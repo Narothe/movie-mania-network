@@ -4,12 +4,13 @@ import styles from "../styles/NewDetails.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
+import TopContainer from "../elements/TopContainer";
 
 const NewDetails = () => {
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movie, setMovie] = useState({});
 
-    const { id } = useParams();
+    const {id} = useParams();
     console.log("Movie ID:", id);
 
     useEffect(() => {
@@ -28,9 +29,10 @@ const NewDetails = () => {
 
     return (
         <animated.div style={props}>
-            <div>
+            <div className={styles.addContainer}>
+                <TopContainer text={'Details'}/>
                 <h2>{movie.title}</h2>
-                <img src={movie.image} alt={`thumbnail ${movie.id}`} />
+                <img src={movie.image} alt={`thumbnail ${movie.id}`}/>
                 <p>{movie.content}</p>
                 {/* Dodaj inne elementy w zależności od potrzeb */}
             </div>

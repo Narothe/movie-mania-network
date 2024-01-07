@@ -1,0 +1,5 @@
+.addContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
