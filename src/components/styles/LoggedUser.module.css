@@ -34,9 +34,10 @@
 }
 
 .positionOfUsername {
-    margin-top: 13px;
+    margin-top: 11px;
     margin-right: 13px;
     color: #FFE1BF;
-    font-size: 20px;
-    font-family: "EFN Handy";
+    font-size: 26px;
+    /*font-weight: bold;*/
+    font-family: "EFN Handy", cursive;
 }

@@ -4,4 +4,12 @@
     justify-content: space-between;
     margin-bottom: 35px;
     margin-top: 12px;
+    font-family: "EFN Handy", cursive;
+    font-size: 38px;
+
+    /*background-color: #61dafb;*/
+}
+
+.textStyle {
+    margin-top: 7px;
 }

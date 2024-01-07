@@ -31,10 +31,13 @@ const NewDetails = () => {
         <animated.div style={props}>
             <div className={styles.addContainer}>
                 <TopContainer text={'Details'}/>
-                <h2>{movie.title}</h2>
-                <img src={movie.image} alt={`thumbnail ${movie.id}`}/>
-                <p>{movie.content}</p>
-                {/* Dodaj inne elementy w zależności od potrzeb */}
+                <h2>Title: "<i>{movie.title}</i>"</h2>
+                <div className={styles.itemsContainer}>
+                    <img className={styles.mainImage} src={movie.image} alt={`thumbnail ${movie.id}`}/>
+                   <div className={styles.contentPlace}>
+                    <p>{movie.content}</p>
+                   </div>
+                </div>
             </div>
         </animated.div>
     );

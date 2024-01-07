@@ -3,3 +3,19 @@
     flex-direction: column;
     color: #FFE1BF;
 }
+
+.mainImage {
+    width: 500px;
+    height: 750px;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.contentPlace {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+}

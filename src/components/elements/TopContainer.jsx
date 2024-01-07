@@ -6,7 +6,9 @@ const TopContainer = (props) => {
     const text = props.text;
     return (
         <div className={styles.topContainer}>
-            <h3>{text}</h3>
+            <div className={styles.textStyle}>
+                {text}
+            </div>
             <SmallerMainLogo/>
         </div>
     );
