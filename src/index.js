@@ -21,6 +21,7 @@ import Details from "./components/subpages/Details";
 import Signup from "./components/subpages/Signup";
 import Category from "./components/subpages/Category";
 import {AuthProvider} from "./components/elements/AuthContext";
+import NewDetails from "./components/subpages/NewDetails";
 
 
 createRoot(document.getElementById('root')).render(
@@ -36,10 +37,11 @@ createRoot(document.getElementById('root')).render(
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="signup" element={<Signup/>}/>
                     <Route path="*" element={<NotFound/>}/>
-                    <Route path="details" element={<Details/>}/>
-                    <Route path="details/:id" element={<Details/>}/>
+                    {/*<Route path="details" element={<Details/>}/>*/}
+                    {/*<Route path="details/:id" element={<Details/>}/>*/}
+                    <Route path="newDetails" element={<NewDetails/>}/>
+                    <Route path="newDetails/:id" element={<NewDetails/>}/>
                     <Route path="statistics" element={<Statistics/>}/>
-
                     {/*<Route index element={<Navigate to="/" />} />*/}
                 </Route>
             </Routes>

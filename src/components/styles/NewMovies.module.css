@@ -23,17 +23,17 @@
     margin-right: 50px;
     /*margin-bottom: 100px;*/
     margin-top: 100px;
+    transition: transform 0.3s ease-in-out;
+
 }
 
 .thumbnailImage {
     width: 200px;
     height: 300px;
-    transition: transform 0.3s ease-in-out;
-
 }
 
 .thumbnailImage:hover {
-    transform: scale(1.1);
+    /*transform: scale(1.1);*/
 }
 
 .hoveredInfoBlock {
@@ -45,4 +45,10 @@
     padding: 10px;
     border-radius: 0px 0px 10px 10px;
     background-color: #312E31;
+    text-decoration: none;
+    color: #FFE1BF;
+}
+
+.thumbnailContainerHovered {
+    transform: scale(1.1);
 }

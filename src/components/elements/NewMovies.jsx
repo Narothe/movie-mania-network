@@ -42,7 +42,10 @@ const NewMovies = () => {
                         onMouseEnter={() => handleMouseEnter(movie)}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <Link to={`/details/${movie.id}`} className={styles.thumbnailContainer}>
+                        <Link
+                            to={`/newDetails/${movie.id}`}
+                            className={`${styles.thumbnailContainer} ${hoveredMovie === movie && styles.thumbnailContainerHovered}`}
+                        >
                             <img
                                 className={styles.thumbnailImage}
                                 src={isValidUrl(movie.image) ? movie.image : noThumbnailImage}
@@ -54,14 +57,14 @@ const NewMovies = () => {
                             />
                         </Link>
                         {hoveredMovie === movie && (
-                            <div className={styles.hoveredInfoBlock}>
+                            <Link to={`/newDetails/${movie.id}`} className={styles.hoveredInfoBlock}>
                                 <h4 className="text-center">{movie.title}</h4>
                                 <p>
                                     {movie.content.length > 100
                                         ? `${movie.content.slice(0, 100)}...`
                                         : movie.content}
                                 </p>
-                            </div>
+                            </Link>
                         )}
                     </div>
                 ))}
