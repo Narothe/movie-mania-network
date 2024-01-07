@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
 import CategoryContainer from "../elements/CategoryContainer";
@@ -8,6 +8,10 @@ import styles from "../styles/Categories.module.css";
 
 const Categories = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     return (
         <animated.div style={props}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../elements/AuthContext";
@@ -10,6 +10,10 @@ import {useSpring, animated} from "react-spring";
 
 const Signin = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     const {login} = useAuth();
     const navigate = useNavigate();

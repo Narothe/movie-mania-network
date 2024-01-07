@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from 'react-spring';
 
 const NotFound = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     return (
         <animated.div style={props}>

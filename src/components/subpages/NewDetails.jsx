@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
 import TopContainer from "../elements/TopContainer";
+import noThumbnailImage from "../assets/noThumbnail/noThumbnailPattern.png";
 
 const NewDetails = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -14,6 +15,8 @@ const NewDetails = () => {
     console.log("Movie ID:", id);
 
     useEffect(() => {
+        document.title = 'Movie Mania Network';
+
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
@@ -33,10 +36,13 @@ const NewDetails = () => {
                 <TopContainer text={'Details'}/>
                 <h2>Title: "<i>{movie.title}</i>"</h2>
                 <div className={styles.itemsContainer}>
-                    <img className={styles.mainImage} src={movie.image} alt={`thumbnail ${movie.id}`}/>
-                   <div className={styles.contentPlace}>
-                    <p>{movie.content}</p>
-                   </div>
+                    <img className={styles.mainImage} src={movie.image} onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = noThumbnailImage;
+                    }} alt={`thumbnail ${movie.id}`}/>
+                    <div className={styles.contentPlace}>
+                        <p>{movie.content}</p>
+                    </div>
                 </div>
             </div>
         </animated.div>

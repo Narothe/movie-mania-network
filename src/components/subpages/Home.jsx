@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useAuth } from "../elements/AuthContext";
 import { jwtDecode } from "jwt-decode";
 import Footnote from "../elements/Footnote";
@@ -15,6 +15,9 @@ const Home = () => {
     const {token} = useAuth();
     const decoded = token ? jwtDecode(token) : null;
 
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     if (!token) {
         console.log("Użytkownik niezalogowany");

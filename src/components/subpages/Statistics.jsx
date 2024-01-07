@@ -14,6 +14,8 @@ const Statistics = () => {
     const [sortedMovies, setSortedMovies] = useState([]);
 
     useEffect(() => {
+        document.title = 'Movie Mania Network';
+
         // Kopiuj dane filmów, aby nie zmieniać oryginalnej tablicy
         const moviesCopy = [...moviesData];
 

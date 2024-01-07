@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import axios from "axios";
@@ -10,6 +10,10 @@ import {useSpring, animated} from "react-spring";
 
 const Signup = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     const {login} = useAuth();
     const navigate = useNavigate();

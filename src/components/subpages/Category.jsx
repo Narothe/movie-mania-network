@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Footnote from "../elements/Footnote";
 import TopContainer from "../elements/TopContainer";
@@ -9,6 +9,10 @@ import { useSpring, animated } from 'react-spring';
 
 const Category = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+    }, []);
 
     const {categoryName} = useParams();
 

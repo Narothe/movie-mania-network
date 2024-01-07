@@ -1,57 +1,54 @@
-import React, { useState, useEffect } from "react";
-import moviesData from "../elements/moviesData.json";
+import React, { useState } from "react";
+import axios from "axios";
 import TopContainer from "../elements/TopContainer";
 import Footnote from "../elements/Footnote";
 import HorizontalGap from "../elements/horizontalGap";
-import styles from"../styles/Add.module.css";
-import { useSpring, animated } from 'react-spring';
+import styles from "../styles/Add.module.css";
+import { useSpring, animated } from "react-spring";
 
 const Add = () => {
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
-    const [setLastId] = useState(0);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                console.log("Udało się pobrać dane");
-
-                const data = moviesData;
-                const maxId = Math.max(...data.map((movie) => movie.id));
-                setLastId(maxId);
-                console.log('Ostatni numer id:', maxId);
-
-            } catch (error) {
-                console.error("Błąd podczas pobierania danych:", error);
-            }
-        };
-
-        fetchData();
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const [formData, setFormData] = useState({
+        title: "",
+        image: "",
+        content: "",
     });
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const handleSubmit = () => {
-        console.log('Zapis danych przy pomocy API (aktualnie brak możliwości zapisu)')
-        alert('Zapis danych przy pomocy API (aktualnie brak możliwości zapisu)');
+        try {
+            // Wysyłanie danych na serwer za pomocą funkcji POST i axios
+            const response = await axios.post("https://at.usermd.net/api/movies", formData);
 
+            console.log("Dane zostały wysłane pomyślnie:", response.data);
+
+            // Zresetuj formularz lub przekieruj gdzieś po udanym dodaniu
+            setFormData({
+                title: "",
+                image: "",
+                content: "",
+            });
+        } catch (error) {
+            console.error("Błąd podczas wysyłania danych:", error);
+        }
+    };
+
+    const handleChange = (e) => {
+        // Aktualizuj stan formularza przy każdej zmianie
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
     };
 
     return (
         <animated.div style={props}>
             <div className={styles.addContainer}>
-                <TopContainer text={'Add a Movie'}/>
-                <HorizontalGap gap={'Form for adding a movie'}/>
+                <TopContainer text={"Add a Movie"} />
+                <HorizontalGap gap={"Form for adding a movie"} />
 
                 <form onSubmit={handleSubmit} className={styles.addForm}>
-                    <div className={styles.addLabels}>
-                        <label className={styles.addLabel}>
-                            Image Source:
-                            <input
-                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                                type="text"
-                                name="src"
-                            />
-                        </label>
-                    </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
                             Title:
@@ -59,36 +56,20 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="text"
                                 name="title"
+                                value={formData.title}
+                                onChange={handleChange}
                             />
                         </label>
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
-                            Type:
+                            Image Source:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="text"
-                                name="type"
-                            />
-                        </label>
-                    </div>
-                    <div className={styles.addLabels}>
-                        <label className={styles.addLabel}>
-                            Short description:
-                            <input
-                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                                type="text"
-                                name="description"
-                            />
-                        </label>
-                    </div>
-                    <div className={styles.addLabels}>
-                        <label className={styles.addLabel}>
-                            Rate (1-10):
-                            <input
-                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                                type="number"
-                                name="rate"
+                                name="image"
+                                value={formData.image}
+                                onChange={handleChange}
                             />
                         </label>
                     </div>
@@ -98,14 +79,18 @@ const Add = () => {
                             <textarea
                                 className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
                                 type="text"
-                                name="long_description"
+                                name="content"
+                                value={formData.content}
+                                onChange={handleChange}
                             />
                         </label>
                     </div>
-                    <button className={`btn ${styles.btnColor}`} type="submit">Add Movie</button>
+                    <button className={`btn ${styles.btnColor}`} type="submit">
+                        Add Movie
+                    </button>
                 </form>
                 <div className={styles.detailsFootnote}>
-                    <Footnote/>
+                    <Footnote />
                 </div>
             </div>
         </animated.div>
