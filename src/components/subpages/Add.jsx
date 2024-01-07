@@ -5,9 +5,13 @@ import Footnote from "../elements/Footnote";
 import HorizontalGap from "../elements/horizontalGap";
 import styles from "../styles/Add.module.css";
 import { useSpring, animated } from "react-spring";
+import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom";
 
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         title: "",
         image: "",
@@ -16,21 +20,21 @@ const Add = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            // Wysyłanie danych na serwer za pomocą funkcji POST i axios
             const response = await axios.post("https://at.usermd.net/api/movies", formData);
-
-            console.log("Dane zostały wysłane pomyślnie:", response.data);
-
-            // Zresetuj formularz lub przekieruj gdzieś po udanym dodaniu
             setFormData({
                 title: "",
                 image: "",
                 content: "",
             });
+            console.log("The data was sent successfully", response.data);
+            toast.success("The data was sent successfully!");
+            setTimeout(() => {
+                navigate("/");
+            }, 1500);
         } catch (error) {
-            console.error("Błąd podczas wysyłania danych:", error);
+            console.error("The data wasn't sent successfully", error);
+            toast.error("The data wasn't sent successfully!");
         }
     };
 

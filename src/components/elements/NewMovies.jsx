@@ -60,8 +60,8 @@ const NewMovies = () => {
                             <Link to={`/newDetails/${movie.id}`} className={styles.hoveredInfoBlock}>
                                 <h4 className="text-center">{movie.title}</h4>
                                 <p>
-                                    {movie.content.length > 100
-                                        ? `${movie.content.slice(0, 100)}...`
+                                    {movie.content.length > 200
+                                        ? `${movie.content.slice(0, 200)}...`
                                         : movie.content}
                                 </p>
                             </Link>
