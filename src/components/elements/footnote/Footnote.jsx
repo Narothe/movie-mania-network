@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Footnote.module.css";
+import styles from "./Footnote.module.css";
 
 const Footnote = () => {
     return (

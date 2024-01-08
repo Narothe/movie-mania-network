@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import moviesData from "../elements/moviesData.json";
+import moviesData from "../moviesData.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import "../styles/styles.css";
-import styles from "../styles/Navbar.module.css";
+import styles from "./Navbar.module.css";
 import {Link} from "react-router-dom";
 
 const Navbar = () => {

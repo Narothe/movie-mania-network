@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import goodRate from "../assets/symbols/goodRate.png";
-import midRate from "../assets/symbols/midRate.png";
-import badRate from "../assets/symbols/badRate.png";
-import MainLogo from "../elements/MainLogo";
-import NotFound from "./NotFound";
-import Footnote from "../elements/Footnote";
-import moviesData from "../elements/moviesData.json";
+import goodRate from "../../../assets/symbols/goodRate.png";
+import midRate from "../../../assets/symbols/midRate.png";
+import badRate from "../../../assets/symbols/badRate.png";
+import MainLogo from "../../../elements/mainLogo/MainLogo";
+import NotFound from "../../NotFound";
+import Footnote from "../../../elements/footnote/Footnote";
+import moviesData from "../../../elements/moviesData.json";
 import { useSpring, animated } from 'react-spring';
-import styles from "../styles/Details.module.css";
+import styles from "./Details.module.css";
 
 const Details = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});

@@ -19,3 +19,7 @@
     flex-direction: row;
     padding: 50px;
 }
+
+.marginBottom {
+    margin-bottom: 15px;
+}

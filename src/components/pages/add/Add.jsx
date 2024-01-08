@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import TopContainer from "../elements/TopContainer";
-import Footnote from "../elements/Footnote";
-import HorizontalGap from "../elements/horizontalGap";
-import styles from "../styles/Add.module.css";
+import TopContainer from "../../elements/topContainer/TopContainer";
+import Footnote from "../../elements/footnote/Footnote";
+import HorizontalGap from "../../elements/HorizontalGap";
+import styles from "./Add.module.css";
 import { useSpring, animated } from "react-spring";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";

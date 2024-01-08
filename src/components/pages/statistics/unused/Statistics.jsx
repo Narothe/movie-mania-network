@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import moviesData from "../elements/moviesData.json";
-import Footnote from "../elements/Footnote";
-import TopContainer from "../elements/TopContainer";
+import moviesData from "../../../elements/moviesData.json";
+import Footnote from "../../../elements/footnote/Footnote";
+import TopContainer from "../../../elements/topContainer/TopContainer";
 import {Link} from "react-router-dom";
-import HorizontalGap from "../elements/horizontalGap";
+import HorizontalGap from "../../../elements/HorizontalGap";
 import { useSpring, animated } from 'react-spring';
-import styles from "../styles/Statistics.module.css";
+import styles from "./Statistics.module.css";
 
 
 const Statistics = () => {

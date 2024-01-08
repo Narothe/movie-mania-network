@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
-import Footnote from "../elements/Footnote";
-import TopContainer from "../elements/TopContainer";
-import HorizontalGap from "../elements/horizontalGap";
-import Movies from "../elements/Movies";
-import styles from "../styles/Category.module.css";
+import Footnote from "../../elements/footnote/Footnote";
+import TopContainer from "../../elements/topContainer/TopContainer";
+import HorizontalGap from "../../elements/HorizontalGap";
+import Movies from "../../elements/Movies";
+import styles from "./Category.module.css";
 import { useSpring, animated } from 'react-spring';
 
 const Category = () => {

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import TopContainer from "../elements/TopContainer";
-import Footnote from "../elements/Footnote";
+import TopContainer from "../../elements/topContainer/TopContainer";
+import Footnote from "../../elements/footnote/Footnote";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import styles from "../styles/Signup.module.css";
+import styles from "./Signup.module.css";
 import toast from "react-hot-toast";
-import { useAuth } from "../elements/AuthContext";
+import { useAuth } from "../../elements/AuthContext";
 import {useSpring, animated} from "react-spring";
 
 const Signup = () => {

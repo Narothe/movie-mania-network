@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import Footnote from "../elements/Footnote";
-import TopContainer from "../elements/TopContainer";
-import CategoryContainer from "../elements/CategoryContainer";
-import HorizontalGap from "../elements/horizontalGap";
+import Footnote from "../../elements/footnote/Footnote";
+import TopContainer from "../../elements/topContainer/TopContainer";
+import CategoryContainer from "./CategoryContainer";
+import HorizontalGap from "../../elements/HorizontalGap";
 import { useSpring, animated } from 'react-spring';
-import styles from "../styles/Categories.module.css";
+import styles from "./Categories.module.css";
 
 const Categories = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});

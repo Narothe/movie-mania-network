@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from "./components/elements/Navbar";
+import Navbar from "./components/elements/navbar/Navbar";
 import { Outlet, useLocation  } from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 import React from "react";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/CategoryContainer.module.css";
+import styles from "./CategoryContainer.module.css";
 
 const CategoryContainer = (props) => {
     return (

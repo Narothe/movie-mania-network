@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/LoggedUser.module.css";
-import { useAuth } from "./AuthContext";
+import styles from "./LoggedUser.module.css";
+import { useAuth } from "../AuthContext";
 import toast from 'react-hot-toast';
 import axios from "axios";
 
 
-import pattern1 from "../assets/userPorfiles/pattern1.png";
-import pattern2 from "../assets/userPorfiles/pattern2.png";
-import pattern3 from "../assets/userPorfiles/pattern3.png";
-import pattern4 from "../assets/userPorfiles/pattern4.png";
-import pattern5 from "../assets/userPorfiles/pattern5.png";
+import pattern1 from "../../assets/userPorfiles/pattern1.png";
+import pattern2 from "../../assets/userPorfiles/pattern2.png";
+import pattern3 from "../../assets/userPorfiles/pattern3.png";
+import pattern4 from "../../assets/userPorfiles/pattern4.png";
+import pattern5 from "../../assets/userPorfiles/pattern5.png";
 import {jwtDecode} from "jwt-decode";
 
 const getPatternByMinute = (minute) => {

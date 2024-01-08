@@ -43,7 +43,7 @@ const NewMovies = () => {
                         onMouseLeave={handleMouseLeave}
                     >
                         <Link
-                            to={`/newDetails/${movie.id}`}
+                            to={`/details/${movie.id}`}
                             className={`${styles.thumbnailContainer} ${hoveredMovie === movie && styles.thumbnailContainerHovered}`}
                         >
                             <img
@@ -57,7 +57,7 @@ const NewMovies = () => {
                             />
                         </Link>
                         {hoveredMovie === movie && (
-                            <Link to={`/newDetails/${movie.id}`} className={styles.hoveredInfoBlock}>
+                            <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
                                 <h4 className="text-center">{movie.title}</h4>
                                 <p>
                                     {movie.content.length > 200

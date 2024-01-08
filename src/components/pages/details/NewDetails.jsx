@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "../styles/NewDetails.module.css";
+import styles from "./NewDetails.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
-import TopContainer from "../elements/TopContainer";
-import noThumbnailImage from "../assets/noThumbnail/noThumbnailPattern.png";
+import TopContainer from "../../elements/topContainer/TopContainer";
+import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
 
 const NewDetails = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -34,7 +34,7 @@ const NewDetails = () => {
         <animated.div style={props}>
             <div className={styles.addContainer}>
                 <TopContainer text={'Details'}/>
-                <h2>Title: "<i>{movie.title}</i>"</h2>
+                <h2 className={styles.marginBottom}>Title: "<i>{movie.title}</i>"</h2>
                 <div className={styles.itemsContainer}>
                     <img className={styles.mainImage} src={movie.image} onError={(e) => {
                         e.target.onerror = null;
