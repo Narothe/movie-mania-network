@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./LoggedUser.module.css";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../../utils/AuthContext";
 import toast from 'react-hot-toast';
 import axios from "axios";
 

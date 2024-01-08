@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { useAuth } from "../../elements/AuthContext";
+import { useAuth } from "../../utils/AuthContext";
 import { jwtDecode } from "jwt-decode";
 import Footnote from "../../elements/footnote/Footnote";
 import SignInButton from "../../elements/signinButton/SignInButton";

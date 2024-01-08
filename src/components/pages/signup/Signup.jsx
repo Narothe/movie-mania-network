@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./Signup.module.css";
 import toast from "react-hot-toast";
-import { useAuth } from "../../elements/AuthContext";
+import { useAuth } from "../../utils/AuthContext";
 import {useSpring, animated} from "react-spring";
 
 const Signup = () => {

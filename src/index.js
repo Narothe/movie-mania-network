@@ -15,7 +15,7 @@ import NotFound from "./components/pages/NotFound";
 import Signin from "./components/pages/signin/Signin";
 import Signup from "./components/pages/signup/Signup";
 import Category from "./components/pages/categories/Category";
-import {AuthProvider} from "./components/elements/AuthContext";
+import {AuthProvider} from "./components/utils/AuthContext";
 import NewDetails from "./components/pages/details/NewDetails";
 import NewStatistics from "./components/pages/statistics/NewStatistics";
 
