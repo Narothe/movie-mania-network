@@ -1,7 +1,7 @@
 import React from "react";
-import fullLogo from "../assets/logos/full_logo.png";
+import fullLogo from "../../assets/logos/full_logo.png";
 import {Link} from "react-router-dom";
-import styles from "../styles/SmallerMainLogo.module.css";
+import styles from "./SmallerMainLogo.module.css";
 
 const SmallerMainLogo = () => {
     return (

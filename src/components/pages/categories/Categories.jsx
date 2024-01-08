@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Footnote from "../../elements/footnote/Footnote";
 import TopContainer from "../../elements/topContainer/TopContainer";
 import CategoryContainer from "./CategoryContainer";
-import HorizontalGap from "../../elements/HorizontalGap";
+import HorizontalGap from "../../elements/topContainer/HorizontalGap";
 import { useSpring, animated } from 'react-spring';
 import styles from "./Categories.module.css";
 

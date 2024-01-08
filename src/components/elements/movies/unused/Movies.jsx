@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import goodRate from "../assets/symbols/goodRate.png";
-import midRate from "../assets/symbols/midRate.png";
-import badRate from "../assets/symbols/badRate.png";
-import moviesData from "./moviesData.json";
-import styles from "../styles/Movies.module.css";
+import goodRate from "../../../assets/symbols/goodRate.png";
+import midRate from "../../../assets/symbols/midRate.png";
+import badRate from "../../../assets/symbols/badRate.png";
+import moviesData from "../../moviesData.json";
+import styles from "./Movies.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 

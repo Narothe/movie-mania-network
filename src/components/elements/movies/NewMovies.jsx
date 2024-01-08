@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/NewMovies.module.css";
+import styles from "./NewMovies.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
-import noThumbnailImage from "../assets/noThumbnail/noThumbnailPattern.png";
+import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
 
 const NewMovies = () => {
     const [movies, setMovies] = useState([]);

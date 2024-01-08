@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import styles from "../styles/SignInButton.module.css";
+import styles from "./SignInButton.module.css";
 
 const SignInButton = () => {
     return (

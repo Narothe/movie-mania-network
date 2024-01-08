@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import TopContainer from "../../elements/topContainer/TopContainer";
 import Footnote from "../../elements/footnote/Footnote";
-import HorizontalGap from "../../elements/HorizontalGap";
+import HorizontalGap from "../../elements/topContainer/HorizontalGap";
 import styles from "./Add.module.css";
 import { useSpring, animated } from "react-spring";
 import toast from "react-hot-toast";

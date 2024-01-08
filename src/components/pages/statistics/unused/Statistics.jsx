@@ -3,7 +3,7 @@ import moviesData from "../../../elements/moviesData.json";
 import Footnote from "../../../elements/footnote/Footnote";
 import TopContainer from "../../../elements/topContainer/TopContainer";
 import {Link} from "react-router-dom";
-import HorizontalGap from "../../../elements/HorizontalGap";
+import HorizontalGap from "../../../elements/topContainer/HorizontalGap";
 import { useSpring, animated } from 'react-spring';
 import styles from "./Statistics.module.css";
 
