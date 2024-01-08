@@ -6,12 +6,15 @@ import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
 import TopContainer from "../../elements/topContainer/TopContainer";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
+import goodRate from "../../assets/symbols/goodRate.png";
+import midRate from "../../assets/symbols/midRate.png";
+import badRate from "../../assets/symbols/badRate.png";
 
 const NewDetails = () => {
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     const [movie, setMovie] = useState({});
 
-    const {id} = useParams();
+    const { id } = useParams();
     console.log("Movie ID:", id);
 
     useEffect(() => {
@@ -30,11 +33,31 @@ const NewDetails = () => {
         fetchData();
     }, [id]);
 
+    let ratingImage;
+    if (movie.rate >= 8 && movie.rate <= 10) {
+        ratingImage = goodRate;
+    } else if (movie.rate >= 4 && movie.rate <= 7) {
+        ratingImage = midRate;
+    } else if (movie.rate >= 0 && movie.rate <= 3) {
+        ratingImage = badRate;
+    }
+
     return (
         <animated.div style={props}>
             <div className={styles.addContainer}>
                 <TopContainer text={'Details'}/>
-                <h2 className={styles.marginBottom}>Title: "<i>{movie.title}</i>"</h2>
+                <div className={`d-flex justify-content-between ${styles.marginBottom}`}>
+                    <h2>Title: "<i>{movie.title}</i>"</h2>
+                    <div className={styles.displayColumn}>
+                        <div className={`d-flex align-items-center flex-row mb-3`}>
+                            <p>Rate: {movie.rate}/10</p>
+                            <div className={styles.marginThat}>
+                                {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
+                            </div>
+                        </div>
+                        <p>Type: {movie.genre}</p>
+                    </div>
+                </div>
                 <div className={styles.itemsContainer}>
                     <img className={styles.mainImage} src={movie.image} onError={(e) => {
                         e.target.onerror = null;

@@ -5,8 +5,8 @@
 }
 
 .mainImage {
-    width: 500px;
-    height: 750px;
+    width: 60%;
+    /*height: 750px;*/
 }
 
 .itemsContainer {
@@ -21,5 +21,28 @@
 }
 
 .marginBottom {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+    /*background-color: red;*/
+}
+
+.displayColumn {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+
+    /*background-color: blue;*/
+}
+
+.ratingImage {
+    width: 75px;
+    position: absolute;
+}
+
+.marginThat {
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    margin-top: -90px;
 }

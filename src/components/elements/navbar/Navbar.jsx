@@ -46,7 +46,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={`${styles.navbarPosition} position-fixed start-50 translate-middle`} style={{ top: scrollPosition > 25 ? "25%" : "50%" }}>
+        <div className={`${styles.navbarPosition} position-fixed start-50 translate-middle`} style={{ top: scrollPosition > 30 ? "30%" : "50%" }}>
             <nav onSubmit={handleSearch} className={`${styles.navBar} ${styles.textColor} navbar rounded-top-2`}>
                 <div className="container-fluid">
                     <form className="d-flex" role="search">
