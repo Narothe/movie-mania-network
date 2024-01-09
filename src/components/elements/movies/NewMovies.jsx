@@ -4,6 +4,7 @@ import styles from "./NewMovies.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
+import getRatingImage from "../RatingHelper";
 
 const NewMovies = () => {
     const [movies, setMovies] = useState([]);
@@ -35,39 +36,51 @@ const NewMovies = () => {
     const renderMoviesRow = (moviesSlice) => {
         return (
             <div className={styles.moviesRow}>
-                {moviesSlice.map((movie) => (
-                    <div
-                        key={movie.id}
-                        className={styles.movieItem}
-                        onMouseEnter={() => handleMouseEnter(movie)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <Link
-                            to={`/details/${movie.id}`}
-                            className={`${styles.thumbnailContainer} ${hoveredMovie === movie && styles.thumbnailContainerHovered}`}
+                {moviesSlice.map((movie) => {
+                    const ratingImage = getRatingImage(movie.rate);
+
+                    return (
+                        <div
+                            key={movie.id}
+                            className={styles.movieItem}
+                            onMouseEnter={() => handleMouseEnter(movie)}
+                            onMouseLeave={handleMouseLeave}
                         >
-                            <img
-                                className={styles.thumbnailImage}
-                                src={isValidUrl(movie.image) ? movie.image : noThumbnailImage}
-                                onError={(e) => {
-                                    e.target.onerror = null;
-                                    e.target.src = noThumbnailImage;
-                                }}
-                                alt={`thumbnail ${movie.id}`}
-                            />
-                        </Link>
-                        {hoveredMovie === movie && (
-                            <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
-                                <h4 className="text-center">{movie.title}</h4>
-                                <p>
-                                    {movie.content.length > 200
-                                        ? `${movie.content.slice(0, 200)}...`
-                                        : movie.content}
-                                </p>
+                            <Link
+                                to={`/details/${movie.id}`}
+                                className={`${styles.thumbnailContainer} ${hoveredMovie === movie && styles.thumbnailContainerHovered}`}
+                            >
+                                <img
+                                    className={styles.thumbnailImage}
+                                    src={isValidUrl(movie.image) ? movie.image : noThumbnailImage}
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = noThumbnailImage;
+                                    }}
+                                    alt={`thumbnail ${movie.id}`}
+                                />
                             </Link>
-                        )}
-                    </div>
-                ))}
+                            {hoveredMovie === movie && (
+                                <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
+                                    <h4 className="text-center">{movie.title}</h4>
+                                    <p>
+                                        {movie.content.length > 200
+                                            ? `${movie.content.slice(0, 200)}...`
+                                            : movie.content}
+                                    </p>
+                                    <div className={`${styles.positionOfRate} ${styles.smallMargin}`}>
+                                        <p>Rate: {movie.rate}/10</p>
+                                        {ratingImage && <img className={styles.ratingImage} src={ratingImage}
+                                                             alt={`rating ${movie.rate}`}/>}
+                                    </div>
+                                    <div className={styles.smallMargin}>
+                                        <p>Type: {movie.genre}</p>
+                                    </div>
+                                </Link>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
         );
     };

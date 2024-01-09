@@ -53,3 +53,20 @@
     transform: scale(1.1);
 }
 
+.ratingImage {
+    position: absolute;
+    width: 60px;
+    margin-left: 70px;
+    margin-top: -10px;
+}
+
+.positionOfRate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smallMargin {
+    margin-top: 20px;
+}

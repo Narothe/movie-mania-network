@@ -79,6 +79,54 @@ const Add = () => {
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            Type:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="text"
+                                name="genre"
+                                value={formData.genre}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Rate:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="number"
+                                name="rate"
+                                value={formData.rate}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Production year:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="number"
+                                name="productionYear"
+                                value={formData.productionYear}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
+                            Background image:
+                            <input
+                                className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
+                                type="number"
+                                name="backgroundImage"
+                                value={formData.backgroundImage}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.addLabels}>
+                        <label className={styles.addLabel}>
                             Long Description:
                             <textarea
                                 className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
@@ -94,7 +142,7 @@ const Add = () => {
                     </button>
                 </form>
                 <div className={styles.detailsFootnote}>
-                    <Footnote />
+                    <Footnote/>
                 </div>
             </div>
         </animated.div>

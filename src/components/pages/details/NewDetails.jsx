@@ -6,9 +6,8 @@ import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
 import TopContainer from "../../elements/topContainer/TopContainer";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
-import goodRate from "../../assets/symbols/goodRate.png";
-import midRate from "../../assets/symbols/midRate.png";
-import badRate from "../../assets/symbols/badRate.png";
+import getRatingImage from "../../elements/RatingHelper";
+
 
 const NewDetails = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -33,14 +32,7 @@ const NewDetails = () => {
         fetchData();
     }, [id]);
 
-    let ratingImage;
-    if (movie.rate >= 8 && movie.rate <= 10) {
-        ratingImage = goodRate;
-    } else if (movie.rate >= 4 && movie.rate <= 7) {
-        ratingImage = midRate;
-    } else if (movie.rate >= 0 && movie.rate <= 3) {
-        ratingImage = badRate;
-    }
+    const ratingImage = getRatingImage(movie.rate);
 
     return (
         <animated.div style={props}>
