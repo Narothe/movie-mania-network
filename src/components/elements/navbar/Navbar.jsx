@@ -1,35 +1,42 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import moviesData from "../moviesData.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import "../styles/styles.css";
 import styles from "./Navbar.module.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [scrollPosition, setScrollPosition] = useState(0);
 
-
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
 
-        // Filtruj filmy według wpisanej frazy
-        const results = moviesData.filter((movie) =>
-            movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        try {
+            const response = await axios.get(`https://at.usermd.net/api/movies`);
+            setSearchResults(response.data);
 
-        // Ustaw wyniki w stanie komponentu
-        setSearchResults(results);
+            const searchTerm = e.target.elements.search.value.toLowerCase();
+            console.log("Wartość z formularza:", searchTerm);
 
-        // Jeśli znaleziono dokładnie jeden film, przekieruj do jego szczegółów
-        if (results.length === 1) {
-            navigate(`/details/${results[0].id}`);
-        } else if (results.length === 0) {
-            // Jeśli nie znaleziono żadnego filmu, wyświetl alert
-            alert("Nie znaleziono filmu o podanej nazwie.");
+            const foundMovie = searchResults.find((movie) =>
+                movie.title.toLowerCase().includes(searchTerm)
+            );
+
+            if (foundMovie) {
+
+                navigate(`/details/${foundMovie.id}`);
+
+            } else {
+                toast.error("There is no such movie");
+            }
+
+        } catch (error) {
+            console.error("Błąd przy wyszukiwaniu filmu", error);
+            // Jeśli wystąpił błąd, wyświetl alert
+            toast.error("Strange error occurred!");
         }
     };
 
@@ -47,10 +54,10 @@ const Navbar = () => {
 
     return (
         <div className={`${styles.navbarPosition} position-fixed start-50 translate-middle`} style={{ top: scrollPosition > 30 ? "30%" : "50%" }}>
-            <nav onSubmit={handleSearch} className={`${styles.navBar} ${styles.textColor} navbar rounded-top-2`}>
+            <nav className={`${styles.navBar} ${styles.textColor} navbar rounded-top-2`}>
                 <div className="container-fluid">
-                    <form className="d-flex" role="search">
-                        <input className={`${styles.formControl} form-control me-2`} type="search" placeholder="Search" aria-label="Search" onChange={(e) => setSearchTerm(e.target.value)}/>
+                    <form onSubmit={handleSearch} className="d-flex" role="search">
+                        <input name="search" className={`${styles.formControl} form-control me-2`} type="search" placeholder="Search" aria-label="Search" />
                         <button className={`btn ${styles.btnColor} ${styles.navbarBtnSize}`} type="submit"> >>></button>
                     </form>
                 </div>
