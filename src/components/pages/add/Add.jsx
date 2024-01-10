@@ -7,25 +7,49 @@ import styles from "./Add.module.css";
 import { useSpring, animated } from "react-spring";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
+import {useAuth} from "../../utils/AuthContext";
+import LoggedUser from "../../elements/loggedUser/LoggedUser";
+import SignInButton from "../../elements/signinButton/SignInButton";
+import MainLogo from "../../elements/mainLogo/MainLogo";
 
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     const navigate = useNavigate();
+    const { token } = useAuth();
 
     const [formData, setFormData] = useState({
         title: "",
         image: "",
         content: "",
+        genre: "",
+        rate: 0,
+        productionYear: 0,
+        backgroundImage: "",
     });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (formData.rate < 0 || formData.rate > 10) {
+            toast.error("Rate should be between 0 and 10.");
+            return;
+        }
+
+        if (!token) {
+            toast.error("You need to be logged in to add a movie.");
+            return;
+        }
+
         try {
             const response = await axios.post("https://at.usermd.net/api/movies", formData);
             setFormData({
                 title: "",
                 image: "",
                 content: "",
+                genre: "",
+                rate: 0,
+                productionYear: 0,
+                backgroundImage: "",
             });
             console.log("The data was sent successfully", response.data);
             toast.success("The data was sent successfully!");
@@ -39,7 +63,6 @@ const Add = () => {
     };
 
     const handleChange = (e) => {
-        // Aktualizuj stan formularza przy każdej zmianie
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -49,8 +72,11 @@ const Add = () => {
     return (
         <animated.div style={props}>
             <div className={styles.addContainer}>
-                <TopContainer text={"Add a Movie"} />
-                <HorizontalGap gap={"Form for adding a movie"} />
+                <nav className={`d-flex justify-content-center`}>
+                    {token ? <LoggedUser/> : <SignInButton/>}
+                </nav>
+                <TopContainer text={"Add a Movie"}/>
+                <HorizontalGap gap={"Form for adding a movie"}/>
 
                 <form onSubmit={handleSubmit} className={styles.addForm}>
                     <div className={styles.addLabels}>

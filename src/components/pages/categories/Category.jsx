@@ -6,9 +6,13 @@ import HorizontalGap from "../../elements/topContainer/HorizontalGap";
 // import Movies from "../../elements/Movies";
 import styles from "./Category.module.css";
 import { useSpring, animated } from 'react-spring';
+import {useAuth} from "../../utils/AuthContext";
+import LoggedUser from "../../elements/loggedUser/LoggedUser";
+import SignInButton from "../../elements/signinButton/SignInButton";
 
 const Category = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const { token } = useAuth();
 
     useEffect(() => {
         document.title = 'Movie Mania Network';
@@ -18,7 +22,7 @@ const Category = () => {
 
     return (
         <animated.div style={props}>
-
+            {token ? <LoggedUser/> : <SignInButton/>}
             <div className={`container ${styles.categoryContainer}`}>
                 <TopContainer text={'Category'}/>
                 <HorizontalGap gap={`Category ${categoryName}`}/>

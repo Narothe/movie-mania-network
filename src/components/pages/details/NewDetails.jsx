@@ -7,13 +7,17 @@ import { useSpring, animated } from 'react-spring';
 import TopContainer from "../../elements/topContainer/TopContainer";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
 import getRatingImage from "../../elements/RatingHelper";
+import LoggedUser from "../../elements/loggedUser/LoggedUser";
+import SignInButton from "../../elements/signinButton/SignInButton";
+import {useAuth} from "../../utils/AuthContext";
 
 
 const NewDetails = () => {
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movie, setMovie] = useState({});
+    const {token} = useAuth();
 
-    const { id } = useParams();
+    const {id} = useParams();
     console.log("Movie ID:", id);
 
     useEffect(() => {
@@ -37,6 +41,7 @@ const NewDetails = () => {
     return (
         <animated.div style={props}>
             <div className={styles.addContainer}>
+                {token ? <LoggedUser/> : <SignInButton/>}
                 <TopContainer text={'Details'}/>
                 <div className={`d-flex justify-content-between ${styles.marginBottom}`}>
                     <h2>Title: "<i>{movie.title}</i>"</h2>
@@ -44,19 +49,24 @@ const NewDetails = () => {
                         <div className={`d-flex align-items-center flex-row mb-3`}>
                             <p>Rate: {movie.rate}/10</p>
                             <div className={styles.marginThat}>
-                                {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
+                                {ratingImage && <img className={styles.ratingImage} src={ratingImage}
+                                                     alt={`rating ${movie.rate}`}/>}
                             </div>
                         </div>
                         <p>Type: {movie.genre}</p>
                     </div>
                 </div>
                 <div className={styles.itemsContainer}>
-                    <img className={styles.mainImage} src={movie.image} onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = noThumbnailImage;
-                    }} alt={`thumbnail ${movie.id}`}/>
-                    <div className={styles.contentPlace}>
-                        <p>{movie.content}</p>
+                    <div className={styles.imageContainer}>
+                        <img className={styles.mainImage} src={movie.image} onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = noThumbnailImage;
+                        }} alt={`thumbnail ${movie.id}`}/>
+                    </div>
+                    <div className={styles.descriptionContainer}>
+                        <div className={styles.contentPlace}>
+                            <p>{movie.content}</p>
+                        </div>
                     </div>
                 </div>
             </div>
