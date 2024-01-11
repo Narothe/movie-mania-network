@@ -6,13 +6,17 @@
 }
 
 .mainImage {
-    width: 500px;
-    height: 750px;
+    /*width: 500px;*/
+    /*height: 750px;*/
+    width: 23vw;
+    height: 70vh;
 }
 
 .itemsContainer {
     display: flex;
     flex-direction: row;
+
+    /*background-color: red;*/
 }
 
 .imageContainer {
@@ -28,7 +32,8 @@
 .contentPlace {
     display: flex;
     flex-direction: row;
-    padding: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
 }
 
 .marginBottom {

@@ -10,10 +10,10 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const NewStatistics = () => {
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movies, setMovies] = useState([]); // Zmiana na tablicę filmów
 
-    const { token } = useAuth();
+    const {token} = useAuth();
 
     useEffect(() => {
         document.title = 'Movie Mania Network';
@@ -40,16 +40,26 @@ const NewStatistics = () => {
                 <div className={styles.properWidth}>
                     <TopContainer text={'Statistics'}/>
                 </div>
-                <HorizontalGap gap={'Top most rated videos (sorted)'}/>
+                <div className={styles.titleContainers}>
+                    <div className={styles.titleContainer}>
+                        <HorizontalGap gap={'Top most rated videos (sorted)'}/>
+                        <ol type="1" className={styles.orderedList}>
+                            {movies.map((movie, index) => (
+                                <li className={styles.listElements} key={movie.id}>
+                                    <span
+                                        className={`${styles.listElementOne} ${styles.background}`}>{index + 1}. {movie.title}</span>
+                                    <span
+                                        className={`${styles.listElementTwo} ${styles.background}`}>{movie.rate}/10</span>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+                    <div className={styles.titleContainer}>
+                        <HorizontalGap gap={'Home page visitation graph'}/>
 
-                <ol type="1" className={styles.orderedList}>
-                    {movies.map((movie, index) => (
-                        <li className={styles.listElements} key={movie.id}>
-                            <span className={`${styles.listElementOne} ${styles.background}`}>{index + 1}. {movie.title}</span>
-                            <span className={`${styles.listElementTwo} ${styles.background}`}>{movie.rate}/10</span>
-                        </li>
-                    ))}
-                </ol>
+                        
+                    </div>
+                </div>
             </div>
         </animated.div>
     );

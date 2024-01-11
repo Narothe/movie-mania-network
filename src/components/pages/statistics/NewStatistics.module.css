@@ -47,3 +47,19 @@
     background-color: #201e20;
     padding: 0 8px;
 }
+
+.titleContainers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    /*background-color: red;*/
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    /*background-color: blue;*/
+}
