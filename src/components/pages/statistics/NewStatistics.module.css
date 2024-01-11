@@ -1,0 +1,49 @@
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFE1BF;
+}
+
+.properWidth {
+    width: 90%;
+}
+.orderedList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.listElements {
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.listElementOne {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.listElementTwo {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.listElementOne::before {
+    content: "·················································································";
+    position: absolute;
+    top: 50%;
+    /*left: 100%;*/
+    transform: translateY(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background {
+    background-color: #201e20;
+    padding: 0 8px;
+}
