@@ -75,7 +75,9 @@ const Add = () => {
                 <nav className={`d-flex justify-content-center`}>
                     {token ? <LoggedUser/> : <SignInButton/>}
                 </nav>
-                <TopContainer text={"Add a Movie"}/>
+                <div className={styles.properWidth}>
+                    <TopContainer text={"Add a Movie"}/>
+                </div>
                 <HorizontalGap gap={"Form for adding a movie"}/>
 
                 <form onSubmit={handleSubmit} className={styles.addForm}>

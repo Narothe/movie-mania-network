@@ -4,13 +4,12 @@ import { useAuth } from "../../utils/AuthContext";
 import toast from 'react-hot-toast';
 import axios from "axios";
 
-
 import pattern1 from "../../assets/userPorfiles/pattern1.png";
 import pattern2 from "../../assets/userPorfiles/pattern2.png";
 import pattern3 from "../../assets/userPorfiles/pattern3.png";
 import pattern4 from "../../assets/userPorfiles/pattern4.png";
 import pattern5 from "../../assets/userPorfiles/pattern5.png";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 const getPatternByMinute = (minute) => {
     switch (Math.floor(minute / 12)) {
@@ -31,10 +30,9 @@ const getPatternByMinute = (minute) => {
 
 const LoggedUser = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const { token, logout  } = useAuth();
+    const { token, logout } = useAuth();
     const [currentMinute, setCurrentMinute] = useState(new Date().getMinutes());
     const decoded = token ? jwtDecode(token) : null;
-
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -66,27 +64,28 @@ const LoggedUser = () => {
         }
     };
 
-
     const selectedPattern = getPatternByMinute(currentMinute);
 
     return (
         <div className={`position-absolute start-100 ${styles.btnSizeHome}`}>
-            <div className={`position-absolute end-100 ${styles.positionOfUsername}`}>
-                {decoded.name}
+            <div className={styles.rightContainer}>
+                <div className={`${styles.positionOfUsername}`}>
+                    {decoded.name}
+                </div>
+                <img
+                    className={`btn ${styles.imgComponent}`}
+                    src={selectedPattern}
+                    alt={`pattern${selectedPattern}`}
+                    onClick={handleImageClick}
+                />
             </div>
-            <img
-                className={`btn ${styles.imgComponent}`}
-                src={selectedPattern}
-                alt={`pattern${selectedPattern}`}
-                onClick={handleImageClick}
-            />
-            {isDropdownOpen && (
+            <div className={`${styles.dropdownContainer} ${isDropdownOpen ? styles.showDropdown : styles.hideDropdown}`}>
                 <ul className={styles.dropdown}>
                     <li>
                         <button onClick={handleLogout} className={`nav-link rounded-2 ${styles.btnColor}`}>Logout</button>
                     </li>
                 </ul>
-            )}
+            </div>
         </div>
     );
 };

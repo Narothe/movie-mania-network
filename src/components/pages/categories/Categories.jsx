@@ -21,18 +21,20 @@ const Categories = () => {
         <animated.div style={props}>
             <div className={`container ${styles.categoriesContainer}`}>
                 {token ? <LoggedUser/> : <SignInButton/>}
-                <TopContainer text="Categories"/>
-                <HorizontalGap gap={'All Categories'}/>
-
-                <div className="d-flex flex-row">
-                    <CategoryContainer categoryName={1}/>
-                    <CategoryContainer categoryName={2}/>
-                    <CategoryContainer categoryName={3}/>
+                <div className={styles.properWidth}>
+                    <TopContainer text="Categories"/>
                 </div>
-                <Footnote/>
-            </div>
+                    <HorizontalGap gap={'All Categories'}/>
+
+                    <div className="d-flex flex-row">
+                        <CategoryContainer categoryName={1}/>
+                        <CategoryContainer categoryName={2}/>
+                        <CategoryContainer categoryName={3}/>
+                    </div>
+                    <Footnote/>
+                </div>
         </animated.div>
-    );
+);
 }
 
 export default Categories;

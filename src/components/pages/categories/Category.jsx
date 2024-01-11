@@ -24,14 +24,16 @@ const Category = () => {
         <animated.div style={props}>
             {token ? <LoggedUser/> : <SignInButton/>}
             <div className={`container ${styles.categoryContainer}`}>
-                <TopContainer text={'Category'}/>
-                <HorizontalGap gap={`Category ${categoryName}`}/>
-                {/*<Movies category={categoryName}/>*/}
+                <div className={styles.properWidth}>
+                    <TopContainer text={'Category'}/>
+                </div>
+                    <HorizontalGap gap={`Category ${categoryName}`}/>
+                    {/*<Movies category={categoryName}/>*/}
 
-                <Footnote/>
-            </div>
+                    <Footnote/>
+                </div>
         </animated.div>
-    );
+);
 }
 
 export default Category;

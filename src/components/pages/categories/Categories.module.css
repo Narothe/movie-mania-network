@@ -3,3 +3,7 @@
     flex-direction: column;
     color: #FFE1BF;
 }
+
+.properWidth {
+    width: 90%;
+}

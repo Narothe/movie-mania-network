@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
     color: #FFE1BF;
+    /*width: 90%;*/
+}
+
+.properWidth {
+    width: 90%;
 }
 
 .addForm {

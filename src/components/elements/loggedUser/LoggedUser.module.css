@@ -1,30 +1,32 @@
 .btnSizeHome {
-    margin-left: -100px;
-    margin-top: 20px;
+    margin-left: -115px;
+    margin-top: 15px;
 }
 
 .imgComponent {
     width: 75px;
 }
 
-.dropdown {
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    background-color: #312E31;
-    padding: 0; /* Zresetuj wypełnienie */
-    margin: 0; /* Zresetuj margines */
-    list-style-type: none;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    color: #FFE1BF;
-}
+/*.dropdown {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    height: 50px;*/
+/*    background-color: #312E31;*/
+/*    padding: 0; !* Zresetuj wypełnienie *!*/
+/*    margin: 0; !* Zresetuj margines *!*/
+/*    list-style-type: none;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border-radius: 10px;*/
+/*    color: #FFE1BF;*/
+/*}*/
 
 .btnColor {
     color: #E0A96D;
     border-color: #E0A96D;
     border-width: 2px;
+    width: 60px;
+    height: 30px;
 }
 
 .btnColor:hover {
@@ -35,9 +37,56 @@
 
 .positionOfUsername {
     margin-top: 11px;
-    margin-right: 13px;
+    /*margin-right: 13px;*/
     color: #FFE1BF;
-    font-size: 25px;
+    font-size: 23px;
     /*font-weight: bold;*/
     font-family: "EFN Handy", cursive;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    /*background-color: red;*/
+}
+
+.dropdownContainer {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.showDropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hideDropdown {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #312E31; /* Dodaj odpowiedni kolor tła dla dropdownu */
+    border: 1px solid #312E31; /* Dodaj odpowiednią ramkę dla dropdownu */
+    border-radius: 4px; /* Dodaj zaokrąglenie rogów dla dropdownu */
+}
+
+.dropdown li {
+    padding: 8px;
+}
+
+.dropdown li:hover {
+    background-color: #312E31; /* Dodaj odpowiedni kolor tła po najechaniu kursorem */
 }
