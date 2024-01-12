@@ -3,7 +3,7 @@ import BarChart from "./BarChart";
 
 const ChartComponent = ({ last7DaysData }) => {
     console.log('ChartComponent - last7DaysData', last7DaysData)
-    const chart = last7DaysData || []; // Ensure chart is initialized to an empty array if undefined
+    const chart = last7DaysData || [];
 
     const userData = {
         labels: chart.map((data) => data.date),

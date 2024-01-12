@@ -85,7 +85,6 @@ const NewMovies = () => {
         );
     };
 
-    // Funkcja sprawdzająca, czy podany ciąg znaków jest prawidłowym adresem URL
     const isValidUrl = (url) => {
         try {
             new URL(url);

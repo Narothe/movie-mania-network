@@ -57,9 +57,6 @@ const Home = () => {
         console.log("Token\n", token);
     }
 
-    // Move this log statement inside the useEffect block to see updated value
-    // console.log('last7DaysData', last7DaysData);
-
     return (
         <animated.div style={props}>
             <div className={`container`}>

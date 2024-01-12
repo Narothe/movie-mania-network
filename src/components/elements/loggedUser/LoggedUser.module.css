@@ -78,9 +78,9 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #312E31; /* Dodaj odpowiedni kolor tła dla dropdownu */
-    border: 1px solid #312E31; /* Dodaj odpowiednią ramkę dla dropdownu */
-    border-radius: 4px; /* Dodaj zaokrąglenie rogów dla dropdownu */
+    background-color: #312E31;
+    border: 1px solid #312E31;
+    border-radius: 4px;
 }
 
 .dropdown li {
@@ -88,5 +88,5 @@
 }
 
 .dropdown li:hover {
-    background-color: #312E31; /* Dodaj odpowiedni kolor tła po najechaniu kursorem */
+    background-color: #312E31;
 }

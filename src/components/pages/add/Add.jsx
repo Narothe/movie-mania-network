@@ -10,7 +10,7 @@ import {useNavigate} from "react-router-dom";
 import {useAuth} from "../../utils/AuthContext";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
-import MainLogo from "../../elements/mainLogo/MainLogo";
+// import MainLogo from "../../elements/mainLogo/MainLogo";
 
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });

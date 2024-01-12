@@ -33,13 +33,9 @@ createRoot(document.getElementById('root')).render(
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="signup" element={<Signup/>}/>
                     <Route path="*" element={<NotFound/>}/>
-                    {/*<Route path="details" element={<Details/>}/>*/}
-                    {/*<Route path="details/:id" element={<Details/>}/>*/}
                     <Route path="details" element={<NewDetails/>}/>
                     <Route path="details/:id" element={<NewDetails/>}/>
-                    {/*<Route path="statistics" element={<Statistics/>}/>*/}
                     <Route path="statistics" element={<NewStatistics/>}/>
-                    {/*<Route index element={<Navigate to="/" />} />*/}
                 </Route>
             </Routes>
         </BrowserRouter>
