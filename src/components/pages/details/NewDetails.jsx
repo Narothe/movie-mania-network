@@ -53,7 +53,7 @@ const NewDetails = () => {
                                                      alt={`rating ${movie.rate}`}/>}
                             </div>
                         </div>
-                        <p>Type: {movie.genre}</p>
+                        <p>Genre: {movie.genre}</p>
                     </div>
                 </div>
                 <div className={styles.itemsContainer}>

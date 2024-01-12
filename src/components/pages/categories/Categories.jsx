@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Footnote from "../../elements/footnote/Footnote";
 import TopContainer from "../../elements/topContainer/TopContainer";
 import CategoryContainer from "./CategoryContainer";
@@ -8,14 +8,47 @@ import styles from "./Categories.module.css";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
 import {useAuth} from "../../utils/AuthContext";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Categories = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const [movies, setMovies] = useState([]);
     const { token } = useAuth();
 
     useEffect(() => {
         document.title = 'Movie Mania Network';
+
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`https://at.usermd.net/api/movies`);
+                setMovies(response.data);
+            } catch (error) {
+                console.error(error);
+                toast.error("Error when loading videos");
+            }
+        };
+        fetchData();
     }, []);
+
+    // Grupowanie kategorii
+    const groupedCategories = movies.reduce((acc, movie) => {
+        const categoryName = movie.genre;
+
+        if (acc[categoryName]) {
+            acc[categoryName].count += 1;
+        } else {
+            acc[categoryName] = {
+                categoryName,
+                count: 1,
+            };
+        }
+
+        return acc;
+    }, {});
+
+    // Konwersja obiektu na tablicę
+    const uniqueCategories = Object.values(groupedCategories);
 
     return (
         <animated.div style={props}>
@@ -24,17 +57,21 @@ const Categories = () => {
                 <div className={styles.properWidth}>
                     <TopContainer text="Categories"/>
                 </div>
-                    <HorizontalGap gap={'All Categories'}/>
+                <HorizontalGap gap={'All Categories'}/>
 
-                    <div className="d-flex flex-row">
-                        <CategoryContainer categoryName={1}/>
-                        <CategoryContainer categoryName={2}/>
-                        <CategoryContainer categoryName={3}/>
-                    </div>
-                    <Footnote/>
+                <div className={`d-flex flex-wrap justify-content-between ${styles.categoriesRow}`}>
+                    {uniqueCategories.map((category) => (
+                        <CategoryContainer
+                            categoryName={category.categoryName}
+                            key={category.categoryName}
+                            count={category.count}
+                        />
+                    ))}
                 </div>
+                <Footnote/>
+            </div>
         </animated.div>
-);
+    );
 }
 
 export default Categories;

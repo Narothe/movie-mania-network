@@ -7,3 +7,9 @@
 .properWidth {
     width: 90%;
 }
+
+.categoriesRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

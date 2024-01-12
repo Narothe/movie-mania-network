@@ -107,7 +107,7 @@ const Add = () => {
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
-                            Type:
+                            Genre:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="text"

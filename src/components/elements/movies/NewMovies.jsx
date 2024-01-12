@@ -74,7 +74,7 @@ const NewMovies = () => {
                                                              alt={`rating ${movie.rate}`}/>}
                                     </div>
                                     <div className={styles.smallMargin}>
-                                        <p>Type: {movie.genre}</p>
+                                        <p>Genre: {movie.genre}</p>
                                     </div>
                                 </Link>
                             )}
