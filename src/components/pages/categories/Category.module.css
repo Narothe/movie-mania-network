@@ -8,13 +8,28 @@
     width: 90%;
 }
 
-.textPosition {
+.twoContainers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /*background-color: aqua;*/
+}
+
+.firstContainer {
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    color: #FFE1BF;
-    width: 50%;
+    width: 45%;
 
+    /*background-color: green;*/
+}
+
+.secondContainer {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    /*justify-content: center;*/
+    align-items: center;
 
     /*background-color: red;*/
 }
@@ -22,13 +37,25 @@
 .textLook {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    /*width: fit-content;*/
+    /*width: 50%;*/
     transition: all 0.3s ease;
-
+    background-color: #282c34;
+    border-radius: 5px;
+    /*margin-bottom: 10px;*/
+    text-decoration: none;
+    color: #FFE1BF;
+    margin: 5px;
+    padding: 5px;
     /*background-color: blue;*/
 }
 
 .textLook:hover {
     transform: scale(1.1);
     color: #E0A96D;
+}
+
+.movieImage {
+    width: 75%;
+    height: 90%;
 }
