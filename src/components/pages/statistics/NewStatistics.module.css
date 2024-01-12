@@ -41,13 +41,13 @@
     position: relative;
 }
 
-.listElementOne::before {
-    content: "··································································································";
-    margin-left: 55px;
+.listElementTwo::before {
+    content: "················································································································";
+
     position: absolute;
     color: #312E31;
     top: 50%;
-    /*left: 100%;*/
+    right: 0;
     transform: translateY(-50%);
     white-space: nowrap;
     overflow: hidden;
