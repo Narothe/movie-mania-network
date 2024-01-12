@@ -124,6 +124,8 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="number"
                                 name="rate"
+                                min="0"
+                                max="10"
                                 value={formData.rate}
                                 onChange={handleChange}
                             />

@@ -8,15 +8,22 @@ import SignInButton from '../../elements/signinButton/SignInButton';
 import { useAuth } from '../../utils/AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import ChartComponent from "./ChartComponent";
+import {Link} from "react-router-dom";
 
 const NewStatistics = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movies, setMovies] = useState([]); // Zmiana na tablicę filmów
+    const [last7DaysData, setLast7DaysData] = useState([]);
 
     const {token} = useAuth();
 
     useEffect(() => {
         document.title = 'Movie Mania Network';
+
+        const last7DaysData = JSON.parse(localStorage.getItem("visitData")) || [];
+        console.log('Data read from LocalStorage:', last7DaysData);
+        setLast7DaysData(last7DaysData);
 
         const fetchData = async () => {
             try {
@@ -24,7 +31,10 @@ const NewStatistics = () => {
                 console.log(response.data);
                 // Sortuj filmy według oceny (rate) od najwyższej do najniższej
                 const sortedMovies = response.data.sort((a, b) => b.rate - a.rate);
-                setMovies(sortedMovies);
+
+                const ratedMovies = sortedMovies.filter(movie => movie.rate > 0);
+
+                setMovies(ratedMovies );
             } catch (error) {
                 console.error(error);
                 toast.error('Error when loading videos');
@@ -43,21 +53,24 @@ const NewStatistics = () => {
                 <div className={styles.titleContainers}>
                     <div className={styles.titleContainer}>
                         <HorizontalGap gap={'Top most rated videos (sorted)'}/>
-                        <ol type="1" className={styles.orderedList}>
+                        <div className={styles.fullSize}>
+                        <div type="1" className={styles.orderedList}>
                             {movies.map((movie, index) => (
-                                <li className={styles.listElements} key={movie.id}>
+                                <Link className={styles.listElements} key={movie.id} to={`/details/${movie.id}`}>
                                     <span
                                         className={`${styles.listElementOne} ${styles.background}`}>{index + 1}. {movie.title}</span>
                                     <span
                                         className={`${styles.listElementTwo} ${styles.background}`}>{movie.rate}/10</span>
-                                </li>
+                                </Link>
                             ))}
-                        </ol>
+                        </div>
+                        </div>
                     </div>
                     <div className={styles.titleContainer}>
                         <HorizontalGap gap={'Home page visitation graph'}/>
-
-                        
+                        <div className={styles.fullSize}>
+                            <ChartComponent last7DaysData={last7DaysData}/>
+                        </div>
                     </div>
                 </div>
             </div>

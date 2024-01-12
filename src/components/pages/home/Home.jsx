@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../utils/AuthContext";
 import { jwtDecode } from "jwt-decode";
 import Footnote from "../../elements/footnote/Footnote";
@@ -8,18 +8,20 @@ import MainLogo from "../../elements/mainLogo/MainLogo";
 import { useSpring, animated } from "react-spring";
 import styles from "./Home.module.css";
 import NewMovies from "../../elements/movies/NewMovies";
+import ChartComponent from "../statistics/ChartComponent";
 
 const Home = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     const { token } = useAuth();
     const decoded = token ? jwtDecode(token) : null;
+    const [last7DaysData, setLast7DaysData] = useState([]);
 
     useEffect(() => {
         document.title = "Movie Mania Network";
 
         // Dzisiejsza data
         const currentDate = new Date();
-        const currentDateString = currentDate.toISOString().split("T")[0];
+        const currentDateString = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
 
         // Pobierz dane z local storage
         const visitData = JSON.parse(localStorage.getItem("visitData")) || [];
@@ -43,7 +45,10 @@ const Home = () => {
 
         // Logowanie danych
         console.log('Visit data for the last 7 days:', last7DaysData);
-    }, []);
+
+        // Ustaw stan z danymi
+        setLast7DaysData(last7DaysData);
+    }, [token]); // Ensure useEffect runs when 'token' changes
 
     if (!token) {
         console.log("Użytkownik niezalogowany");
@@ -51,6 +56,9 @@ const Home = () => {
         console.log("Użytkownik zalogowany\n", decoded);
         console.log("Token\n", token);
     }
+
+    // Move this log statement inside the useEffect block to see updated value
+    // console.log('last7DaysData', last7DaysData);
 
     return (
         <animated.div style={props}>
