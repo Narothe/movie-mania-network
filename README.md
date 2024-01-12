@@ -1,5 +1,4 @@
-
-# Movie Mania Network
+![Movie Mania Network](./src/components/assets/logos/full_logo.png)
 
 Website written in ReactJS for browsing, adding video reviews.
 
