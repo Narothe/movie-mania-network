@@ -43,6 +43,7 @@
 
 .listElementOne::before {
     content: "··································································································";
+    margin-left: 55px;
     position: absolute;
     color: #312E31;
     top: 50%;
