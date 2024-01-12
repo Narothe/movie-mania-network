@@ -3,10 +3,15 @@
 
 Website written in ReactJS for browsing, adding video reviews.
 
-
 ## Author
 
 - [@Narothe](https://github.com/Narothe)
+
+## Main branch updates
+
+- phase_3: 21.11.2023r.
+- phase_4: 18.12.2023r.
+- phase_5: 12.01.2024r.
 
 
 ## How to install
