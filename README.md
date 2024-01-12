@@ -15,8 +15,11 @@ Website written in ReactJS for browsing, adding video reviews.
 
 
 ## How to install
+
 You need to have "Node.js" (LTS version) downloaded to run the project.
+
  - [Node.js](https://nodejs.org/en)
+ 
 Throughout the project, I used the "yarn" command to install/add dependencies/run the project. 
 
 - [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
