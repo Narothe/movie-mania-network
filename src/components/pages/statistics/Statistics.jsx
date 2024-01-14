@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import styles from './NewStatistics.module.css';
+import styles from './Statistics.module.css';
 import TopContainer from '../../elements/topContainer/TopContainer';
 import HorizontalGap from '../../elements/topContainer/HorizontalGap';
 import LoggedUser from '../../elements/loggedUser/LoggedUser';
@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import ChartComponent from "./ChartComponent";
 import {Link} from "react-router-dom";
 
-const NewStatistics = () => {
+const Statistics = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movies, setMovies] = useState([]); // Zmiana na tablicę filmów
     const [last7DaysData, setLast7DaysData] = useState([]);
@@ -78,4 +78,4 @@ const NewStatistics = () => {
     );
 };
 
-export default NewStatistics;
+export default Statistics;

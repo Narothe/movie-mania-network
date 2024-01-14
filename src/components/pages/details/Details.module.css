@@ -62,3 +62,18 @@
     background-color: green;
     margin-top: -90px;
 }
+
+.btnCol {
+    position: absolute;
+    right: 15px;
+    top: 200px;
+    color: #E0A96D;
+    border-color: #E0A96D;
+    border-width: 2px;
+}
+
+.btnCol:hover {
+    background-color: #E0A96D;
+    border-color: #E0A96D;
+    color: #312E31;
+}

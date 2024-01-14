@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./NewMovies.module.css";
+import styles from "./Movies.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
 import getRatingImage from "../RatingHelper";
 
-const NewMovies = () => {
+const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [hoveredMovie, setHoveredMovie] = useState(null);
 
@@ -64,8 +64,8 @@ const NewMovies = () => {
                                 <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
                                     <h4 className="text-center">{movie.title}</h4>
                                     <p>
-                                        {movie.content.length > 165
-                                            ? `${movie.content.slice(0, 165)}...`
+                                        {movie.content.length > 155
+                                            ? `${movie.content.slice(0, 155)}...`
                                             : movie.content}
                                     </p>
                                     <div className={`${styles.positionOfRate} ${styles.smallMargin}`}>
@@ -114,4 +114,4 @@ const NewMovies = () => {
     );
 };
 
-export default NewMovies;
+export default Movies;

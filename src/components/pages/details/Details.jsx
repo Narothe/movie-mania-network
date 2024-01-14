@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./NewDetails.module.css";
+import styles from "./Details.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
@@ -9,15 +9,16 @@ import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
 import getRatingImage from "../../elements/RatingHelper";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
-import {useAuth} from "../../utils/AuthContext";
+import { useAuth } from "../../utils/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-
-const NewDetails = () => {
+const Details = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movie, setMovie] = useState({});
-    const {token} = useAuth();
+    const { token } = useAuth();
+    const navigate = useNavigate();  // Zaktualizowany hook
 
-    const {id} = useParams();
+    const { id } = useParams();
     console.log("Movie ID:", id);
 
     useEffect(() => {
@@ -38,6 +39,25 @@ const NewDetails = () => {
 
     const ratingImage = getRatingImage(movie.rate);
 
+    const handleDeleteMovie = async () => {
+        try {
+            await axios.delete(`https://at.usermd.net/api/movie/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            toast.success("Movie deleted successfully");
+            // Przekieruj użytkownika na inną stronę po usunięciu filmu (np. listę filmów)
+            navigate('/movies'); // Zaktualizowana funkcja do przekierowania do listy filmów
+        } catch (error) {
+            console.error(error);
+            if (error.response) {
+                console.error('Response data:', error.response.data);
+            }
+            toast.error("Error deleting movie");
+        }
+    };
+
     return (
         <animated.div style={props}>
             <div className={styles.addContainer}>
@@ -49,8 +69,7 @@ const NewDetails = () => {
                         <div className={`d-flex align-items-center flex-row mb-3`}>
                             <p>Rate: {movie.rate}/10</p>
                             <div className={styles.marginThat}>
-                                {ratingImage && <img className={styles.ratingImage} src={ratingImage}
-                                                     alt={`rating ${movie.rate}`}/>}
+                                {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
                             </div>
                         </div>
                         <p>Genre: {movie.genre}</p>
@@ -67,6 +86,11 @@ const NewDetails = () => {
                         <div className={styles.contentPlace}>
                             <p>{movie.content}</p>
                         </div>
+                        {token && (
+                            <button onClick={handleDeleteMovie} className={`btn ${styles.btnCol}`}>
+                                Delete Movie
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
@@ -74,4 +98,4 @@ const NewDetails = () => {
     );
 };
 
-export default NewDetails;
+export default Details;

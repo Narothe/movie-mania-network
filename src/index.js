@@ -16,8 +16,8 @@ import Signin from "./components/pages/signin/Signin";
 import Signup from "./components/pages/signup/Signup";
 import Category from "./components/pages/categories/Category";
 import {AuthProvider} from "./components/utils/AuthContext";
-import NewDetails from "./components/pages/details/NewDetails";
-import NewStatistics from "./components/pages/statistics/NewStatistics";
+import Details from "./components/pages/details/Details";
+import Statistics from "./components/pages/statistics/Statistics";
 
 
 createRoot(document.getElementById('root')).render(
@@ -33,9 +33,9 @@ createRoot(document.getElementById('root')).render(
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="signup" element={<Signup/>}/>
                     <Route path="*" element={<NotFound/>}/>
-                    <Route path="details" element={<NewDetails/>}/>
-                    <Route path="details/:id" element={<NewDetails/>}/>
-                    <Route path="statistics" element={<NewStatistics/>}/>
+                    <Route path="details" element={<Details/>}/>
+                    <Route path="details/:id" element={<Details/>}/>
+                    <Route path="statistics" element={<Statistics/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

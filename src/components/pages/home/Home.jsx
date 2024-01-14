@@ -7,7 +7,7 @@ import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import MainLogo from "../../elements/mainLogo/MainLogo";
 import { useSpring, animated } from "react-spring";
 import styles from "./Home.module.css";
-import NewMovies from "../../elements/movies/NewMovies";
+import Movies from "../../elements/movies/Movies";
 import ChartComponent from "../statistics/ChartComponent";
 
 const Home = () => {
@@ -65,7 +65,7 @@ const Home = () => {
                     <MainLogo />
                 </nav>
                 <div>
-                    <NewMovies />
+                    <Movies />
                 </div>
                 <div className={styles.footnote}>
                     <Footnote />
