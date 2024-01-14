@@ -47,8 +47,7 @@ const Details = () => {
                 }
             });
             toast.success("Movie deleted successfully");
-            // Przekieruj użytkownika na inną stronę po usunięciu filmu (np. listę filmów)
-            navigate('/movies'); // Zaktualizowana funkcja do przekierowania do listy filmów
+            navigate('/');
         } catch (error) {
             console.error(error);
             if (error.response) {

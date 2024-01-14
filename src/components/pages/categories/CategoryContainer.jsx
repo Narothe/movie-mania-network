@@ -9,7 +9,7 @@ const CategoryContainer = (props) => {
             to={`/category/${props.categoryName}`}
         >
             <div>
-                <p className={`text-center fw-bold fs-4 ${styles.categoryContainerTextColor}`}>Category {props.categoryName}</p>
+                <p className={`text-center fw-bold fs-4 ${styles.categoryContainerTextColor}`}>{props.categoryName}</p>
             </div>
         </Link>
     );

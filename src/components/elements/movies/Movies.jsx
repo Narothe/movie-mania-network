@@ -62,19 +62,18 @@ const Movies = () => {
                             </Link>
                             {hoveredMovie === movie && (
                                 <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
-                                    <h4 className="text-center">{movie.title}</h4>
+                                    <h4 className="text-center">{movie.title || "Unknown Title"}</h4>
                                     <p>
-                                        {movie.content.length > 155
+                                        {movie.content && movie.content.length > 155
                                             ? `${movie.content.slice(0, 155)}...`
-                                            : movie.content}
+                                            : movie.content || "No description available"}
                                     </p>
                                     <div className={`${styles.positionOfRate} ${styles.smallMargin}`}>
-                                        <p>Rate: {movie.rate}/10</p>
-                                        {ratingImage && <img className={styles.ratingImage} src={ratingImage}
-                                                             alt={`rating ${movie.rate}`}/>}
+                                        <p>Rate: {movie.rate || 0}/10</p>
+                                        {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
                                     </div>
                                     <div className={styles.smallMargin}>
-                                        <p>Genre: {movie.genre}</p>
+                                        <p>Genre: {movie.genre || "Unknown Genre"}</p>
                                     </div>
                                 </Link>
                             )}
