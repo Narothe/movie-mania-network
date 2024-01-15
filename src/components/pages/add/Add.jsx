@@ -32,12 +32,22 @@ const Add = () => {
         e.preventDefault();
 
         if (formData.rate < 0 || formData.rate > 10) {
-            toast.error("Rate should be between 0 and 10.");
+            toast.error("Rate should be between 0 and 10.", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
             return;
         }
 
         if (!token) {
-            toast.error("You need to be logged in to add a movie.");
+            toast.error("You need to be logged in to add a movie.", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
             return;
         }
 
@@ -53,13 +63,23 @@ const Add = () => {
                 backgroundImage: "",
             });
             console.log("The data was sent successfully", response.data);
-            toast.success("The data was sent successfully!");
+            toast.success("The data was sent successfully!", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
             setTimeout(() => {
                 navigate("/");
             }, 1500);
         } catch (error) {
             console.error("The data wasn't sent successfully", error);
-            toast.error("The data wasn't sent successfully!");
+            toast.error("The data wasn't sent successfully!", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
         }
     };
 

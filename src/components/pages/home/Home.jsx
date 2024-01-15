@@ -8,7 +8,7 @@ import MainLogo from "../../elements/mainLogo/MainLogo";
 import { useSpring, animated } from "react-spring";
 import styles from "./Home.module.css";
 import Movies from "../../elements/movies/Movies";
-import ChartComponent from "../statistics/ChartComponent";
+
 
 const Home = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });

@@ -32,14 +32,24 @@ const Signin = () => {
             .then((response) => {
                 console.dir(response.data, {depth: null});
                 login(response.data.token);
-                toast.success("Signed!");
+                toast.success("Signed!", {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
                 setTimeout(() => {
                     navigate("/");
                 }, 1500);
             })
             .catch((error) => {
                 console.error(error);
-                toast.error("Given username doesn't exist or password is wrong!");
+                toast.error("Given username doesn't exist or password is wrong!", {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
             });
     };
 

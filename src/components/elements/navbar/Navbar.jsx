@@ -21,7 +21,12 @@ const Navbar = () => {
         console.log('Wartość z formularza:', searchTerm);
 
         if (searchTerm.length < 4) {
-            toast.error('Enter minimum 4 characters');
+            toast.error('Enter minimum 4 characters', {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
         } else {
             try {
                 const response = await axios.get(`https://at.usermd.net/api/movies`);
@@ -42,11 +47,21 @@ const Navbar = () => {
                 if (foundMovie) {
                     navigate(`/details/${foundMovie.id}`);
                 } else {
-                    toast.error('There is no such movie');
+                    toast.error('There is no such movie', {
+                        style: {
+                            backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                            color: '#FFE1BF',
+                        },
+                    });
                 }
             } catch (error) {
                 console.error('Błąd przy wyszukiwaniu filmu', error);
-                toast.error('Strange error occurred!');
+                toast.error('Strange error occurred!', {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
             }
         }
     };
@@ -115,7 +130,13 @@ const Navbar = () => {
                                 ) : (
                                     <span
                                         className={`${styles.btnColor} nav-link rounded-2`}
-                                        onClick={() => toast.error('You need to log in to access this page')}
+                                        onClick={() => toast.error('You need to log in to access this page', {
+                                            style: {
+                                                backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                                                color: '#FFE1BF',
+                                            },
+                                        })
+                                    }
                                         style={{userSelect: 'none', cursor: 'pointer'}}
                                     >
                                         {' '}

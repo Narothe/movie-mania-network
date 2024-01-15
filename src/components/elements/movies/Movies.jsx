@@ -10,20 +10,47 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [hoveredMovie, setHoveredMovie] = useState(null);
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get("https://at.usermd.net/api/movies");
+            console.log(response.data);
+            setMovies(response.data);
+        } catch (error) {
+            console.error(error);
+            toast.error("Error when loading videos", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("https://at.usermd.net/api/movies");
-                console.log(response.data);
-                setMovies(response.data);
-            } catch (error) {
-                console.error(error);
-                toast.error("Error when loading videos");
-            }
+        document.title = 'Movie Mania Network';
+
+        const scrollToTop = () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         };
 
-        fetchData();
+        toast.promise(
+            fetchData(),
+            {
+                loading: 'Loading movie details...',
+                success: 'Movie details loaded successfully',
+                error: 'Error when loading movie details',
+            },
+            {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            }
+        ).then(() => {
+            scrollToTop();
+        });
     }, []);
+
 
     const handleMouseEnter = (movie) => {
         setHoveredMovie(movie);

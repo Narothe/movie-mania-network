@@ -25,7 +25,12 @@ const Categories = () => {
                 setMovies(response.data);
             } catch (error) {
                 console.error(error);
-                toast.error("Error when loading videos");
+                toast.error("Error when loading videos", {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
             }
         };
         fetchData();
@@ -47,7 +52,6 @@ const Categories = () => {
         return acc;
     }, {});
 
-    // Konwersja obiektu na tablicę
     const uniqueCategories = Object.values(groupedCategories);
 
     return (

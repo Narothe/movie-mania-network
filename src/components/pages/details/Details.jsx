@@ -21,20 +21,40 @@ const Details = () => {
     const { id } = useParams();
     console.log("Movie ID:", id);
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
+            console.log(response.data);
+            setMovie(response.data);
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    };
+
     useEffect(() => {
         document.title = 'Movie Mania Network';
 
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
-                console.log(response.data);
-                setMovie(response.data);
-            } catch (error) {
-                console.error(error);
-                toast.error("Error when loading videos");
-            }
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
-        fetchData();
+
+        toast.promise(
+            fetchData(),
+            {
+                loading: 'Loading movie details...',
+                success: 'Movie details loaded successfully',
+                error: 'Error when loading movie details',
+            },
+            {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            }
+        ).then(() => {
+            scrollToTop();
+        });
     }, [id]);
 
     const clampedRate = Math.min(10, Math.max(0, movie.rate));
@@ -49,14 +69,24 @@ const Details = () => {
                     Authorization: `Bearer ${token}`
                 }
             });
-            toast.success("Movie deleted successfully");
+            toast.success("Movie deleted successfully", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
             navigate('/');
         } catch (error) {
             console.error(error);
             if (error.response) {
                 console.error('Response data:', error.response.data);
             }
-            toast.error("Error deleting movie");
+            toast.error("Error deleting movie", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
         }
     };
 

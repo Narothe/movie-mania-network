@@ -34,7 +34,12 @@ const Signup = () => {
             .then((response) => {
                 console.log('response.data', response.data);
                 localStorage.setItem('token', response.data.token);
-                toast.success("Account created successfully!");
+                toast.success("Account created successfully!", {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
 
                 // Zaloguj użytkownika po rejestracji
                 axios
@@ -45,7 +50,12 @@ const Signup = () => {
                     .then((loginResponse) => {
                         console.dir(loginResponse.data, {depth: null});
                         login(loginResponse.data.token);
-                        toast.success("Logged in!");
+                        toast.success("Logged in!", {
+                            style: {
+                                backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                                color: '#FFE1BF',
+                            },
+                        });
 
                         // Przejdź do strony głównej po zalogowaniu
                         setTimeout(() => {
@@ -54,13 +64,23 @@ const Signup = () => {
                     })
                     .catch((loginError) => {
                         console.error(loginError);
-                        toast.error("Error during login.");
+                        toast.error("Error during login.", {
+                            style: {
+                                backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                                color: '#FFE1BF',
+                            },
+                        });
                     });
 
             })
             .catch((error) => {
                 console.error(error);
-                toast.error("Given username does exists!");
+                toast.error("Given username does exists!", {
+                    style: {
+                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                    },
+                });
             });
     };
 

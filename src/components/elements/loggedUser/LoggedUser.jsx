@@ -52,11 +52,21 @@ const LoggedUser = () => {
                 .then(response => {
                     console.log(response.data);
                     logout();
-                    toast.success("Logout successfully!");
+                    toast.success("Logout successfully!", {
+                        style: {
+                            backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                            color: '#FFE1BF',
+                        },
+                    });
                 })
                 .catch(error => {
                     console.error(error);
-                    toast.error("Error during logout!");
+                    toast.error("Error during logout!", {
+                        style: {
+                            backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                            color: '#FFE1BF',
+                        },
+                    });
                 });
         } else {
             console.error("User ID not found in decoded token.");
