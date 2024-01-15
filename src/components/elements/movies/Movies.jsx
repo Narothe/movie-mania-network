@@ -37,7 +37,10 @@ const Movies = () => {
         return (
             <div className={styles.moviesRow}>
                 {moviesSlice.map((movie) => {
-                    const ratingImage = getRatingImage(movie.rate);
+                    // Dodaj warunki do zabezpieczenia pola rate
+                    const clampedRate = Math.min(10, Math.max(0, movie.rate));
+
+                    const ratingImage = getRatingImage(clampedRate);
 
                     return (
                         <div
@@ -69,8 +72,10 @@ const Movies = () => {
                                             : movie.content || "No description available"}
                                     </p>
                                     <div className={`${styles.positionOfRate} ${styles.smallMargin}`}>
-                                        <p>Rate: {movie.rate || 0}/10</p>
-                                        {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
+                                        {/* Użyj zabezpieczonej wartości rate */}
+                                        <p>Rate: {clampedRate || 0}/10</p>
+                                        {ratingImage && <img className={styles.ratingImage} src={ratingImage}
+                                                             alt={`rating ${clampedRate}`}/>}
                                     </div>
                                     <div className={styles.smallMargin}>
                                         <p>Genre: {movie.genre || "Unknown Genre"}</p>
