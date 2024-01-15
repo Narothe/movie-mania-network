@@ -80,11 +80,12 @@
     margin: 0;
     background-color: #312E31;
     border: 1px solid #312E31;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .dropdown li {
     padding: 8px;
+    border-radius: 10px;
 }
 
 .dropdown li:hover {

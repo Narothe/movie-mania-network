@@ -27,9 +27,8 @@ const Navbar = () => {
                 const response = await axios.get(`https://at.usermd.net/api/movies`);
                 setSearchResults(response.data);
 
-
                 const foundMovies = response.data.filter((movie) =>
-                    movie.title.toLowerCase().includes(searchTerm)
+                    movie.title && movie.title.toLowerCase().includes(searchTerm)
                 );
 
                 if (foundMovies.length > 0) {
@@ -37,7 +36,7 @@ const Navbar = () => {
                 }
 
                 const foundMovie = foundMovies.find((movie) =>
-                    movie.title.toLowerCase().includes(searchTerm)
+                    movie.title && movie.title.toLowerCase().includes(searchTerm)
                 );
 
                 if (foundMovie) {
