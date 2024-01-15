@@ -66,7 +66,7 @@ const Details = () => {
                     <h2>Title: "<i>{movie.title}</i>"</h2>
                     <div className={styles.displayColumn}>
                         <div className={`d-flex align-items-center flex-row mb-3`}>
-                            <p>Rate: {movie.rate}/10</p>
+                            <p>Rate: {movie.rate || 0}/10</p>
                             <div className={styles.marginThat}>
                                 {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
                             </div>

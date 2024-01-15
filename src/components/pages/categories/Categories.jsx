@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 const Categories = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movies, setMovies] = useState([]);
-    const { token } = useAuth();
+    const {token} = useAuth();
 
     useEffect(() => {
         document.title = 'Movie Mania Network';
@@ -61,17 +61,19 @@ const Categories = () => {
 
                 <div className={`d-flex flex-wrap justify-content-between ${styles.categoriesRow}`}>
                     {uniqueCategories.map((category) => (
-                        <CategoryContainer
-                            categoryName={category.categoryName}
-                            key={category.categoryName}
-                            count={category.count}
-                        />
+                        // Sprawdź, czy categoryName nie jest puste
+                        category.categoryName && (
+                            <CategoryContainer
+                                categoryName={category.categoryName}
+                                key={category.categoryName}
+                                count={category.count}
+                            />
+                        )
                     ))}
                 </div>
                 <Footnote/>
             </div>
         </animated.div>
     );
-}
-
+};
 export default Categories;

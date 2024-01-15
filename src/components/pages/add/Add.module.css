@@ -70,3 +70,10 @@
 .detailsFootnote {
     margin-top: 50px;
 }
+
+.requiredSymbol {
+    margin-top: 4px;
+    color: #E0A96D;
+    font-weight: bold;
+    font-size: 20px;
+}

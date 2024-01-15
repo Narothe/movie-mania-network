@@ -15,6 +15,7 @@ import SignInButton from "../../elements/signinButton/SignInButton";
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     const navigate = useNavigate();
+    const requiredFields = ["title", "image", "genre", "rate", "productionYear", "backgroundImage", "content"];
     const { token } = useAuth();
 
     const [formData, setFormData] = useState({
@@ -83,6 +84,7 @@ const Add = () => {
                 <form onSubmit={handleSubmit} className={styles.addForm}>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Title:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
@@ -90,11 +92,13 @@ const Add = () => {
                                 name="title"
                                 value={formData.title}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Image Source:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
@@ -102,11 +106,13 @@ const Add = () => {
                                 name="image"
                                 value={formData.image}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Genre:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
@@ -114,11 +120,13 @@ const Add = () => {
                                 name="genre"
                                 value={formData.genre}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Rate:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
@@ -128,11 +136,13 @@ const Add = () => {
                                 max="10"
                                 value={formData.rate}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Production year:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
@@ -140,6 +150,7 @@ const Add = () => {
                                 name="productionYear"
                                 value={formData.productionYear}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
@@ -148,7 +159,7 @@ const Add = () => {
                             Background image:
                             <input
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
-                                type="number"
+                                type="text"
                                 name="backgroundImage"
                                 value={formData.backgroundImage}
                                 onChange={handleChange}
@@ -157,6 +168,7 @@ const Add = () => {
                     </div>
                     <div className={styles.addLabels}>
                         <label className={styles.addLabel}>
+                            <span className={styles.requiredSymbol}>*</span>
                             Long Description:
                             <textarea
                                 className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
@@ -164,6 +176,7 @@ const Add = () => {
                                 name="content"
                                 value={formData.content}
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
