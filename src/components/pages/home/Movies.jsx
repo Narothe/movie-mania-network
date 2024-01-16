@@ -92,10 +92,14 @@ const Movies = () => {
                             </Link>
                             {hoveredMovie === movie && (
                                 <Link to={`/details/${movie.id}`} className={styles.hoveredInfoBlock}>
-                                    <h4 className="text-center">{movie.title || "Unknown Title"}</h4>
+                                    <h4 className="text-center">
+                                        {movie.title && movie.title.length > 20
+                                            ? `${movie.title.slice(0, 20)}...`
+                                            : movie.title || "Unknown Title"}
+                                    </h4>
                                     <p>
-                                        {movie.content && movie.content.length > 155
-                                            ? `${movie.content.slice(0, 155)}...`
+                                        {movie.content && movie.content.length > 140
+                                            ? `${movie.content.slice(0, 140)}...`
                                             : movie.content || "No description available"}
                                     </p>
                                     <div className={`${styles.positionOfRate} ${styles.smallMargin}`}>
@@ -105,7 +109,8 @@ const Movies = () => {
                                                              alt={`rating ${clampedRate}`}/>}
                                     </div>
                                     <div className={styles.smallMargin}>
-                                        <p>Genre: {movie.genre || "Unknown Genre"}</p>
+                                        <p>Genre: {movie.genre || "Unknown"}</p>
+                                        <p>Production year: {movie.productionYear || "Unknown"}</p>
                                     </div>
                                 </Link>
                             )}

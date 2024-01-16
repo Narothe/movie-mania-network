@@ -99,12 +99,16 @@ const Details = () => {
                     <h2>Title: "<i>{movie.title}</i>"</h2>
                     <div className={styles.displayColumn}>
                         <div className={`d-flex align-items-center flex-row mb-3`}>
-                            <p>Rate: {clampedRate || 0}/10</p>
+                            <div>
+                                <p className={styles.marginThem}>Rate: {clampedRate || 0}/10</p>
+                                <p className={styles.marginThem}>Production year: {movie.productionYear !== 0 ? movie.productionYear : 'Unknown'}</p>
+                                <p className={styles.marginThem}>Genre: {movie.genre}</p>
+                            </div>
                             <div className={styles.marginThat}>
                                 {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
                             </div>
                         </div>
-                        <p>Genre: {movie.genre}</p>
+
                     </div>
                 </div>
                 <div className={styles.itemsContainer}>

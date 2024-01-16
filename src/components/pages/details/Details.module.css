@@ -6,10 +6,13 @@
 }
 
 .mainImage {
-    /*width: 500px;*/
+    width: 312px;
     /*height: 750px;*/
-    width: 23vw;
-    height: 70vh;
+    /*width: 23vw;*/
+    /*height: 70vh;*/
+    /*width: 100%;*/
+    /*width: 90%;*/
+    /*height: 100%;*/
 }
 
 .itemsContainer {
@@ -76,4 +79,8 @@
     background-color: #E0A96D;
     border-color: #E0A96D;
     color: #312E31;
+}
+
+.marginThem {
+    margin-bottom: -0px;
 }
