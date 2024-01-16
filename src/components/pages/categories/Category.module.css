@@ -34,28 +34,47 @@
     /*background-color: red;*/
 }
 
+.helpTitle {
+    color: #FFE1BF;
+    z-index: 100;
+}
+
 .textLook {
     display: flex;
     flex-direction: column;
-    /*width: fit-content;*/
-    /*width: 50%;*/
     transition: all 0.3s ease;
-    background-color: #282c34;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
     border-radius: 5px;
-    /*margin-bottom: 10px;*/
     text-decoration: none;
     color: #FFE1BF;
     margin: 5px;
     padding: 5px;
-    /*background-color: blue;*/
+    position: relative;
+}
+
+.textLook::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    color: #FFE1BF;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(49,46,49,1) 50%, rgba(224,169,109,0) 100%);
 }
 
 .textLook:hover {
     transform: scale(1.1);
     color: #E0A96D;
+    filter: grayscale(0%);
+    background: transparent;
 }
 
 .movieImage {
-    width: 65%;
+    width: 55%;
     height: 90%;
 }

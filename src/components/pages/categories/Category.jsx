@@ -12,10 +12,10 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Category = () => {
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     const [movies, setMovies] = useState([]);
-    const {token} = useAuth();
-    const {categoryName} = useParams();
+    const { token } = useAuth();
+    const { categoryName } = useParams();
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
@@ -43,12 +43,12 @@ const Category = () => {
 
     return (
         <animated.div style={props}>
-            {token ? <LoggedUser/> : <SignInButton/>}
+            {token ? <LoggedUser /> : <SignInButton />}
             <div className={`container ${styles.categoryContainer}`}>
                 <div className={styles.properWidth}>
-                    <TopContainer text={"Category"}/>
+                    <TopContainer text={"Category"} />
                 </div>
-                <HorizontalGap gap={`Category: ${categoryName}`}/>
+                <HorizontalGap gap={`Category: ${categoryName}`} />
 
                 <div className={styles.twoContainers}>
                     <div className={styles.firstContainer}>
@@ -59,7 +59,12 @@ const Category = () => {
                                     className={styles.textLook}
                                     onMouseEnter={() => setSelectedMovie(movie)}
                                     onMouseLeave={() => setSelectedMovie(null)}
-                                >{movie.title}</Link>
+                                    style={{ backgroundImage: `url(${movie.image})` }}
+                                >
+                                    <div className={styles.helpTitle}>
+                                    {movie.title}
+                                    </div>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -73,7 +78,7 @@ const Category = () => {
                         )}
                     </div>
                 </div>
-                <Footnote/>
+                <Footnote />
             </div>
         </animated.div>
     );

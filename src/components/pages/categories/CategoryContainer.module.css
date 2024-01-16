@@ -12,7 +12,9 @@
 }
 
 .backgroundColor {
-    background-color: #E0A96D;
+    /*background-color: #E0A96D;*/
+    background: rgb(224,169,109);
+    background: linear-gradient(225deg, rgba(224,169,109,1) 50%, rgba(49,46,49,1) 100%);
     border-radius: 10px;
 }
 

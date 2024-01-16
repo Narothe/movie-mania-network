@@ -36,9 +36,9 @@ const Movies = () => {
         toast.promise(
             fetchData(),
             {
-                loading: 'Loading movie details...',
-                success: 'Movie details loaded successfully',
-                error: 'Error when loading movie details',
+                loading: 'Loading movies...',
+                success: 'Movies loaded successfully',
+                error: 'Error when loading movies',
             },
             {
                 style: {
