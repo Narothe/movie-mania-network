@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useSpring, animated } from 'react-spring';
 import TopContainer from "../../elements/topContainer/TopContainer";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
-import getRatingImage from "../../elements/RatingHelper";
+import getRatingImage from "../../utils/RatingHelper";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
 import { useAuth } from "../../utils/AuthContext";

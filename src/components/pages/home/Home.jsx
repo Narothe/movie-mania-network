@@ -4,10 +4,10 @@ import { jwtDecode } from "jwt-decode";
 import Footnote from "../../elements/footnote/Footnote";
 import SignInButton from "../../elements/signinButton/SignInButton";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
-import MainLogo from "../../elements/mainLogo/MainLogo";
+import MainLogo from "./MainLogo";
 import { useSpring, animated } from "react-spring";
 import styles from "./Home.module.css";
-import Movies from "../../elements/movies/Movies";
+import Movies from "./Movies";
 
 
 const Home = () => {

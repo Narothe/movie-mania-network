@@ -4,7 +4,7 @@ import styles from "./Movies.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import noThumbnailImage from "../../assets/noThumbnail/noThumbnailPattern.png";
-import getRatingImage from "../RatingHelper";
+import getRatingImage from "../../utils/RatingHelper";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);

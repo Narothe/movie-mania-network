@@ -11,7 +11,7 @@ import {
 import Home from "./components/pages/home/Home";
 import Categories from "./components/pages/categories/Categories";
 import Add from "./components/pages/add/Add";
-import NotFound from "./components/pages/NotFound";
+import NotFound from "./components/utils/NotFound";
 import Signin from "./components/pages/signin/Signin";
 import Signup from "./components/pages/signup/Signup";
 import Category from "./components/pages/categories/Category";

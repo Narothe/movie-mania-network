@@ -1,5 +1,5 @@
 import React from "react";
-import SmallerMainLogo from "../smallerMainLogo/SmallerMainLogo";
+import SmallerMainLogo from "./SmallerMainLogo";
 import styles from "./TopContainer.module.css";
 
 const TopContainer = (props) => {
