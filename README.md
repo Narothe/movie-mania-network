@@ -57,6 +57,12 @@ Note: Open project at port `3000`, not `3001` or another. Reason: Other port may
 - Google Chrome version: 120.0.6099.217 (64-bit)
 - Firefox 121.0 (64-bit)
 
+## Project Structure
+
+The components are divided into catalogs that correspond to applications. If a component (element) is used only in one place in the project, it is located in the parent folder.
+
+![ProjectStructure](./preview/currentDesign/ProjectStructure.png)
+
 ## Preview images of the application
 
 ### Conceptual design (phase_3)
