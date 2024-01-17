@@ -10,6 +10,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import ChartComponent from "./ChartComponent";
 import {Link} from "react-router-dom";
+import Footnote from "../../elements/footnote/Footnote";
 
 const Statistics = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -54,16 +55,16 @@ const Statistics = () => {
                     <div className={styles.titleContainer}>
                         <HorizontalGap gap={'Top most rated videos (sorted)'}/>
                         <div className={styles.fullSize}>
-                        <div type="1" className={styles.orderedList}>
-                            {movies.map((movie, index) => (
-                                <Link className={styles.listElements} key={movie.id} to={`/details/${movie.id}`}>
+                            <div type="1" className={styles.orderedList}>
+                                {movies.map((movie, index) => (
+                                    <Link className={styles.listElements} key={movie.id} to={`/details/${movie.id}`}>
                                     <span
                                         className={`${styles.listElementOne} ${styles.background}`}>{index + 1}. {movie.title}</span>
-                                    <span
-                                        className={`${styles.listElementTwo} ${styles.background}`}>{movie.rate}/10</span>
-                                </Link>
-                            ))}
-                        </div>
+                                        <span
+                                            className={`${styles.listElementTwo} ${styles.background}`}>{movie.rate}/10</span>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                     <div className={styles.titleContainer}>
@@ -72,6 +73,9 @@ const Statistics = () => {
                             <ChartComponent last7DaysData={last7DaysData}/>
                         </div>
                     </div>
+                </div>
+                <div className={styles.detailsFootnote}>
+                    <Footnote/>
                 </div>
             </div>
         </animated.div>

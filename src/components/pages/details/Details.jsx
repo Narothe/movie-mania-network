@@ -11,6 +11,7 @@ import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
 import { useAuth } from "../../utils/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Footnote from "../../elements/footnote/Footnote";
 
 const Details = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -101,11 +102,13 @@ const Details = () => {
                         <div className={`d-flex align-items-center flex-row mb-3`}>
                             <div>
                                 <p className={styles.marginThem}>Rate: {clampedRate || 0}/10</p>
-                                <p className={styles.marginThem}>Production year: {movie.productionYear !== 0 ? movie.productionYear : 'Unknown'}</p>
+                                <p className={styles.marginThem}>Production
+                                    year: {movie.productionYear !== 0 ? movie.productionYear : 'Unknown'}</p>
                                 <p className={styles.marginThem}>Genre: {movie.genre}</p>
                             </div>
                             <div className={styles.marginThat}>
-                                {ratingImage && <img className={styles.ratingImage} src={ratingImage} alt={`rating ${movie.rate}`}/>}
+                                {ratingImage && <img className={styles.ratingImage} src={ratingImage}
+                                                     alt={`rating ${movie.rate}`}/>}
                             </div>
                         </div>
 
@@ -128,6 +131,9 @@ const Details = () => {
                             </button>
                         )}
                     </div>
+                </div>
+                <div className={styles.detailsFootnote}>
+                    <Footnote/>
                 </div>
             </div>
         </animated.div>
