@@ -26,6 +26,7 @@ const Navbar = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
         } else {
             try {
@@ -52,6 +53,7 @@ const Navbar = () => {
                             backgroundColor: 'rgba(49, 46, 49, 0.5)',
                             color: '#FFE1BF',
                         },
+                        duration: 1500,
                     });
                 }
             } catch (error) {
@@ -61,6 +63,7 @@ const Navbar = () => {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',
                         color: '#FFE1BF',
                     },
+                    duration: 1500,
                 });
             }
         }
@@ -135,6 +138,7 @@ const Navbar = () => {
                                                 backgroundColor: 'rgba(49, 46, 49, 0.5)',
                                                 color: '#FFE1BF',
                                             },
+                                            duration: 1500,
                                         })
                                     }
                                         style={{userSelect: 'none', cursor: 'pointer'}}

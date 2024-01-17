@@ -40,6 +40,7 @@ const Signup = () => {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',
                         color: '#FFE1BF',
                     },
+                    duration: 1500,
                 });
 
                 // Zaloguj użytkownika po rejestracji
@@ -56,6 +57,7 @@ const Signup = () => {
                                 backgroundColor: 'rgba(49, 46, 49, 0.5)',
                                 color: '#FFE1BF',
                             },
+                            duration: 1500,
                         });
 
                         // Przejdź do strony głównej po zalogowaniu
@@ -70,6 +72,7 @@ const Signup = () => {
                                 backgroundColor: 'rgba(49, 46, 49, 0.5)',
                                 color: '#FFE1BF',
                             },
+                            duration: 1500,
                         });
                     });
 
@@ -81,6 +84,7 @@ const Signup = () => {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',
                         color: '#FFE1BF',
                     },
+                    duration: 1500,
                 });
             });
     };
@@ -142,9 +146,6 @@ const Signup = () => {
                         </div>
                     </div>
                 </div>
-                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
-                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
-                </Link>
                 <div className="detailsFootnote">
                     <Footnote/>
                 </div>

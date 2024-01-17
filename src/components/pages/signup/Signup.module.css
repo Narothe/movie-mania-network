@@ -86,13 +86,3 @@
 .detailsFootnote {
     margin-top: 30px;
 }
-
-.githubLogo {
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-}
-
-.githubLogoW {
-    width: 55px;
-}

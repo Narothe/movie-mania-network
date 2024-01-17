@@ -38,6 +38,7 @@ const Add = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
             return;
         }
@@ -48,6 +49,7 @@ const Add = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
             return;
         }
@@ -69,6 +71,7 @@ const Add = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
             setTimeout(() => {
                 navigate("/");
@@ -80,6 +83,7 @@ const Add = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
         }
     };
@@ -209,9 +213,6 @@ const Add = () => {
                         Add Movie
                     </button>
                 </form>
-                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
-                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
-                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

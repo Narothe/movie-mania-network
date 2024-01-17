@@ -32,7 +32,13 @@ const Statistics = () => {
             setMovies(ratedMovies);
         } catch (error) {
             // console.error(error);
-            toast.error('Error when loading videos');
+            toast.error('Error when loading videos',{
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                        color: '#FFE1BF',
+                },
+                duration: 1500,
+            });
         }
     };
 
@@ -60,6 +66,7 @@ const Statistics = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             }
         ).then(() => {
             scrollToTop();
@@ -90,15 +97,12 @@ const Statistics = () => {
                         </div>
                     </div>
                     <div className={styles.titleContainer}>
-                        <HorizontalGap gap={'Home page visitation graph'}/>
+                        <HorizontalGap gap={'Your home page visitation graph'}/>
                         <div className={styles.fullSize}>
                             <ChartComponent last7DaysData={last7DaysData}/>
                         </div>
                     </div>
                 </div>
-                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
-                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
-                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

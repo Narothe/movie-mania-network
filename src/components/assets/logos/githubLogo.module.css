@@ -1,0 +1,20 @@
+.githubLogo {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.githubLogo:hover {
+    position: fixed;
+    bottom: 22px;
+}
+
+.githubLogoW {
+    width: 55px;
+    transition: all 0.3s ease;
+}
+
+.githubLogoW:hover {
+    transform: scale(1.1);
+}

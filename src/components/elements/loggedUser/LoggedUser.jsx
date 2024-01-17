@@ -57,6 +57,7 @@ const LoggedUser = () => {
                             backgroundColor: 'rgba(49, 46, 49, 0.5)',
                             color: '#FFE1BF',
                         },
+                        duration: 1500,
                     });
                 })
                 .catch(error => {
@@ -66,6 +67,7 @@ const LoggedUser = () => {
                             backgroundColor: 'rgba(49, 46, 49, 0.5)',
                             color: '#FFE1BF',
                         },
+                        duration: 1500,
                     });
                 });
         } else {

@@ -29,6 +29,7 @@ const Categories = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             });
         }
     };
@@ -52,6 +53,7 @@ const Categories = () => {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
                     color: '#FFE1BF',
                 },
+                duration: 1500,
             }
         ).then(() => {
             scrollToTop();
@@ -97,9 +99,6 @@ const Categories = () => {
                         )
                     ))}
                 </div>
-                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
-                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
-                </Link>
                 <Footnote/>
             </div>
         </animated.div>

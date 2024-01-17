@@ -69,9 +69,6 @@ const Home = () => {
                 <div>
                     <Movies/>
                 </div>
-                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
-                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
-                </Link>
                 <div className={styles.footnote}>
                     <Footnote/>
                 </div>
