@@ -11,6 +11,7 @@
 - phase_3: 21.11.2023r. - Create project, main idea of the view.
 - phase_4: 18.12.2023r. - Developing phase_3. Completing the page with the other subpages and how they work.
 - phase_5: 12.01.2024r. - Plugging the entire site under the API. Major changes in the appearance of the website.
+- phase_6: 17.01.2024r. - Final adjustments. Adding safeguards against missing items or unpredictable user behavior.
 
 
 ## How to install
