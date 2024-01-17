@@ -52,7 +52,7 @@ npm start
 
 Open [http://localhost:3000]( http://localhost:3000) in your browser to view the website.
 
-Note: Open project at port `3000`, not `3001` or another. Reason: Other port may cause problems with css styles and display of elements in site.
+Note: I recommend to open project at port `3000`, not `3001` or another. Reason: If you are using ad-block the other port may cause problems with css styles and display of elements in site.
 
 ### The Browsers used while creating project: 
 - Google Chrome version: 120.0.6099.217 (64-bit)
