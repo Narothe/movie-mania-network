@@ -4,7 +4,7 @@ import {Link, Outlet, useLocation} from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 import React from "react";
 import {Toaster} from "react-hot-toast";
-import styles from "./components/assets/logos/githubLogo.module.css";
+import styles from "./components/utils/githubLogo.module.css";
 import githubLogo from "./components/assets/logos/githubLogo.png";
 
 function App() {
