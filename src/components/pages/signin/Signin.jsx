@@ -30,7 +30,7 @@ const Signin = () => {
         axios
             .post("https://at.usermd.net/api/user/auth", account)
             .then((response) => {
-                console.dir(response.data, {depth: null});
+                // console.dir(response.data, {depth: null});
                 login(response.data.token);
                 toast.success("Signed!", {
                     style: {
@@ -43,7 +43,7 @@ const Signin = () => {
                 }, 1500);
             })
             .catch((error) => {
-                console.error(error);
+                // console.error(error);
                 toast.error("Given username doesn't exist or password is wrong!", {
                     style: {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',

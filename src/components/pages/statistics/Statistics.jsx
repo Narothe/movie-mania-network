@@ -23,13 +23,13 @@ const Statistics = () => {
         document.title = 'Movie Mania Network';
 
         const last7DaysData = JSON.parse(localStorage.getItem("visitData")) || [];
-        console.log('Data read from LocalStorage:', last7DaysData);
+        // console.log('Data read from LocalStorage:', last7DaysData);
         setLast7DaysData(last7DaysData);
 
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://at.usermd.net/api/movies`);
-                console.log(response.data);
+                // console.log(response.data);
                 // Sortuj filmy według oceny (rate) od najwyższej do najniższej
                 const sortedMovies = response.data.sort((a, b) => b.rate - a.rate);
 
@@ -37,7 +37,7 @@ const Statistics = () => {
 
                 setMovies(ratedMovies );
             } catch (error) {
-                console.error(error);
+                // console.error(error);
                 toast.error('Error when loading videos');
             }
         };

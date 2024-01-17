@@ -13,10 +13,10 @@ const Movies = () => {
     const fetchData = async () => {
         try {
             const response = await axios.get("https://at.usermd.net/api/movies");
-            console.log(response.data);
+            // console.log(response.data);
             setMovies(response.data);
         } catch (error) {
-            console.error(error);
+            // console.error(error);
             toast.error("Error when loading videos", {
                 style: {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',

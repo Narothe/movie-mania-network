@@ -32,7 +32,7 @@ const Signup = () => {
                 account
             )
             .then((response) => {
-                console.log('response.data', response.data);
+                // console.log('response.data', response.data);
                 localStorage.setItem('token', response.data.token);
                 toast.success("Account created successfully!", {
                     style: {
@@ -48,7 +48,7 @@ const Signup = () => {
                         password: account.password,
                     })
                     .then((loginResponse) => {
-                        console.dir(loginResponse.data, {depth: null});
+                        // console.dir(loginResponse.data, {depth: null});
                         login(loginResponse.data.token);
                         toast.success("Logged in!", {
                             style: {
@@ -63,7 +63,7 @@ const Signup = () => {
                         }, 1500);
                     })
                     .catch((loginError) => {
-                        console.error(loginError);
+                        // console.error(loginError);
                         toast.error("Error during login.", {
                             style: {
                                 backgroundColor: 'rgba(49, 46, 49, 0.5)',
@@ -74,7 +74,7 @@ const Signup = () => {
 
             })
             .catch((error) => {
-                console.error(error);
+                // console.error(error);
                 toast.error("Given username does exists!", {
                     style: {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',

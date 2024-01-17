@@ -29,7 +29,7 @@ const Category = () => {
                 );
                 setMovies(filteredMovies);
             } catch (error) {
-                console.error(error);
+                // console.error(error);
                 toast.error("Error when loading videos", {
                     style: {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',

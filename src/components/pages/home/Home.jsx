@@ -44,17 +44,17 @@ const Home = () => {
         localStorage.setItem("visitData", JSON.stringify(last7DaysData));
 
         // Logowanie danych
-        console.log('Visit data for the last 7 days:', last7DaysData);
+        // console.log('Visit data for the last 7 days:', last7DaysData);
 
         // Ustaw stan z danymi
         setLast7DaysData(last7DaysData);
     }, [token]); // Ensure useEffect runs when 'token' changes
 
     if (!token) {
-        console.log("Użytkownik niezalogowany");
+        // console.log("Użytkownik niezalogowany");
     } else {
-        console.log("Użytkownik zalogowany\n", decoded);
-        console.log("Token\n", token);
+        // console.log("Użytkownik zalogowany\n", decoded);
+        // console.log("Token\n", token);
     }
 
     return (

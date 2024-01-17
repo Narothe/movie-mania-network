@@ -2,7 +2,7 @@ import React from 'react';
 import BarChart from "./BarChart";
 
 const ChartComponent = ({ last7DaysData }) => {
-    console.log('ChartComponent - last7DaysData', last7DaysData)
+    // console.log('ChartComponent - last7DaysData', last7DaysData)
     const chart = last7DaysData || [];
 
     const userData = {

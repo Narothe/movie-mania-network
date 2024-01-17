@@ -50,7 +50,7 @@ const LoggedUser = () => {
         if (decoded && decoded.userId) {
             axios.delete(`https://at.usermd.net/api/user/logout/${decoded.userId}`)
                 .then(response => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     logout();
                     toast.success("Logout successfully!", {
                         style: {
@@ -60,7 +60,7 @@ const LoggedUser = () => {
                     });
                 })
                 .catch(error => {
-                    console.error(error);
+                    // console.error(error);
                     toast.error("Error during logout!", {
                         style: {
                             backgroundColor: 'rgba(49, 46, 49, 0.5)',
@@ -69,7 +69,7 @@ const LoggedUser = () => {
                     });
                 });
         } else {
-            console.error("User ID not found in decoded token.");
+            // console.error("User ID not found in decoded token.");
         }
     };
 

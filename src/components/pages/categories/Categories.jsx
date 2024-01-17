@@ -24,7 +24,7 @@ const Categories = () => {
                 const response = await axios.get(`https://at.usermd.net/api/movies`);
                 setMovies(response.data);
             } catch (error) {
-                console.error(error);
+                // console.error(error);
                 toast.error("Error when loading videos", {
                     style: {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',

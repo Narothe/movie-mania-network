@@ -62,7 +62,7 @@ const Add = () => {
                 productionYear: 0,
                 backgroundImage: "",
             });
-            console.log("The data was sent successfully", response.data);
+            // console.log("The data was sent successfully", response.data);
             toast.success("The data was sent successfully!", {
                 style: {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',
@@ -73,7 +73,7 @@ const Add = () => {
                 navigate("/");
             }, 1500);
         } catch (error) {
-            console.error("The data wasn't sent successfully", error);
+            // console.error("The data wasn't sent successfully", error);
             toast.error("The data wasn't sent successfully!", {
                 style: {
                     backgroundColor: 'rgba(49, 46, 49, 0.5)',

@@ -18,7 +18,7 @@ const Navbar = () => {
         e.preventDefault();
 
         const searchTerm = e.target.elements.search.value.toLowerCase();
-        console.log('Wartość z formularza:', searchTerm);
+        // console.log('Wartość z formularza:', searchTerm);
 
         if (searchTerm.length < 4) {
             toast.error('Enter minimum 4 characters', {
@@ -55,7 +55,7 @@ const Navbar = () => {
                     });
                 }
             } catch (error) {
-                console.error('Błąd przy wyszukiwaniu filmu', error);
+                // console.error('Błąd przy wyszukiwaniu filmu', error);
                 toast.error('Strange error occurred!', {
                     style: {
                         backgroundColor: 'rgba(49, 46, 49, 0.5)',

@@ -20,15 +20,15 @@ const Details = () => {
     const navigate = useNavigate();  // Zaktualizowany hook
 
     const { id } = useParams();
-    console.log("Movie ID:", id);
+    // console.log("Movie ID:", id);
 
     const fetchData = async () => {
         try {
             const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
-            console.log(response.data);
+            // console.log(response.data);
             setMovie(response.data);
         } catch (error) {
-            console.error(error);
+            // console.error(error);
             throw error;
         }
     };
@@ -78,9 +78,9 @@ const Details = () => {
             });
             navigate('/');
         } catch (error) {
-            console.error(error);
+            // console.error(error);
             if (error.response) {
-                console.error('Response data:', error.response.data);
+                // console.error('Response data:', error.response.data);
             }
             toast.error("Error deleting movie", {
                 style: {
