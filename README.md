@@ -6,6 +6,11 @@
 
 - [@Narothe](https://github.com/Narothe)
 
+### Site to visit:
+
+- [Movie Mania Network](https://movie-mania-network.vercel.app/)
+
+
 ## Main branch updates
 
 - phase_3: 21.11.2023r. - Create project, main idea of the view.
