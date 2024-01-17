@@ -117,6 +117,7 @@ const Signup = () => {
                                         className={`${styles.signupFormControl} me-2 ${styles.addMargin}`}
                                         type="text"
                                         name="email"
+                                        maxLength="20"
                                         value={account.email}
                                         onChange={handleInputChange}
                                     />

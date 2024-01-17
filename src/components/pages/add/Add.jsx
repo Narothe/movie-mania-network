@@ -110,6 +110,7 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="text"
                                 name="title"
+                                maxLength="100"
                                 value={formData.title}
                                 onChange={handleChange}
                                 required
@@ -138,6 +139,7 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="text"
                                 name="genre"
+                                maxLength="100"
                                 value={formData.genre}
                                 onChange={handleChange}
                                 required
@@ -168,6 +170,7 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addMargin}`}
                                 type="number"
                                 name="productionYear"
+                                min="0"
                                 value={formData.productionYear}
                                 onChange={handleChange}
                                 required
@@ -194,6 +197,7 @@ const Add = () => {
                                 className={`${styles.formControl} form-control me-2 ${styles.addHeight} ${styles.addMargin}`}
                                 type="text"
                                 name="content"
+                                maxLength="2000"
                                 value={formData.content}
                                 onChange={handleChange}
                                 required
