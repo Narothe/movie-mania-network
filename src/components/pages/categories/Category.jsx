@@ -12,43 +12,63 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Category = () => {
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const [movies, setMovies] = useState([]);
-    const { token } = useAuth();
-    const { categoryName } = useParams();
+    const {token} = useAuth();
+    const {categoryName} = useParams();
     const [selectedMovie, setSelectedMovie] = useState(null);
 
-    useEffect(() => {
-        document.title = "Movie Mania Network";
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`https://at.usermd.net/api/movies`);
+            const filteredMovies = response.data.filter(
+                (movie) => movie.genre === categoryName
+            );
+            setMovies(filteredMovies);
+        } catch (error) {
+            // console.error(error);
+            toast.error("Error when loading videos", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
+        }
+    };
 
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`https://at.usermd.net/api/movies`);
-                const filteredMovies = response.data.filter(
-                    (movie) => movie.genre === categoryName
-                );
-                setMovies(filteredMovies);
-            } catch (error) {
-                // console.error(error);
-                toast.error("Error when loading videos", {
-                    style: {
-                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
-                        color: '#FFE1BF',
-                    },
-                });
-            }
+    useEffect(() => {
+        document.title = 'Movie Mania Network';
+
+        const scrollToTop = () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         };
-        fetchData();
+
+        toast.promise(
+            fetchData(),
+            {
+                loading: 'Loading category...',
+                success: 'Category loaded successfully',
+                error: 'Error when loading category',
+            },
+            {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            }
+        ).then(() => {
+            scrollToTop();
+        });
     }, []);
 
     return (
         <animated.div style={props}>
-            {token ? <LoggedUser /> : <SignInButton />}
+            {token ? <LoggedUser/> : <SignInButton/>}
             <div className={`container ${styles.categoryContainer}`}>
                 <div className={styles.properWidth}>
-                    <TopContainer text={"Category"} />
+                    <TopContainer text={"Category"}/>
                 </div>
-                <HorizontalGap gap={`Category: ${categoryName}`} />
+                <HorizontalGap gap={`Category: ${categoryName}`}/>
 
                 <div className={styles.twoContainers}>
                     <div className={styles.firstContainer}>
@@ -59,10 +79,10 @@ const Category = () => {
                                     className={styles.textLook}
                                     onMouseEnter={() => setSelectedMovie(movie)}
                                     onMouseLeave={() => setSelectedMovie(null)}
-                                    style={{ backgroundImage: `url(${movie.image})` }}
+                                    style={{backgroundImage: `url(${movie.image})`}}
                                 >
                                     <div className={styles.helpTitle}>
-                                    {movie.title}
+                                        {movie.title}
                                     </div>
                                 </Link>
                             </div>
@@ -78,7 +98,7 @@ const Category = () => {
                         )}
                     </div>
                 </div>
-                <Footnote />
+                <Footnote/>
             </div>
         </animated.div>
     );

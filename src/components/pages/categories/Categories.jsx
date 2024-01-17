@@ -16,24 +16,44 @@ const Categories = () => {
     const [movies, setMovies] = useState([]);
     const {token} = useAuth();
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`https://at.usermd.net/api/movies`);
+            setMovies(response.data);
+        } catch (error) {
+            // console.error(error);
+            toast.error("Error when loading videos", {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            });
+        }
+    };
+
     useEffect(() => {
         document.title = 'Movie Mania Network';
 
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`https://at.usermd.net/api/movies`);
-                setMovies(response.data);
-            } catch (error) {
-                // console.error(error);
-                toast.error("Error when loading videos", {
-                    style: {
-                        backgroundColor: 'rgba(49, 46, 49, 0.5)',
-                        color: '#FFE1BF',
-                    },
-                });
-            }
+        const scrollToTop = () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         };
-        fetchData();
+
+        toast.promise(
+            fetchData(),
+            {
+                loading: 'Loading categories...',
+                success: 'Categories loaded successfully',
+                error: 'Error when loading categories',
+            },
+            {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            }
+        ).then(() => {
+            scrollToTop();
+        });
     }, []);
 
     // Grupowanie kategorii

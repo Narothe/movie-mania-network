@@ -19,6 +19,23 @@ const Statistics = () => {
 
     const {token} = useAuth();
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`https://at.usermd.net/api/movies`);
+            // console.log(response.data);
+            // Sortuj filmy według oceny (rate) od najwyższej do najniższej
+            const sortedMovies = response.data.sort((a, b) => b.rate - a.rate);
+
+            const ratedMovies = sortedMovies.filter(movie => movie.rate > 0);
+
+            setMovies(ratedMovies);
+        } catch (error) {
+            // console.error(error);
+            toast.error('Error when loading videos');
+        }
+    };
+
+
     useEffect(() => {
         document.title = 'Movie Mania Network';
 
@@ -26,22 +43,26 @@ const Statistics = () => {
         // console.log('Data read from LocalStorage:', last7DaysData);
         setLast7DaysData(last7DaysData);
 
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`https://at.usermd.net/api/movies`);
-                // console.log(response.data);
-                // Sortuj filmy według oceny (rate) od najwyższej do najniższej
-                const sortedMovies = response.data.sort((a, b) => b.rate - a.rate);
-
-                const ratedMovies = sortedMovies.filter(movie => movie.rate > 0);
-
-                setMovies(ratedMovies );
-            } catch (error) {
-                // console.error(error);
-                toast.error('Error when loading videos');
-            }
+        const scrollToTop = () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         };
-        fetchData();
+
+        toast.promise(
+            fetchData(),
+            {
+                loading: 'Loading statistics...',
+                success: 'Statistics loaded successfully',
+                error: 'Error when loading statistics',
+            },
+            {
+                style: {
+                    backgroundColor: 'rgba(49, 46, 49, 0.5)',
+                    color: '#FFE1BF',
+                },
+            }
+        ).then(() => {
+            scrollToTop();
+        });
     }, []);
 
     return (
