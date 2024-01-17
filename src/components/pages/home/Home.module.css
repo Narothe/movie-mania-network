@@ -5,3 +5,13 @@
 .footnote {
     margin-top: 450px;
 }
+
+.githubLogo {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+.githubLogoW {
+    width: 55px;
+}

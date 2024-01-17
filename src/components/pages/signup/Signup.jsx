@@ -2,11 +2,12 @@ import React, {useEffect, useState} from "react";
 import TopContainer from "../../elements/topContainer/TopContainer";
 import Footnote from "../../elements/footnote/Footnote";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import styles from "./Signup.module.css";
 import toast from "react-hot-toast";
 import { useAuth } from "../../utils/AuthContext";
 import {useSpring, animated} from "react-spring";
+import githubLogo from "../../assets/logos/githubLogo.png";
 
 const Signup = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -141,6 +142,9 @@ const Signup = () => {
                         </div>
                     </div>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className="detailsFootnote">
                     <Footnote/>
                 </div>

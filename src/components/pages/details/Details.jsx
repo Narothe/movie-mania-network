@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import styles from "./Details.module.css";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -12,6 +12,7 @@ import SignInButton from "../../elements/signinButton/SignInButton";
 import { useAuth } from "../../utils/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Footnote from "../../elements/footnote/Footnote";
+import githubLogo from "../../assets/logos/githubLogo.png";
 
 const Details = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -132,6 +133,9 @@ const Details = () => {
                         )}
                     </div>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

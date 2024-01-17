@@ -6,10 +6,11 @@ import HorizontalGap from "../../elements/topContainer/HorizontalGap";
 import styles from "./Add.module.css";
 import { useSpring, animated } from "react-spring";
 import toast from "react-hot-toast";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../../utils/AuthContext";
 import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
+import githubLogo from "../../assets/logos/githubLogo.png";
 // import MainLogo from "../../elements/mainLogo/MainLogo";
 
 const Add = () => {
@@ -208,6 +209,9 @@ const Add = () => {
                         Add Movie
                     </button>
                 </form>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

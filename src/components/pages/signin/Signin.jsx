@@ -7,6 +7,7 @@ import Footnote from "../../elements/footnote/Footnote";
 import styles from "./Signin.module.css";
 import toast from "react-hot-toast";
 import {useSpring, animated} from "react-spring";
+import githubLogo from "../../assets/logos/githubLogo.png";
 
 const Signin = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -106,6 +107,9 @@ const Signin = () => {
                             up</Link>
                     </div>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

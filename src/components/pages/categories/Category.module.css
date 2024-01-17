@@ -78,3 +78,13 @@
     width: 55%;
     height: 90%;
 }
+
+.githubLogo {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+.githubLogoW {
+    width: 55px;
+}

@@ -10,6 +10,7 @@ import LoggedUser from "../../elements/loggedUser/LoggedUser";
 import SignInButton from "../../elements/signinButton/SignInButton";
 import axios from "axios";
 import toast from "react-hot-toast";
+import githubLogo from "../../assets/logos/githubLogo.png";
 
 const Category = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -98,6 +99,9 @@ const Category = () => {
                         )}
                     </div>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <Footnote/>
             </div>
         </animated.div>

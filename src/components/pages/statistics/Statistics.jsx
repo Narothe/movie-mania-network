@@ -11,6 +11,7 @@ import toast from 'react-hot-toast';
 import ChartComponent from "./ChartComponent";
 import {Link} from "react-router-dom";
 import Footnote from "../../elements/footnote/Footnote";
+import githubLogo from "../../assets/logos/githubLogo.png";
 
 const Statistics = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -95,6 +96,9 @@ const Statistics = () => {
                         </div>
                     </div>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className={styles.detailsFootnote}>
                     <Footnote/>
                 </div>

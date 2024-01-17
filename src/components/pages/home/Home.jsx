@@ -8,11 +8,13 @@ import MainLogo from "./MainLogo";
 import { useSpring, animated } from "react-spring";
 import styles from "./Home.module.css";
 import Movies from "./Movies";
+import githubLogo from "../../assets/logos/githubLogo.png";
+import {Link} from "react-router-dom";
 
 
 const Home = () => {
-    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-    const { token } = useAuth();
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const {token} = useAuth();
     const decoded = token ? jwtDecode(token) : null;
     const [last7DaysData, setLast7DaysData] = useState([]);
 
@@ -34,7 +36,7 @@ const Home = () => {
             todayEntry.count += 1;
         } else {
             // Jeśli nie mamy wpisu dla dzisiaj, dodaj nowy wpis
-            visitData.push({ date: currentDateString, count: 1 });
+            visitData.push({date: currentDateString, count: 1});
         }
 
         // Ogranicz tablicę do ostatnich 7 dni
@@ -61,14 +63,17 @@ const Home = () => {
         <animated.div style={props}>
             <div className={`container`}>
                 <nav className={`d-flex justify-content-center ${styles.homeNav}`}>
-                    {token ? <LoggedUser userData={decoded} /> : <SignInButton />}
-                    <MainLogo />
+                    {token ? <LoggedUser userData={decoded}/> : <SignInButton/>}
+                    <MainLogo/>
                 </nav>
                 <div>
-                    <Movies />
+                    <Movies/>
                 </div>
+                <Link to={"https://github.com/Narothe/movie-mania-network"} className={styles.githubLogo}>
+                    <img src={githubLogo} alt="githubLogo" className={styles.githubLogoW}/>
+                </Link>
                 <div className={styles.footnote}>
-                    <Footnote />
+                    <Footnote/>
                 </div>
             </div>
         </animated.div>
